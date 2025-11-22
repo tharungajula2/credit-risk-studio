@@ -16,28 +16,29 @@ export const curriculum: Curriculum = {
               type: "markdown",
               content: `At the highest level:
 
-* A bank **takes risk**: it lends money, trades, invests, offers guarantees, etc.
-* Some of those loans will **default**, markets will move, operations will fail.
-* To survive those losses **without collapsing**, the bank needs a **buffer**.
+* A bank **takes risk**: lending, investing, trading, providing guarantees, etc.
+* Some loans will **default**, markets will move, operations will fail.
+* To withstand these losses without failing, the bank needs a **loss-absorbing buffer**.
 
-That buffer is called **regulatory capital**.
-“Capital adequacy” means: *does the bank have **enough** of this buffer compared to the risks it is taking?*
+That buffer is **regulatory capital**.
+“Capital adequacy” asks:
 
-Regulators measure this through **capital ratios**, the core one being:
+> Does the bank have **enough** regulatory capital compared to the **risk-weighted** size of its exposures?
+
+Regulators measure this through **capital ratios**, especially:
 
 $$
 \\text{Capital Adequacy Ratio (CAR / CRAR)} = \\frac{\\text{Regulatory Capital}}{\\text{Risk-Weighted Assets (RWA)}}
 $$
 
-* **Regulatory Capital**: specific, high-quality parts of the bank’s equity/liabilities that regulators recognise as loss-absorbing (we break this down in Modules 2–3).
-* **RWA**: the bank’s exposures, but **adjusted for risk** (credit, market, operational, etc.).
+* **Regulatory capital** = the parts of a bank’s funding that regulators recognise as loss-absorbing (CET1, AT1, Tier 2 – detailed in Modules 2–3).
+* **RWA** = the bank’s exposures, but **adjusted for risk** (credit, market, operational, etc.).
 
-Basel standards and the original Basel I / II / III frameworks require a **minimum total capital ratio of 8% of RWA** globally. ([Bank for International Settlements](https://www.bis.org/publ/bcbs128b.pdf))
-Most countries then **add their own overlays**.
+BCBS standards (Basel I, II and III) are built around a **minimum total capital ratio of 8% of RWA**, with more detailed minimums for CET1 and Tier 1 under Basel III.
 
-In India, RBI requires a **minimum total capital adequacy ratio of 9%**, higher than the Basel 8%, and then adds buffers to bring the total requirement to about **11.5%** in normal conditions. ([Agrud Partners](https://agrudpartners.com/prudential-norms-for-banks/))
+In India, the Reserve Bank of India (RBI) requires a **minimum total capital adequacy ratio of 9% of RWA**, higher than the Basel 8% benchmark. On top of this, banks must hold a **Capital Conservation Buffer (CCB) of 2.5% of RWA in CET1**, bringing the effective total capital requirement to **11.5% of RWA** once fully phased in.
 
-> You will see both **CAR** and **CRAR** (Capital to Risk-Weighted Assets Ratio). For our purposes, treat them as the same concept.`
+> In practice, “CAR” and “CRAR” are used interchangeably for the capital-to-RWA ratio.`
             }
           ]
         },
@@ -47,32 +48,32 @@ In India, RBI requires a **minimum total capital adequacy ratio of 9%**, higher 
           content: [
             {
               type: "markdown",
-              content: `Regulators use capital rules to achieve three main objectives:
+              content: `Regulators use capital rules to achieve three main objectives.
 
 ### 1. Financial stability
 
-If banks are under-capitalised:
+Under-capitalised banks are vulnerable:
 
-* Small shocks can **wipe out** their equity.
-* This can cause **runs**, contagion to other banks, and large real-economy damage.
+* A moderate shock can **wipe out equity**.
+* This can trigger **runs**, contagion, and a broader financial crisis.
 
-Basel III was created specifically to **strengthen banks** after the 2007–09 global financial crisis, by raising both **quality and quantity** of capital and adding buffers. ([Bank for International Settlements](https://www.bis.org/bcbs/basel3.htm))
+Basel III was introduced after the 2007–09 global financial crisis specifically to **strengthen the resilience** of banks by raising both the **quality and quantity** of capital and by adding capital buffers.
 
 ### 2. Protect depositors and the real economy
 
-Most depositors **cannot analyse** bank risk themselves.
+Most depositors **cannot independently assess** bank risk.
 
-* Capital serves as a **shield** between depositors and unexpected losses.
-* Even if a bank suffers credit and market losses, strong capital reduces the probability that **depositors lose money** or that the government/taxpayers have to bail out the bank.
+* Capital acts as a **shield** between depositors and unexpected losses.
+* Strong capital reduces the probability that depositors or taxpayers have to absorb losses via bail-outs.
 
 ### 3. Constrain excessive risk-taking (moral hazard)
 
-Banks fund themselves largely with **other people’s money** (deposits and wholesale funding). Without constraints, they might:
+Banks fund themselves largely with **other people’s money** (deposits and wholesale funding). Without capital constraints they could:
 
-* Take **high risk** for short-term return.
-* Rely on **implicit government support** if things go wrong.
+* Take **very high risk** to maximise short-term returns.
+* Rely on expected public support if things go wrong.
 
-High capital requirements force banks to keep more of **their own skin in the game**, reducing incentives to gamble.`
+Higher capital requirements force banks to keep more of their **own loss-absorbing resources** at risk, reducing incentives to take excessive risk.`
             }
           ]
         },
@@ -82,33 +83,31 @@ High capital requirements force banks to keep more of **their own skin in the ga
           content: [
             {
               type: "markdown",
-              content: `### 1.3.1 Basel Committee on Banking Supervision (BCBS) – global standard setter
+              content: `### 1.3.1 Basel Committee on Banking Supervision (BCBS)
 
-* The **Basel Committee on Banking Supervision (BCBS)** sits at the Bank for International Settlements (BIS) in Basel, Switzerland.
-* It issues **global standards** like Basel I, Basel II, Basel III and Basel 3.1 (Endgame). ([Bank for International Settlements](https://www.bis.org/bcbs/basel3.htm))
-* These are **not laws**; they are **soft standards** agreed among central banks and supervisors.
+* The **Basel Committee on Banking Supervision (BCBS)**, hosted by the **Bank for International Settlements (BIS)** in Basel, develops global standards such as **Basel I, Basel II, Basel III and the “Basel III: Finalising post-crisis reforms” package (Basel 3.1)**.
+* These standards are **not laws** by themselves; they are **agreed benchmarks** for bank capital and risk management.
 
-Key point:
-Basel defines **minimums and methodologies** (e.g. 8% minimum total capital ratio), but **each country’s regulator** decides:
+Key idea:
 
-* How to **implement** them in local rules.
-* Whether to be **stricter** (higher ratios, stricter definitions).
+> Basel defines **concepts, minimum ratios and methodologies**.
+> Each **national authority** decides how to adopt or **tighten** them in local regulation.
 
 ### 1.3.2 National implementation – example: India (RBI)
 
 In India:
 
-* The **Reserve Bank of India (RBI)** is the central bank and prudential regulator for banks.
-* RBI has implemented Basel II and Basel III through detailed **circulars / master directions** (e.g. Basel III Capital Regulations implemented from 1 April 2013). ([Reserve Bank of India](https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/70BIIIMC010713.pdf))
-* RBI explicitly states that it uses the **CRAR framework advocated by the Basel Accord**, which links capital to risk-weighted assets including off-balance sheet items. ([Reserve Bank of India](https://www.rbi.org.in/commonman/English/Scripts/Notification.aspx?Id=615))
+* The **Reserve Bank of India (RBI)** is the central bank and primary prudential regulator for banks.
+* RBI has implemented Basel II and Basel III through detailed **guidelines, master circulars and master directions**, including the **“Master Circular – Basel III Capital Regulations”** and related updates.
+* RBI explicitly states that the **CRAR framework advocated by the Basel Accord** has been adopted for capital adequacy, covering risk on both **on-balance-sheet** and **off-balance-sheet** items.
 
-India is **more conservative** than the Basel template:
+India’s calibration is **more conservative** than the Basel template:
 
 * Basel minimum total capital ratio: **8% of RWA**.
-* RBI minimum total capital adequacy ratio for banks: **9% of RWA**.
-* Plus capital conservation buffer (CCB) and, where applicable, other buffers to reach about **11.5%** total requirement in normal times.
+* RBI minimum CRAR for banks: **9% of RWA**, on an ongoing basis.
+* Capital Conservation Buffer (CCB): **2.5% of RWA in CET1**, fully in place from 1 October 2021.
 
-> **Basel = global standard; RBI = local implementation (often stricter).**`
+So, in normal conditions, the **effective minimum total capital requirement in India is 11.5% of RWA** (9% minimum + 2.5% CCB), with scope for additional buffers where relevant.`
             }
           ]
         },
@@ -118,275 +117,273 @@ India is **more conservative** than the Basel template:
           content: [
             {
               type: "markdown",
-              content: `Think of the bank as several layers of functions (all very real in practice):
+              content: `Capital adequacy is part of a wider internal ecosystem.
 
 1. **Accounting & financial reporting**
-   * Prepares **balance sheet** and **P&L** based on accounting standards (Ind AS / IFRS).
-   * Shows total assets, liabilities, and equity – but **not** risk-weighted.
+
+   * Prepares the **balance sheet** and **profit & loss account** under accounting standards (e.g. Ind AS / IFRS).
+   * Shows total assets, liabilities and equity – but **not risk-weighted**.
 
 2. **Risk management**
-   * Identifies and measures:
-     * **Credit risk** (borrowers defaulting).
-     * **Market risk** (interest rate, FX, equity, commodity moves).
-     * **Operational risk** (fraud, system failures, legal issues).
-   * Maintains risk limits, models, and **risk appetite**.
+
+   * Identifies and quantifies:
+     * **Credit risk** – borrowers or counterparties defaulting.
+     * **Market risk** – movements in interest rates, FX, equities, commodities.
+     * **Operational risk** – process failures, fraud, legal and system issues.
+   * Sets risk appetite, limits and measurement models.
 
 3. **Regulatory capital / capital adequacy**
-   * Takes input from:
-     * Balance sheet + off-balance sheet exposures.
-     * Risk parameters (risk weights, CCFs, etc.).
+
+   * Uses:
+     * Accounting data (on-balance and off-balance exposures).
+     * Risk parameters (risk weights, credit conversion factors, etc.).
    * Produces:
      * **Regulatory capital** (CET1, AT1, Tier 2).
-     * **RWA** by risk type.
-     * Capital ratios: **CET1 ratio, Tier 1 ratio, Total capital ratio (CRAR)**.
-   * Ensures these are **above regulatory minima + buffers** at all times.
+     * **RWA** by risk type and portfolio.
+     * **Capital ratios**: CET1 ratio, Tier 1 ratio, Total capital ratio (CRAR).
+   * Ensures ratios remain **above regulatory minimums plus buffers** at all times.
 
 4. **Stress testing and capital planning**
-   * Projects capital and RWA under **adverse scenarios**.
-   * Checks if the bank stays above requirements in **stressed conditions**.
-   * Supports **ICAAP** (Internal Capital Adequacy Assessment Process) and supervisory dialogue (Pillar 2 – detailed later).
+
+   * Projects capital and RWA under **baseline and stressed scenarios**.
+   * Checks whether the bank stays above requirements in stress.
+   * Forms part of **ICAAP** (Internal Capital Adequacy Assessment Process) under Pillar 2.
 
 5. **Disclosures and market communication**
-   * Prepares **Pillar 3 disclosures**, annual reports, investor presentations.
-   * Communicates capital ratios, leverage, and risk metrics to:
-     * Regulators.
-     * Investors.
-     * Rating agencies.
-     * Analysts.
 
-Capital adequacy is therefore at the **intersection** of:
-* Accounting (source of raw numbers),
+   * Prepares **Pillar 3 disclosures**, annual report sections and investor information.
+   * Communicates capital adequacy, leverage, liquidity and key risk metrics to regulators, investors, analysts and rating agencies.
+
+Capital adequacy therefore sits at the **intersection** of:
+
+* Accounting (source of exposure data),
 * Risk measurement (RWA),
-* Strategy / business planning (capital allocation, growth),
-* Supervision & disclosure.`
+* Strategy and business planning (capital allocation, growth decisions),
+* Supervision and public disclosure.`
             }
           ]
         },
         {
           id: "1-5",
-          title: "1.5 The core mechanics: capital, RWA, and ratios",
+          title: "1.5 Core mechanics: capital, RWA and ratios",
           content: [
             {
               type: "markdown",
-              content: `### 1.5.1 Regulatory capital (very high level, detailed later)
+              content: `### 1.5.1 Regulatory capital – very high level
 
-At Basel III level, total regulatory capital is:
+At Basel III level, total regulatory capital can be summarised as:
 
 $$
 \\text{Total Capital} = \\text{CET1} + \\text{AT1} + \\text{Tier 2} - \\text{Regulatory Deductions}
 $$
 
-You will later break down what goes into:
+Where:
 
-* **CET1 (Common Equity Tier 1)** – core equity.
-* **AT1 (Additional Tier 1)** – perpetual instruments with loss-absorption features.
-* **Tier 2** – subordinated debt etc.
+* **CET1 (Common Equity Tier 1)** = ordinary shares and related reserves, retained earnings and other qualifying elements, net of adjustments such as goodwill and certain deferred tax assets.
+* **AT1 (Additional Tier 1)** = perpetual, subordinated instruments with fully discretionary coupons and loss-absorption features.
+* **Tier 2** = lower-tier capital such as dated subordinated debt and certain provisions.
 
-Basel III and national implementations focus heavily on the **quality** of capital, especially CET1.
+Basel III emphasises both the **quality of capital** (especially CET1) and clear eligibility criteria for AT1 and Tier 2 instruments.
 
 ### 1.5.2 Risk-Weighted Assets (RWA) – conceptual structure
 
-At a high level:
+Total RWA can be broken down as:
 
 $$
-\\text{Total RWA} = \\text{RWA}_{\\text{Credit}} + \\text{RWA}_{\\text{Market}} + \\text{RWA}_{\\text{Operational}} + \\text{(other components as applicable)}
+\\text{Total RWA} = \\text{RWA}_{\\text{Credit}} + \\text{RWA}_{\\text{Market}} + \\text{RWA}_{\\text{Operational}} + \\text{(other components)}
 $$
 
-* **Credit risk RWA**: based on exposures to borrowers (sovereign, bank, corporate, retail, etc.), adjusted by **risk weights** under the Standardised or IRB approaches.
-* **Market risk RWA**: based on trading book positions and related price risks.
-* **Operational risk RWA**: based on business indicators or modelled metrics.
+- **Credit risk RWA** – exposures to borrowers (sovereign, bank, corporate, retail, etc.), risk-weighted under either the **Standardised Approach (SA)** or **Internal Ratings-Based (IRB)** approaches.
+- **Market risk RWA** – trading book positions exposed to market price movements.
+- **Operational risk RWA** – based on size and loss experience (e.g. Standardised Measurement Approach).
 
-Basel frameworks formally state that **minimum capital requirements are calculated for credit, market, and operational risk**, and the total capital ratio must be at least 8% of RWA.
+Basel frameworks state that **minimum capital requirements are calculated for credit, market and operational risk**, and that minimum ratios (CET1, Tier 1, Total capital) are expressed as percentages of **total RWA**.
 
-### 1.5.3 Capital adequacy ratio (CAR / CRAR)
+### 1.5.3 Capital adequacy ratios
 
-Formally:
+The general form:
 
 $$
-\\text{CAR (or CRAR)} = \\frac{\\text{Total Regulatory Capital}}{\\text{Total RWA}}
+\\text{Capital Adequacy Ratio (CAR / CRAR)} = \\frac{\\text{Total Regulatory Capital}}{\\text{Total RWA}}
 $$
 
-with regulatory floors such as:
+Basel III minimum levels are:
 
-* Basel template:
-  * CET1 ≥ 4.5% of RWA,
-  * Tier 1 ≥ 6%,
-  * Total capital ≥ 8%, plus capital buffers. ([Wikipedia](https://en.wikipedia.org/wiki/Basel_III))
+* **CET1 ratio** ≥ **4.5%** of RWA
+* **Tier 1 ratio** ≥ **6.0%** of RWA
+* **Total capital ratio** ≥ **8.0%** of RWA
 
-* India (simplified view for now):
-  * Total capital ≥ **9%** of RWA (plus CCB, etc.).
+These are supplemented by **capital buffers** (CCB, possible CCyB, systemic buffers).
 
-Later modules will go into **exact minimums**, **buffers**, and **India-specific calibrations**.`
+In India:
+
+* **Minimum total capital ratio (CRAR)** = **9% of RWA**.
+* **Capital Conservation Buffer** = **2.5% of RWA in CET1** when fully implemented.
+
+Detailed calibrations and buffer mechanics are developed further in later modules.`
             }
           ]
         },
         {
           id: "1-6",
-          title: "1.6 Regulatory environment: India-focused view",
+          title: "1.6 Regulatory environment – India-focused view",
           content: [
             {
               type: "markdown",
               content: `### 1.6.1 RBI’s role
 
-RBI acts as:
+RBI’s key roles relevant to capital adequacy:
 
-* **Regulator** (prudential norms, capital adequacy, risk management guidelines).
-* **Supervisor** (onsite/offsite inspections, SREP, enforcement).
-* **Monetary authority** (monetary policy, liquidity management).
-* **Resolution role** (through various frameworks, though resolution is a broader legal ecosystem).
+* **Prudential regulator** – issues norms on capital adequacy, risk management, income recognition, asset classification and provisioning.
+* **Supervisor** – conducts onsite inspections and offsite monitoring, and applies the Supervisory Review and Evaluation Process (SREP).
+* **Monetary authority and liquidity manager** – indirectly influencing bank balance sheets and risks.
 
-RBI’s capital adequacy framework:
+On capital adequacy specifically:
 
-* Uses the **CRAR approach** “advocated by the Basel Accord”, considering risk of both **on-balance sheet and off-balance sheet** items.
-* Implements Basel II and III via **master circulars / master directions**, which are legally binding for banks.
+* RBI uses the **CRAR methodology** advocated by the Basel Accord, covering risk in both on- and off-balance sheet items.
+* Basel III capital regulations for Indian banks began implementation from **1 April 2013**, on a phased schedule aligned with, but sometimes more conservative than, global timelines.
 
-Key implementation facts:
+### 1.6.2 India vs global Basel – stricter calibration
 
-* Basel III capital regulations in India are implemented **from 1 April 2013**, in a phased manner.
-* RBI has periodically updated these directions (e.g. buffers, transitional arrangements, Basel 3.1-related changes).
+Reasons often cited for India’s more conservative stance (e.g. 9% vs 8% minimum, and early adoption of buffers) include:
 
-### 1.6.2 India vs global Basel – why slightly stricter?
+* Higher perceived **macro-financial volatility** and concentration risk in certain segments.
+* Desire to maintain **strong depositor and investor confidence**.
+* Need for additional safety margins during phases when data, systems or models are still evolving towards global best practice.
 
-Reasons why RBI often sets **higher** capital standards (like 9% vs 8%):
+For analysis and implementation work, it is important to keep both layers in mind:
 
-* Banking system in many emerging markets may be **more exposed** to concentration risk, group exposures, or macro volatility.
-* Higher minima give **additional comfort** to depositors and foreign investors.
-* It also provides a **cushion** against implementation / data quality issues during transitions.
-
-For you, as a risk / capital adequacy professional, this matters because:
-
-* When you design or analyse capital metrics for an Indian bank, you must know both:
-  * **Basel template minimums** and
-  * **RBI-specific overlays**.`
+* The **Basel global template**; and
+* The **RBI implementation**, which may impose **higher ratios or additional conditions**.`
             }
           ]
         },
         {
           id: "1-7",
-          title: "1.7 How are capital and RWA numbers actually used?",
+          title: "1.7 How are capital and RWA numbers used in practice?",
           content: [
             {
               type: "markdown",
-              content: `### 1.7.1 Internal uses (inside the bank)
+              content: `### 1.7.1 Internal uses inside the bank
 
 1. **Regulatory compliance monitoring**
-   * Daily or at least monthly monitoring of:
-     * CET1 ratio,
-     * Tier 1 ratio,
-     * Total capital ratio,
-     * Leverage ratio,
-     * Key buffers.
-   * Early-warning thresholds set **above** regulatory minima.
 
-2. **Risk appetite & limits**
-   * Board sets **capital targets** and **risk appetite** (e.g. minimum 1–2% headroom over regulatory requirements).
-   * Business units get:
-     * RWA limits (e.g., max RWA per segment),
-     * Capital usage metrics.
+   * Regular tracking of:
+     * CET1, Tier 1 and Total capital ratios,
+     * Leverage ratio,
+     * Position relative to CCB and any other buffers.
+   * Internal triggers are set **above** regulatory minimums to provide early warning.
+
+2. **Risk appetite and limits**
+
+   * Board and senior management define **target capital levels** and **risk appetite** (for example, a target headroom of 1–2 percentage points above the regulatory stack).
+   * Business units receive:
+     * **RWA limits** by portfolio or segment, and
+     * Capital-usage metrics to incorporate into planning.
 
 3. **Business planning and product strategy**
-   * Capital is a **scarce resource**; banks allocate it to businesses with:
-     * Acceptable risk profile, and
-     * Good **return on capital**.
-   * Pricing models incorporate **cost of capital** (we’ll touch this conceptually later, not in deep quant detail here).
 
-4. **Risk & finance integration**
-   * RWA numbers reconciled with:
-     * Book exposures,
-     * Impairments / provisions,
-     * Risk parameters.
-   * Consistency checks (e.g., RWA changes vs balance-sheet growth, mix, CRM, etc.).
+   * Capital is treated as a **scarce resource**.
+   * New products and portfolios are evaluated on both:
+     * Risk profile, and
+     * **Return on capital** and RWA consumption.
 
-### 1.7.2 External / supervisory uses
+4. **Risk–finance integration**
 
-1. **Regulatory returns and onsite supervision**
-   * Banks submit **detailed returns** on capital, RWA breakdowns, exposures, and risk concentrations.
-   * Supervisors use these to:
-     * Assess capital adequacy,
-     * Set **Pillar 2 add-ons** or specific conditions,
-     * Decide on **supervisory interventions** where needed.
+   * RWA numbers are reconciled to:
+     * Accounting exposures,
+     * Provisioning and impairments,
+     * Internal risk parameters.
+   * Change analysis distinguishes between **volume effects**, **mix effects**, and **risk-parameter/CRM effects**.
 
-2. **Pillar 3 and market discipline**
-   * Basel III requires **disclosures** on:
-     * Capital structure (CET1, AT1, Tier 2),
-     * Capital ratios,
-     * RWA by risk type and major portfolios,
-     * Credit risk mitigation, etc.
-   * Investors and rating agencies use these to:
-     * Judge bank safety,
-     * Compare across peers.
+### 1.7.2 External and supervisory uses
+
+1. **Regulatory reporting and supervision**
+
+   * Banks submit **capital adequacy and RWA returns** to the supervisor at required frequency.
+   * Supervisors use these for:
+     * Assessing capital adequacy,
+     * Setting **Pillar 2 capital add-ons** where needed,
+     * Determining any restrictions or supervisory actions.
+
+2. **Pillar 3 disclosures and market discipline**
+
+   * Basel III and corresponding national rules require detailed **Pillar 3 disclosures** on:
+     * Capital structure and capital ratios,
+     * RWA by risk type and portfolio,
+     * Credit risk, CRM and securitisation exposures,
+     * Leverage and other key metrics.
+   * Investors, analysts and rating agencies use these disclosures to compare risk profiles and capital strength across banks.
 
 3. **Triggers and constraints**
-   * Breaching capital buffers may trigger:
-     * Restrictions on **dividends / distributions**,
-     * Supervisory actions,
-     * Reputation and rating impacts.`
+
+   * Falling into the **capital conservation buffer range** does not necessarily mean breaching minimums, but it triggers **automatic restrictions on distributions** (dividends, share buy-backs, variable remuneration) until capital is rebuilt.`
             }
           ]
         },
         {
           id: "1-8",
-          title: "1.8 Practical “bulb” section – how to think about Module 1 in industry",
+          title: "1.8 Key takeaways for Module 1",
           content: [
             {
               type: "markdown",
-              content: `💡 **Bulb 1 – Separate numerator and denominator clearly**
-Always think of capital adequacy as:
+              content: `**1. Capital adequacy = capital vs risk-weighted size of the balance sheet**
 
-* **Numerator problem**: how much **high-quality capital** the bank has (CET1, AT1, Tier 2).
-* **Denominator problem**: how much **risk-weighted exposure** it carries (credit, market, operational).
-
-Most real-life capital actions (rights issue, AT1 issuance, RWA optimisation) target **one of these two pieces**.
+* Numerator: **quality and quantity of regulatory capital** (CET1, AT1, Tier 2).
+* Denominator: **risk-weighted assets**, combining credit, market and operational risk.
+* Most practical capital actions work by either increasing capital or optimising RWA.
 
 ---
 
-💡 **Bulb 2 – Know the regulatory “stack”**
+**2. Understand the regulatory “stack”**
 
-When reading any bank’s capital numbers, be clear on:
+Always distinguish between:
 
-1. **Basel template minimums** (8% total capital, 4.5% CET1, etc.).
-2. **National overlays** (e.g., RBI’s 9% CAR and buffers).
-3. **Bank’s internal targets** (often above the regulatory minimum plus buffers).
-
-In an interview, you sound very strong if you can say:
-
-> “Basel minimum is 8%, but RBI requires 9% plus a 2.5% capital conservation buffer, so effectively Indian banks target around 11.5% or more in normal conditions.”
+* **Global Basel minimums** (e.g. CET1 4.5%, Tier 1 6%, Total capital 8%).
+* **RBI overlays** (e.g. **9% CRAR minimum** plus **2.5% CCB** = 11.5% effective total capital requirement).
+* Any **bank-specific internal targets**, which are usually set above the regulatory minimum stack.
 
 ---
 
-💡 **Bulb 3 – RWA is not the same as total assets**
+**3. RWA is not the same as total assets**
 
-* Total assets are **accounting numbers**.
-* RWAs are **risk-adjusted**; low-risk exposures can get lower weights; high-risk exposures get higher weights.
-* Two banks with the **same balance-sheet size** can have very different **RWA and capital ratios**.
-
-Understanding this is core to explaining capital adequacy to both **technical and non-technical** audiences.
+* Total assets are **accounting values**.
+* RWA incorporates **risk sensitivity** via risk weights.
+* Two banks of similar asset size can have **very different RWA and capital ratios**, depending on portfolio mix, collateral, ratings and CRM.
 
 ---
 
-💡 **Bulb 4 – Capital adequacy connects all 13 modules**
+**4. Everything else in the course is a deeper breakdown of CAR = Capital / RWA**
 
-Everything else in your curriculum is basically:
+Subsequent modules:
 
-* Decomposing **capital**: CET1, AT1, Tier 2.
-* Decomposing **RWA**:
-  * Credit risk (standardised vs IRB),
-  * Market risk,
-  * Operational risk,
-  * Securitisation,
-  * Off-balance sheet treatment,
-  * CRM, etc.
-* Translating these into:
-  * **Reporting**,
-  * **Disclosures**,
-  * **Capital planning**,
-  * **Scenario analysis**.
+* Decompose the **capital side** (CET1, AT1, Tier 2, buffers).
+* Decompose the **RWA side**:
+  * Standardised Approach details,
+  * Off-balance sheet items and CCFs,
+  * CRM, securitisation and other risk types,
+  * Data flows, reporting and planning.
 
-If you keep the simple picture in mind:
+Keeping the simple equation
 
-> **CAR = Capital / RWA**
+$$
+\\text{CAR} = \\frac{\\text{Capital}}{\\text{RWA}}
+$$
 
-everything else becomes “just” a more detailed breakdown of numerator and denominator.`
+in mind makes it much easier to connect each later module back to the overall picture.
+
+---
+
+### Reference links for Module 1
+
+[1]: https://www.bis.org/bcbs/basel3.htm "Basel III: international regulatory framework for banks"
+[2]: https://www.bis.org/fsi/fsisummaries/defcap_b3.pdf "FSI Executive Summary – Definition of capital in Basel III"
+[3]: https://www.bis.org/publ/bcbs128.pdf "International Convergence of Capital Measurement and Capital Standards – A Revised Framework (Basel II)"
+[4]: https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/70BIIIMC010713.pdf "Master Circular – Basel III Capital Regulations (example version; always check latest)"
+[5]: https://www.rbi.org.in/commonman/English/Scripts/Notification.aspx?Id=615 "RBI note on CRAR framework"
+[6]: https://www.rbi.org.in/commonman/english/scripts/Notification.aspx?Id=1461 "Prudential Norms on Capital Adequacy – Basel I Framework (9% CRAR minimum)"
+[7]: https://www.rbi.org.in/commonman/english/scripts/Notification.aspx?Id=3269 "Basel III Capital Regulations – Review of transitional arrangements (CCB 2.5%)"
+[8]: https://www.bis.org/bcbs/publ/d378.pdf "Basel III monitoring report – confirms 4.5% CET1, 6% Tier 1, 8% total capital minimums"`
             }
           ]
         }
@@ -400,144 +397,191 @@ everything else becomes “just” a more detailed breakdown of numerator and de
       sections: [
         {
           id: "2-1",
-          title: "Master Class Notes",
+          title: "2.1 Basel timeline – high level",
           content: [
             {
-              type: 'markdown',
-              content: `Module 2 is all about putting **Basel I → Basel II → Basel III** and the **Three Pillars** into a clean mental map, so you always know:
+              type: "markdown",
+              content: `### Basel I (1988, market-risk amendment 1996)
 
-* *What changed*,
-* *Why it changed*, and
-* *Where it sits in the framework (Pillar 1 / 2 / 3)*.
-
----
-
-## 2.1 Basel timeline at a high level
-
-### Basel I (1988, updated in 1996)
-
-* First global capital standard from the Basel Committee.
+* First global capital standard issued by the Basel Committee.
 * Focus: **credit risk** in the banking book.
 * Introduced:
 
   * **Risk-weighted assets (RWA)** with simple buckets (0%, 20%, 50%, 100%, etc.).
-  * A minimum **total capital ratio of 8% of RWA**. ([Bank for International Settlements][1])
-  * Two capital tiers: **Tier 1** and **Tier 2** (no CET1/AT1 split yet).
+  * A minimum **total capital ratio = 8% of RWA** for internationally active banks.
+  * Two tiers of capital: **Tier 1** and **Tier 2** (no CET1 / AT1 split yet).
 
-Later, in 1996, a market risk amendment added **trading book capital**.
+A 1996 amendment added **market risk capital** for the trading book and allowed both a standardised and an internal-models approach.
 
 ---
 
 ### Basel II (2004)
 
-* Aim: make capital requirements more **risk-sensitive** and better aligned to banks’ internal risk measurement.
+Objectives: make capital requirements more **risk-sensitive** and align them better with internal risk measurement.
+
+Main changes:
+
+* Introduced the **Three Pillars**:
+
+  1. Minimum capital requirements,
+  2. Supervisory review,
+  3. Market discipline.
+
+* Added capital for **operational risk** under Pillar 1 (on top of credit and market risk).
+
 * Introduced:
 
-  * **Three Pillars** (minimum capital, supervisory review, market discipline). ([Reserve Bank of India][2])
-  * Capital charges for **operational risk** under Pillar 1 (besides credit and market).
-  * **Standardised Approaches** and **Internal Ratings-Based (IRB)** approaches for credit risk.
-* Still keeps the **8% minimum total capital ratio** – but with more sophisticated RWA calculation. ([Bank for International Settlements][1])
+  * **Standardised Approaches** for credit and operational risk, and
+  * **Internal Ratings-Based (IRB)** approaches for credit risk.
+
+The **8% minimum total capital ratio** against total RWA remained unchanged; what changed was **how RWA is calculated**.
 
 ---
 
 ### Basel III (2010 onwards)
 
-* Basel II proved too weak in the 2007–09 crisis (low-quality capital, under-estimated risks, poor liquidity).
-* Basel III is a **strengthening and extension** of Basel II, not a completely new idea.
-* Key enhancements: ([Bank for International Settlements][3])
+Basel II did not fully address problems revealed in the 2007–09 global financial crisis (insufficient high-quality capital, under-estimated risks, inadequate liquidity). Basel III is a **strengthening and extension** of Basel II.
 
-  * **Higher and better-quality capital**, especially CET1.
-  * **Capital buffers** (Capital Conservation Buffer, Countercyclical Buffer).
-  * A **leverage ratio** (non-risk-based backstop).
-  * **Liquidity standards**:
+Key enhancements:
 
-    * Liquidity Coverage Ratio (**LCR**).
-    * Net Stable Funding Ratio (**NSFR**).
-  * More robust treatment of trading book, securitisation, counterparty credit risk.
+* **Higher and better-quality capital**, especially CET1.
 
----
+* Introduction of **capital buffers** (Capital Conservation Buffer and Countercyclical Buffer).
 
-### Basel 3.1 / “Basel IV” (finalisation of Basel III)
+* A **leverage ratio** as a non-risk-based backstop.
 
-* Official name: *Basel III: Finalising post-crisis reforms* (Dec 2017 onwards).
-* Markets often call it “Basel IV”, but BCBS calls it part of Basel III.
-* Main themes: ([Bank for International Settlements][4])
+* **Liquidity standards**:
 
-  * Stronger **Standardised Approaches** for credit, market, operational risk.
-  * Tighter constraints on **IRB** (input floors, model restrictions).
-  * **Output floor**: bank’s total RWA under models cannot fall below **72.5%** of RWA under the standardised approaches.
+  * Liquidity Coverage Ratio (**LCR**),
+  * Net Stable Funding Ratio (**NSFR**).
 
-We’ll go deep into these mechanics in later modules (especially Modules 4, 8, 12).
+* More robust treatment of trading book, securitisation and counterparty credit risk.
 
 ---
 
-## 2.2 The Three Pillars – overview
+### Basel 3.1 / “Basel IV” (finalising Basel III)
 
-Basel II (and Basel III/3.1) rest on **three mutually reinforcing pillars**: ([Reserve Bank of India][2])
+Official name: **“Basel III: Finalising post-crisis reforms”** (December 2017).
+
+Main themes:
+
+* Stronger **Standardised Approaches** for credit, market and operational risk.
+* Restrictions and floors on **IRB models** to reduce unwarranted variability in RWA.
+* An **aggregate output floor** so that **model-based RWA cannot fall below 72.5% of RWA under the standardised approaches** once fully phased in.
+
+Detailed mechanics are explored later (especially Modules 4, 8 and 12).`
+            }
+          ]
+        },
+        {
+          id: "2-2",
+          title: "2.2 Basel framework organised by the Three Pillars",
+          content: [
+            {
+              type: "markdown",
+              content: `Basel II and Basel III / 3.1 are built on **three mutually reinforcing pillars**:
 
 1. **Pillar 1 – Minimum capital requirements**
 
-   * Quantitative rules:
+   * Quantitative rules for:
 
-     * How to compute **RWA** for credit, market, operational risk.
-     * How much **regulatory capital** must be held (minimum ratios).
+     * Calculating **RWA** for credit, market and operational risk.
+     * Determining how much **regulatory capital** must be held (minimum ratios).
 
 2. **Pillar 2 – Supervisory review process**
 
-   * Qualitative + quantitative:
-
-     * Banks must assess their **overall capital adequacy** relative to *all* risks (ICAAP).
-     * Supervisors perform their own assessment (SREP) and can require **extra capital/add-ons**.
+   * Banks must assess their **overall capital adequacy** relative to all material risks (the **Internal Capital Adequacy Assessment Process – ICAAP**).
+   * Supervisors perform their own assessment (**Supervisory Review and Evaluation Process – SREP**) and can require **additional capital or qualitative measures**.
 
 3. **Pillar 3 – Market discipline**
 
-   * **Disclosure** requirements:
+   * **Disclosure** requirements on:
 
-     * Capital structure, capital ratios.
-     * RWA by risk type and exposure class.
-     * Risk management practices and key parameters.
-   * Idea: transparent banks face more discipline from investors and markets.
+     * Capital structure and capital ratios,
+     * RWA by risk type and exposure class,
+     * Risk management frameworks and key risk parameters.
 
-You can think:
+   * Objective: improve **transparency** so that market participants can assess banks and apply discipline.
 
-* Pillar 1 → formula-based **minimum** capital.
-* Pillar 2 → **extra** capital + risk management expectations.
-* Pillar 3 → **transparency** so the market can judge.
+A useful mapping:
+
+* **Pillar 1** – formula-driven **minimum capital**.
+* **Pillar 2** – **additional capital and governance expectations**.
+* **Pillar 3** – **public transparency**.
 
 ---
 
-## 2.3 Basel I – what it actually did (numerator + denominator)
+### Reference links for Module 2
 
-Basel I is simpler but sets the foundation.
+1. **Basel II comprehensive version (includes 1988 Accord & market-risk amendment)** – International Convergence of Capital Measurement and Capital Standards, BCBS.
+   \`https://www.bis.org/publ/bcbs128.pdf\`
 
-### 2.3.1 Numerator: capital
+2. **Basel III main capital text** – Basel III: A global regulatory framework for more resilient banks and banking systems.
+   \`https://www.bis.org/publ/bcbs189.htm\`
 
-Regulatory capital was split into: ([Reserve Bank of India][5])
+3. **Basel III: Finalising post-crisis reforms (Basel 3.1 / Endgame)** – output floor and revised approaches.
+   \`https://www.bis.org/bcbs/publ/d424.htm\`
 
-* **Tier 1 capital**: mainly core equity (paid-up capital + disclosed reserves).
-* **Tier 2 capital**: supplementary (revaluation reserves, subordinated debt, etc.).
-* Tier 2 was capped at **100% of Tier 1** for regulatory capital purposes.
+4. **Pillar 3 disclosure requirements – consolidated and enhanced framework**.
+   \`https://www.bis.org/bcbs/publ/d400.htm\`
 
-Total capital (Basel I level):
+5. **Basel III leverage ratio framework and disclosure requirements**.
+   \`https://www.bis.org/publ/bcbs270.htm\`
+
+6. **Basel III: The Liquidity Coverage Ratio (LCR)**.
+   \`https://www.bis.org/publ/bcbs238.pdf\`
+
+7. **Basel III: The Net Stable Funding Ratio (NSFR)**.
+   \`https://www.bis.org/bcbs/publ/d295.pdf\`
+
+8. **RBI – Draft/Final guidelines on New Capital Adequacy Framework (Basel II / NCAF) and Three Pillars**.
+   \`https://rbi.org.in/upload/notification/pdfs/61023.pdf\`
+
+9. **RBI – Master Circular / notifications on Basel III Capital Regulations and implementation from 1 April 2013**.
+   Example master circular entry:
+   \`https://www.rbi.org.in/CommonPerson/english/Scripts/Notification.aspx?Id=1264\`
+
+10. **EBA – The Basel framework: global regulatory standards for banks (EU implementation via CRR/CRD)**.
+    \`https://www.eba.europa.eu/activities/basel-framework-global-regulatory-standards-banks\``
+            }
+          ]
+        },
+        {
+          id: "2-3",
+          title: "2.3 Basel I – building the basic capital ratio",
+          content: [
+            {
+              type: "markdown",
+              content: `Basel I is conceptually simple but sets the foundation for everything that followed.
+
+### 2.3.1 Numerator: capital under Basel I
+
+Regulatory capital was split into:
+
+* **Tier 1 capital** – mainly core equity (paid-up capital and disclosed reserves).
+* **Tier 2 capital** – supplementary capital (revaluation reserves, certain subordinated debt, general provisions, etc.).
+* Tier 2 that counted for regulatory capital was **capped at 100% of Tier 1**.
+
+Total capital (Basel I):
 
 $$
-\\text{Total Capital} = \\text{Tier 1} + \\text{Tier 2} \\quad (\\text{subject to caps})
+\\text{Total Capital} = \\text{Tier 1} + \\text{Tier 2} \\quad (\\text{subject to regulatory caps})
 $$
 
-### 2.3.2 Denominator: RWA using simple risk weights
+### 2.3.2 Denominator: RWA with simple buckets
 
-Assets were grouped into broad buckets like 0%, 20%, 50%, 100% based on counterparty type and risk. ([Reserve Bank of India][5])
+Assets were grouped into broad risk-weight categories (0%, 20%, 50%, 100%) based on counterparty type and risk.
 
 Conceptually:
 
 $$
-\\text{RWA} = \\sum_j (\\text{Exposure}_j \\times \\text{Risk Weight}_j)
+\\text{RWA} = \\sum_j \\left(\\text{Exposure}_j \\times \\text{Risk Weight}_j\\right)
 $$
 
-For example (conceptually; details come in Module 4):
+Examples (high level):
 
-* Claims on OECD sovereigns → 0%
-* Interbank claims → 20%
+* Claims on certain sovereigns → 0%
+* Inter-bank claims → 20%
 * Residential mortgages → 50%
 * Corporate loans → 100%
 
@@ -549,244 +593,214 @@ $$
 \\frac{\\text{Total Capital}}{\\text{RWA}} \\ge 8\\%
 $$
 
-This 8% minimum is still the **global template** under Basel II and Basel III (before buffers and local overlays). ([Bank for International Settlements][1])
-
----
-
-## 2.4 Basel II – more risk-sensitive + Three Pillars
-
-Basel II did *not* change the 8% minimum but changed **how you get to RWA** and introduced the Three Pillars.
+This **8% minimum total capital ratio** remains the global template in Basel II and Basel III (before capital buffers and national overlays).`
+            }
+          ]
+        },
+        {
+          id: "2-4",
+          title: "2.4 Basel II – more risk-sensitive and the Three Pillars",
+          content: [
+            {
+              type: "markdown",
+              content: `Basel II preserves the **8% minimum**, but fundamentally changes **how RWA is calculated** and formalises the Three Pillars.
 
 ### 2.4.1 Pillar 1 in Basel II
 
-Capital requirements for: ([Bank for International Settlements][1])
+Minimum capital requirements cover three major risk categories:
 
-1. **Credit risk**:
+1. **Credit risk**
 
-   * Approaches:
+   Approaches:
 
-     * **Standardised Approach (SA)** – regulator-prescribed risk weights.
-     * **IRB approaches** (Foundation and Advanced) – bank’s internal estimates of PD, LGD, etc., used in regulatory formulas (Module 12).
+   * **Standardised Approach (SA)** – uses regulator-prescribed risk weights, often based on external ratings and exposure class.
+   * **IRB approaches** – banks estimate internal parameters such as **PD**, **LGD**, **EAD** which are then used in regulatory formulas.
 
-2. **Market risk**:
+2. **Market risk**
 
-   * Standardised or internal model-based capital for trading book and FX, commodities, etc.
+   * Standardised and internal models approaches for trading book positions and FX / commodities.
 
-3. **Operational risk**:
+3. **Operational risk**
 
-   * Basic Indicator, Standardised, or Advanced Measurement approaches.
+   * Basic Indicator, Standardised, or Advanced Measurement approaches (AMA).
 
-Total minimum capital requirement is:
-
-$$
-K_{\\text{total}} = 0.08 \\times (\\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}})
-$$
-
-Equivalently, define total RWA:
+If we define:
 
 $$
 \\text{Total RWA} = \\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}}
 $$
 
-and check:
+then the Basel II minimum condition remains:
 
 $$
 \\frac{\\text{Total Capital}}{\\text{Total RWA}} \\ge 8\\%
 $$
 
-(Exactly how each RWA component is calculated is what the rest of the course is about.)
-
 ### 2.4.2 Pillar 2 in Basel II
 
-* Banks must have an **Internal Capital Adequacy Assessment Process (ICAAP)**.
-* They assess whether capital is adequate given:
+Core elements:
 
-  * All material risks (including those not fully captured in Pillar 1, like concentration risk, interest rate risk in the banking book, reputational risk, etc.).
-  * Their business plans, stress scenarios, and risk appetite.
-* Supervisors run a **Supervisory Review and Evaluation Process (SREP)** and can:
+* Banks must operate an **ICAAP**, assessing whether capital is adequate for:
 
-  * Require **extra capital buffers**,
-  * Impose **risk limits**, or
-  * Require improvements in governance/risk management. ([Bank for International Settlements][6])
+  * All material risks (including those not fully captured in Pillar 1, e.g. concentration risk, interest-rate risk in the banking book, reputational risk).
+  * Their business model, strategy and stress scenarios.
+
+* Supervisors conduct **SREP** and can:
+
+  * Require **additional capital (“Pillar 2 add-ons”)**,
+  * Impose **risk-management or governance improvements**,
+  * In serious cases, apply other supervisory measures.
 
 ### 2.4.3 Pillar 3 in Basel II
 
-* Requires **regular public disclosures** on:
+Pillar 3 introduces **public disclosure requirements** on:
 
-  * Risk exposures and assessment.
-  * Capital structure and adequacy.
-* Aim: market participants can compare banks and apply **market discipline**. ([UN Trade and Development (UNCTAD)][7])
+* Capital structure and adequacy,
+* Risk exposure amounts,
+* Risk-management systems and methodologies.
 
----
-
-## 2.5 Basel III – strengthening each Pillar
-
-Basel III keeps the same three pillars but **strengthens the rules** in several ways. ([Bank for International Settlements][3])
+The goal is to make **market discipline** a complement to Pillars 1 and 2.`
+            }
+          ]
+        },
+        {
+          id: "2-5",
+          title: "2.5 Basel III – strengthening each Pillar",
+          content: [
+            {
+              type: "markdown",
+              content: `Basel III keeps the three pillars but **tightens** and **extends** them.
 
 ### 2.5.1 Pillar 1 under Basel III
 
 1. **Capital quality and minimums**
 
-   * Clear split of capital into:
+   * Clear split into:
 
-     * **CET1**, **AT1**, **Tier 2** (detailed in Module 3).
-   * Stricter criteria for what counts as capital (permanence, loss-absorption).
+     * **CET1**,
+     * **Additional Tier 1 (AT1)**,
+     * **Tier 2**.
+
+   * Stricter eligibility criteria emphasising permanence and loss-absorption.
+
    * Basel template minimum ratios (before buffers):
 
-     * **CET1 ≥ 4.5% of RWA**
-     * **Tier 1 ≥ 6% of RWA**
-     * **Total capital ≥ 8% of RWA**
+     * **CET1 ratio ≥ 4.5% of RWA**,
+     * **Tier 1 ratio ≥ 6% of RWA**,
+     * **Total capital ratio ≥ 8% of RWA**.
 
 2. **Capital buffers**
 
    * **Capital Conservation Buffer (CCB)**:
 
-     * 2.5% of RWA, in CET1, above the minimum.
-     * Breaching it triggers restrictions on dividends, bonuses, etc.
+     * **2.5% of RWA in CET1** above the minimum.
+     * Breaching it triggers limits on distributions until capital is rebuilt.
+
    * **Countercyclical Capital Buffer (CCyB)**:
 
-     * 0–2.5% of RWA in CET1, activated by national authorities during credit booms.
-   * Some jurisdictions also add **systemic risk buffers** for SIFIs.
+     * 0–2.5% of RWA in CET1, set by national authorities to lean against excessive credit growth.
+
+   * Some jurisdictions also add **systemic risk buffers** for systemically important banks.
 
 3. **Leverage ratio**
 
-   * Non-risk-based backstop: ([Bank for International Settlements][8])
+   * Non-risk-based backstop:
 
 $$
 \\text{Leverage Ratio} = \\frac{\\text{Tier 1 Capital}}{\\text{Exposure Measure}} \\ge 3\\%
 $$
 
-* Exposure measure = on-balance sheet exposures + derivatives and SFT add-ons + off-balance sheet items (converted using CCFs).
+* Exposure measure includes on-balance sheet exposures, derivatives, securities-financing transactions and certain off-balance sheet items.
 
 4. **Liquidity standards**
 
-   * **Liquidity Coverage Ratio (LCR)**:
+   * **LCR** (short-term liquidity resilience):
 
 $$
-\\text{LCR} = \\frac{\\text{High-Quality Liquid Assets (HQLA)}}{\\text{Net cash outflows over 30 days}} \\ge 100\\%
+\\text{LCR} = \\frac{\\text{High-Quality Liquid Assets (HQLA)}}{\\text{Net cash outflows over 30 calendar days}} \\ge 100\\%
 $$
 
-\`\`\`
- – ensures short-term liquidity resilience. :contentReference[oaicite:14]{index=14}  
-\`\`\`
+* **NSFR** (structural funding stability):
 
-* **Net Stable Funding Ratio (NSFR)** (high level here):
-
-  * Available stable funding / required stable funding ≥ 100%.
-  * Ensures longer-term funding stability. ([ICMA][9])
+$$
+\\text{NSFR} = \\frac{\\text{Available Stable Funding (ASF)}}{\\text{Required Stable Funding (RSF)}} \\ge 100\\%
+$$
 
 5. **Enhanced risk coverage**
 
-   * Stronger rules for:
+   * Revised frameworks for:
 
      * Securitisation,
      * Counterparty credit risk,
-     * Trading book capital.
+     * Trading book (Fundamental Review of the Trading Book – FRTB),
+     * Operational risk (Standardised Measurement Approach).
 
 ### 2.5.2 Pillar 2 under Basel III
 
-* Greater emphasis on:
-
-  * **Stress testing**,
-  * Capital planning over the cycle,
-  * Systemic risk considerations.
-* Supervisors can impose **Pillar 2 capital add-ons**, restrictions, or other measures.
-* ICAAP and SREP are more structured and documented.
+* Greater emphasis on **stress testing**, **forward-looking capital planning** and **systemic risk considerations**.
+* ICAAP and SREP expectations are more detailed and documented.
+* Supervisors can impose **Pillar 2 capital guidance or requirements**, and other supervisory measures.
 
 ### 2.5.3 Pillar 3 under Basel III
 
-* More **standardised, detailed templates** for disclosure:
-
-  * Harmonised tables and templates for capital, RWA, buffers, leverage, LCR/NSFR.
-* Objective: make it easier for market participants to **compare banks across countries**. ([Bank for International Settlements][10])
-
----
-
-## 2.6 How jurisdictions implement and calibrate Basel
-
-Basel standards are **not self-executing law**. Each jurisdiction translates them into local regulations and may **tighten** them.
+* Introduction of **standardised tables and templates** to make disclosures more consistent and comparable.
+* The **consolidated and enhanced Pillar 3 framework** (2017 and subsequent updates) sets out detailed templates for capital, RWA, leverage, liquidity and risk-type-specific disclosures.`
+            }
+          ]
+        },
+        {
+          id: "2-6",
+          title: "2.6 Implementation and calibration by jurisdiction",
+          content: [
+            {
+              type: "markdown",
+              content: `Basel standards are **minimum international benchmarks**; they are implemented through local laws and regulations, often with **stricter calibration**.
 
 ### 2.6.1 European Union
 
-* Implements Basel II/III mainly via:
+* The Basel framework is implemented mainly via:
 
-  * **Capital Requirements Regulation (CRR)**,
-  * **Capital Requirements Directive (CRD)**. ([European Banking Authority][11])
-* The European Banking Authority (EBA) issues detailed technical standards, reporting templates, etc.
+  * **Capital Requirements Regulation (CRR)**, and
+  * **Capital Requirements Directive (CRD)**.
 
-### 2.6.2 India (RBI)
+* The **European Banking Authority (EBA)** develops technical standards, reporting templates and guidelines to implement many detailed elements (liquidity, own funds, internal models, disclosure).
 
-* RBI explicitly states that Basel II is built on the three pillars and has issued detailed guidelines accordingly. ([Reserve Bank of India][2])
-* Basel III Capital Regulations implemented in India **from 1 April 2013 in a phased manner**. ([Reserve Bank of India][12])
-* India is **more conservative**:
+### 2.6.2 India – Reserve Bank of India (RBI)
 
-  * Total capital minimum **9% of RWA** (vs Basel 8%).
-  * Full CCB to bring effective requirement to about **11.5%** in normal times.
-  * RBI has also set its own **leverage ratio floors** during transition and adopted LCR/NSFR with local calibration. ([Reserve Bank of India][13])
+Key points from RBI communications:
+
+* Basel II in India is referred to as the **New Capital Adequacy Framework (NCAF)** and is explicitly described as resting on **three pillars** (minimum capital, supervisory review, market discipline).
+* **Basel III capital regulations** are implemented in India **from 1 April 2013 in a phased manner**, via master circulars and subsequent updates.
+* India applies a **higher minimum total capital ratio (CRAR) of 9% of RWA**, plus buffers (notably the 2.5% CCB in CET1 when fully phased in).
+* RBI has issued separate guidelines for the **leverage ratio**, **LCR**, and **NSFR**, calibrated for Indian conditions.
 
 ### 2.6.3 Other jurisdictions (conceptual)
-* **US**: implements via rules of Federal Reserve, OCC, FDIC; has additional leverage ratios (SLR, eSLR) for large banks.
-* **Others** (e.g., Saudi Arabia, Singapore, etc.) implement Basel rules via national rulebooks, sometimes with local risk-weight adjustments or extra buffers. ([SAMA Rulebook][14])
 
-For your interviews and your web app, the key message:
+* **United States** – implements Basel via Federal Reserve, OCC and FDIC rules; has its own leverage and stress-testing frameworks on top.
+* **Other regulators** (e.g. Bank of England/PRA, Saudi Central Bank, etc.) implement Basel standards through national rulebooks and may apply additional buffers or risk-weight adjustments.
 
-> Basel defines the **framework**. Each regulator (RBI, ECB, Fed, etc.) defines the **calibration** and **local rules**.
+The important idea for analysis and implementation work:
 
----
-
-## 2.7 India-specific note on the Three Pillars
-
-In India, RBI’s Basel guidelines and training material (e.g. IIBF) explicitly describe capital adequacy as resting on **three Pillars**: ([IIBF][15])
-
-1. **Pillar 1 – Minimum Capital Ratio**
-
-   * RBI prescribes:
-
-     * Calculation of RWA for credit, market, operational risk.
-     * **Minimum CRAR** (9%) and buffer framework.
-
-2. **Pillar 2 – Supervisory Review Process (SRP) & ICAAP**
-
-   * Banks must:
-
-     * Prepare a formal **ICAAP document** and submit it to RBI annually.
-     * Assess capital for all material risks, including those not fully covered by Pillar 1.
-   * RBI:
-
-     * Reviews ICAAP as part of SREP.
-     * Can impose **Pillar 2 capital charges**, qualitative requirements, etc.
-
-3. **Pillar 3 – Market Discipline**
-
-   * RBI has issued disclosure requirements for:
-
-     * Capital structure,
-     * Capital adequacy,
-     * Credit risk, CRM, securitisation, etc.
-   * Banks publish **Pillar 3 disclosures** on their websites and in annual reports.
-
-For your app, you can literally tag features:
-
-* “This dashboard is mainly **Pillar 1** (RWA, ratios).”
-* “This narrative is **Pillar 2** (ICAAP/stress test).”
-* “These tables are **Pillar 3** (public disclosure).”
-
----
-
-## 2.8 Practical maths & calculation flow at the Basel / Three Pillars level
-
-We’ll go deep into formulas later, but at the **global Basel framework level**, the core maths you should internalise is:
-
-### 2.8.1 Capital ratios under Basel III
+> Basel provides the **architecture and minimums**; each jurisdiction (RBI, ECB/EBA, Fed, etc.) applies its own **calibration, timelines and additional conditions**.`
+            }
+          ]
+        },
+        {
+          id: "2-7",
+          title: "2.7 Basel-level maths and calculation flow",
+          content: [
+            {
+              type: "markdown",
+              content: `### 2.7.1 Capital ratios under Basel III
 
 Let:
 
-* $C_{\\text{CET1}}$ = CET1 capital
-* $C_{\\text{T1}} = C_{\\text{CET1}} + C_{\\text{AT1}}$ = Tier 1 capital
-* $C_{\\text{Total}} = C_{\\text{CET1}} + C_{\\text{AT1}} + C_{\\text{Tier 2}}$ (after deductions)
-* $\\text{RWA}$ = total risk-weighted assets
+* $C_{\\text{CET1}}$ = CET1 capital,
+* $C_{\\text{T1}} = C_{\\text{CET1}} + C_{\\text{AT1}}$ = Tier 1 capital,
+* $C_{\\text{Total}} = C_{\\text{CET1}} + C_{\\text{AT1}} + C_{\\text{Tier 2}}$ (after regulatory deductions),
+* $\\text{RWA}$ = total risk-weighted assets.
 
-Then the key ratios are:
+Key ratios:
 
 $$
 \\text{CET1 Ratio} = \\frac{C_{\\text{CET1}}}{\\text{RWA}}
@@ -800,115 +814,97 @@ $$
 \\text{Total Capital Ratio} = \\frac{C_{\\text{Total}}}{\\text{RWA}}
 $$
 
-Regulators then impose constraints such as (Basel template):
+Basel III then requires (before buffers):
 
-* CET1 Ratio ≥ 4.5% + buffers,
-* Tier 1 Ratio ≥ 6% + buffers,
-* Total Capital Ratio ≥ 8% + buffers. ([Bank for International Settlements][3])
+* CET1 ratio ≥ 4.5% of RWA,
+* Tier 1 ratio ≥ 6% of RWA,
+* Total capital ratio ≥ 8% of RWA,
 
-India overlays its own minimums and buffer structure on top of this.
+and adds buffer requirements (CCB, CCyB, systemic buffers) on top.
 
-### 2.8.2 How a bank “does” Pillar 1 in practice (conceptual algorithm)
+### 2.7.2 Conceptual Pillar-1 calculation flow
 
-Very high level, repeated monthly / daily:
+At a high level, repeated at whatever frequency the regulator requires:
 
-1. **Collect data**:
+1. **Collect data**
 
-   * Exposures (on- and off-balance sheet).
+   * Exposure data (on- and off-balance sheet).
    * Counterparty attributes, ratings, collateral, guarantees.
    * Trading book positions.
-   * Operational risk inputs (gross income / business indicator, etc.).
+   * Operational-risk drivers (e.g. business indicator or income).
 
-2. **Classify exposures**:
+2. **Classify exposures**
 
-   * Exposure class (sovereign, bank, corporate, retail, etc.).
-   * Approach (Standardised vs IRB, etc.).
+   * Exposure classes (sovereign, bank, corporate, retail, real estate, etc.).
+   * Approach applied (Standardised vs IRB, market-risk and op-risk approaches).
 
-3. **Apply rules**:
+3. **Apply rules**
 
-   * Assign **risk weights** or use **regulatory formulas** (credit, market, operational).
-   * Convert off-balance sheet items using **CCFs**.
-   * Recognise **CRM** (collateral/guarantees) where allowed.
+   * Assign **risk weights** or use **regulatory formulas** to compute risk-weighted exposure amounts.
+   * Convert off-balance sheet items using **credit conversion factors (CCFs)**.
+   * Recognise **credit risk mitigation (CRM)** where the framework allows.
 
-4. **Compute RWA**:
+4. **Compute RWA**
 
-   * Sum across exposures and risk types.
+   * Sum RWA by exposure and risk type to obtain **total RWA**.
 
-5. **Compute capital & ratios**:
+5. **Compute capital and ratios**
 
-   * Aggregate CET1, AT1, Tier 2 as per regulatory definitions.
-   * Calculate CET1, Tier 1, Total capital ratios, leverage ratio, LCR/NSFR.
+   * Determine eligible CET1, AT1 and Tier 2 under the regulatory definition.
+   * Calculate capital ratios, leverage ratio and liquidity ratios.
 
-6. **Compare to minima & buffers**:
+6. **Compare to minima & buffers**
 
    * Check compliance with Basel / RBI thresholds.
-   * Report internally and externally.
+   * Feed results into internal governance and external reporting.
 
-Pillar 2 then **adds additional capital if needed** (ICAAP/SREP). Pillar 3 requires **disclosing** key parts of this calculation.
+Pillar 2 then adds **additional capital and qualitative measures** if necessary; Pillar 3 requires **disclosure** of key elements.`
+            }
+          ]
+        },
+        {
+          id: "2-8",
+          title: "2.8 Key takeaways for Module 2",
+          content: [
+            {
+              type: "markdown",
+              content: `1. **Simple evolution**
 
----
+   * **Basel I** – 8% capital vs RWA, few risk-weight buckets, mainly credit risk.
+   * **Basel II** – same 8%, but much more **risk-sensitive RWA** and the **Three Pillars**.
+   * **Basel III** – higher and better-quality capital, explicit **buffers**, **leverage ratio**, **liquidity standards**, and enhanced risk coverage.
+   * **Basel 3.1** – refines the framework, strengthens standardised approaches and IRB constraints, and introduces the **output floor** (model RWA ≥ 72.5% of SA RWA).
 
-## 2.9 “Bulb” section – interview & implementation angles
+2. **Three Pillars are the organising logic**
 
-💡 **Bulb 1 – One-sentence evolution**
+   * **Pillar 1** – formula-based minimum capital requirements.
+   * **Pillar 2** – supervisory review, ICAAP/SREP, and possible extra capital.
+   * **Pillar 3** – disclosure and market discipline.
 
-* **Basel I**: simple 8% capital vs RWA, mainly credit risk, few buckets.
-* **Basel II**: still 8%, but with **more risk-sensitive RWA** and **Three Pillars**.
-* **Basel III**: higher and better-quality capital, **buffers**, **leverage ratio**, **liquidity standards**, and **tighter risk coverage**.
+3. **Jurisdiction overlay matters**
 
-If you say this cleanly, you sound very structured.
+   * Global Basel standards provide a **baseline**.
+   * Jurisdictions like **India** implement them with **higher minimum ratios and local calibration** (for example, 9% CRAR + 2.5% CCB under RBI) and their own timelines.
 
----
+4. **Everything else in later modules is detail**
 
-💡 **Bulb 2 – How to explain the Three Pillars in 10 seconds**
-
-> “Pillar 1 gives you the **formula** for minimum capital,
-> Pillar 2 checks if that’s **truly enough** given all risks and strategy,
-> Pillar 3 makes the bank **show its work** to the market.”
-
-Then you can go deeper if they ask.
-
----
-
-💡 **Bulb 3 – Always ask: ‘Which Pillar am I talking about?’**
-
-When you encounter any regulatory topic:
-
-* New risk-weight rules → **Pillar 1**.
-* ICAAP, stress testing, SREP findings → **Pillar 2**.
-* Disclosure templates, quarterly risk reports → **Pillar 3**.
-
-For your web app, you can actually structure the UI around these pillars – it shows conceptual clarity.
+   * Modules 3–8 break down the **numerator** (capital structure) and **denominator** (RWA computation) under this Basel / Three-Pillar architecture.
+   * Modules 9–12 connect the framework to **data flows, reporting, capital planning and IRB/Endgame topics**.
 
 ---
 
-💡 **Bulb 4 – Jurisdiction overlay is a differentiator**
+### Reference links for Module 2
 
-In interviews, don’t stop at “Basel says 8%”. Add:
-
-* “In India, RBI implements Basel II/III with **9% minimum CRAR** and full CCB, so effective requirements are higher than the Basel template.” ([Reserve Bank of India][12])
-
-This shows you understand **both global standards and local implementation**, which is exactly what a capital adequacy / regulatory reporting role needs.
-
----
-
-
-[1]: https://www.bis.org/publ/bcbs128b.pdf?utm_source=chatgpt.com "Part 2: The First Pillar – Minimum Capital Requirements"
-[2]: https://rbi.org.in/upload/notification/pdfs/61023.pdf?utm_source=chatgpt.com "61023.pdf"
-[3]: https://www.bis.org/publ/bcbs189.pdf?utm_source=chatgpt.com "Basel III: A global regulatory framework for more resilient ..."
-[4]: https://www.bis.org/basel_framework/?utm_source=chatgpt.com "Basel Framework"
-[5]: https://www.rbi.org.in/commonman/english/scripts/Notification.aspx?Id=1033&utm_source=chatgpt.com "Prudential Norms on Capital Adequacy - Basel I Framework"
-[6]: https://www.bis.org/review/r050715g.pdf?utm_source=chatgpt.com "Regulation and risk management - implementing Basel II"
-[7]: https://unctad.org/system/files/official-document/osgdp20052_en.pdf?utm_source=chatgpt.com "BASEL II: THE REVISED FRAMEWORK OF JUNE 2004"
-[8]: https://www.bis.org/publ/bcbs270.htm?utm_source=chatgpt.com "Basel III leverage ratio framework and disclosure ..."
-[9]: https://www.icmagroup.org/assets/documents/Events/test/20%20-%20ICMA%20Presentation%20-%20Liquidity%20%26%20Leverage_v1.pdf?utm_source=chatgpt.com "An overview of the LCR, NSFR and LR"
-[10]: https://www.bis.org/bcbs/basel3.htm?utm_source=chatgpt.com "Basel III: international regulatory framework for banks"
-[11]: https://www.eba.europa.eu/activities/basel-framework-global-regulatory-standards-banks?utm_source=chatgpt.com "The Basel framework: the global regulatory standards for banks"
-[12]: https://www.rbi.org.in/commonman/English/Scripts/Notification.aspx?Id=1488&utm_source=chatgpt.com "Master Circular – Basel III Capital Regulations"
-[13]: https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/70BIIIMC010713.pdf?utm_source=chatgpt.com "Master Circular – Basel III Capital Regulations"
-[14]: https://rulebook.sama.gov.sa/en/minimum-capital-requirements-credit-risk?utm_source=chatgpt.com "Minimum Capital Requirements for Credit Risk"
-[15]: https://www.iibf.org.in/documents/BASEL-III.pdf?utm_source=chatgpt.com "Basel III Capital Regulations"
-`
+[1]: https://www.bis.org/publ/bcbs128.pdf "Basel II comprehensive version"
+[2]: https://www.bis.org/publ/bcbs189.htm "Basel III main capital text"
+[3]: https://www.bis.org/bcbs/publ/d424.htm "Basel III: Finalising post-crisis reforms (Basel 3.1 / Endgame)"
+[4]: https://www.bis.org/bcbs/publ/d400.htm "Pillar 3 disclosure requirements"
+[5]: https://www.bis.org/publ/bcbs270.htm "Basel III leverage ratio framework"
+[6]: https://www.bis.org/publ/bcbs238.pdf "Basel III: The Liquidity Coverage Ratio (LCR)"
+[7]: https://www.bis.org/bcbs/publ/d295.pdf "Basel III: The Net Stable Funding Ratio (NSFR)"
+[8]: https://rbi.org.in/upload/notification/pdfs/61023.pdf "RBI – Draft/Final guidelines on New Capital Adequacy Framework"
+[9]: https://www.rbi.org.in/CommonPerson/english/Scripts/Notification.aspx?Id=1264 "RBI – Master Circular on Basel III Capital Regulations"
+[10]: https://www.eba.europa.eu/activities/basel-framework-global-regulatory-standards-banks "EBA – The Basel framework"`
             }
           ]
         }
@@ -922,349 +918,393 @@ This shows you understand **both global standards and local implementation**, wh
       sections: [
         {
           id: "3-1",
-          title: "Master Class Notes",
+          title: "3.1 Capital quality hierarchy & going-concern vs gone-concern",
           content: [
             {
-              type: 'markdown',
-              content: `## 3.1 Capital quality hierarchy & going-concern vs gone-concern
+              type: "markdown",
+              content: `Under Basel III, regulatory capital is structured in **three main layers**:
 
-Under Basel III, regulatory capital is split into **three layers**: ([Bank for International Settlements][1])
-
-* **Common Equity Tier 1 (CET1)** – highest quality, pure equity.
-* **Additional Tier 1 (AT1)** – going-concern capital, but lower quality than CET1.
+* **Common Equity Tier 1 (CET1)** – highest quality capital.
+* **Additional Tier 1 (AT1)** – still going-concern capital, but lower quality than CET1.
 * **Tier 2** – gone-concern capital.
 
-Grouped:
+Grouped by their role:
 
-* **Tier 1 (going-concern)**
+* **Tier 1 capital (going-concern):**
+
   * CET1
   * AT1
-* **Tier 2 (gone-concern)**
 
-**Going-concern capital** = capital that can absorb losses while the bank is still operating *without* triggering insolvency or resolution. (Tier 1) ([Bank for International Settlements][1])
+* **Tier 2 capital (gone-concern):**
 
-**Gone-concern capital** = capital that absorbs losses **only when the bank fails** (e.g. in liquidation or resolution). (Tier 2) ([Bank for International Settlements][1])
+  * Eligible Tier 2 instruments and provisions
 
-Basel III also requires that **all AT1 and Tier 2 instruments** must be able to absorb losses at the **Point of Non-Viability (PoNV)** – typically via conversion to equity or write-down when the supervisor decides the bank would otherwise fail or needs public support. ([Bank for International Settlements][1])
+**Going-concern capital**
+Capital that can absorb losses **while the bank is still operating as a going concern**, without automatically triggering insolvency, resolution, or liquidation. Under Basel III, this is **Tier 1 (CET1 + AT1)**.
 
----
+**Gone-concern capital**
+Capital that mainly absorbs losses **once the bank has failed** and is in liquidation or resolution. This is **Tier 2**.
 
-## 3.2 Overall structure of regulatory capital (Basel and India)
+Basel III also requires that **AT1 and Tier 2 instruments** include features that allow them to absorb losses at the **Point of Non-Viability (PoNV)**—for example, mandatory conversion into equity or write-down when the supervisor determines that the bank would otherwise fail or needs public support.`
+            }
+          ]
+        },
+        {
+          id: "3-2",
+          title: "3.2 Basel III capital structure and minimum ratios",
+          content: [
+            {
+              type: "markdown",
+              content: `### 3.2.1 Global Basel structure
 
-### 3.2.1 Basel structure
+At Basel III level, the components are:
 
-At Basel III level: ([Bank for International Settlements][1])
+* **CET1**
 
-* **CET1** – common shares + share premium + retained earnings + other reserves + eligible minority interest – **regulatory adjustments**.
-* **AT1** – eligible AT1 instruments + related share premium + eligible minority interest – **AT1 adjustments**.
-* **Tier 2** – eligible Tier 2 instruments + related share premium + eligible minority interest + certain loan-loss provisions – **Tier 2 adjustments**.
+  * Common shares that meet strict CET1 criteria
+  * Share premium (stock surplus) on those shares
+  * Retained earnings
+  * Other reserves and accumulated other comprehensive income that are freely available
+  * Eligible minority interest in the common equity of consolidated subsidiaries
+  * **Less: CET1 regulatory adjustments** (intangible assets, certain DTAs, investments in other financial institutions, etc.)
 
-Total capital:
+* **AT1**
+
+  * Qualifying AT1 instruments (that are not CET1)
+  * Associated share premium
+  * Eligible AT1 instruments issued by subsidiaries and held by third parties
+  * **Less: AT1-specific regulatory adjustments**
+
+* **Tier 2**
+
+  * Qualifying Tier 2 debt and preference instruments
+  * Associated share premium
+  * Eligible Tier 2 instruments issued by subsidiaries and held by third parties
+  * Certain **loan-loss provisions / general provisions** subject to caps
+  * **Less: Tier 2-specific regulatory adjustments**
+
+Aggregations:
 
 $$
-\\text{Tier 1} = \\text{CET1} + \\text{AT1}
+\\text{Tier 1 Capital} = \\text{CET1} + \\text{AT1}
 $$
 
 $$
 \\text{Total Capital} = \\text{Tier 1} + \\text{Tier 2}
 $$
 
-Basel template minimums (before buffers): ([Bank for International Settlements][2])
+**Basel III (global template) minimum ratios (before buffers):**
 
-* CET1 ≥ **4.5%** of RWA
-* Tier 1 ≥ **6%** of RWA
-* Total capital ≥ **8%** of RWA
+* CET1 ratio ≥ **4.5%** of RWA
+* Tier 1 ratio ≥ **6.0%** of RWA
+* Total capital ratio ≥ **8.0%** of RWA
 
-plus the **Capital Conservation Buffer (CCB)** of 2.5% of RWA in CET1, and possibly a **Countercyclical Buffer** up to another 2.5%. ([Bank for International Settlements][2])
+On top of this, Basel III prescribes buffers (capital conservation buffer and counter-cyclical buffer) to be held in **CET1**.
 
-### 3.2.2 India (RBI) structure & minima
+### 3.2.2 India (RBI) – capital stack and minima
 
-RBI adopts the same capital stack, but with **higher minima**: ([IIBF][3])
+RBI adopts the same **CET1 / AT1 / Tier 2** stack but with **stricter minimum ratios** for banks.
 
-* **Tier 1 (going-concern)**
-  * CET1
-  * AT1
-* **Tier 2 (gone-concern)**
+On a fully-implemented basis (for scheduled commercial banks):
 
-RBI requires (on a fully-loaded basis):
+| Requirement                        | % of RWA (India – typical Basel III banks) |
+| ---------------------------------- | ------------------------------------------ |
+| Minimum CET1                       | **5.5%**                                   |
+| Capital Conservation Buffer (CET1) | **2.5%**                                   |
+| **CET1 incl. CCB**                 | **8.0%**                                   |
+| Minimum Tier 1 (CET1 + AT1)        | **7.0%**                                   |
+| Minimum Total Capital (CRAR)       | **9.0%**                                   |
+| **Total Capital incl. CCB**        | **11.5%**                                  |
 
-| Requirement                  | % of RWA (India – banks) |
-| ---------------------------- | ------------------------ |
-| Minimum CET1                 | **5.5%**                 |
-| CCB (CET1 only)              | **2.5%**                 |
-| CET1 incl. CCB               | **8.0%**                 |
-| AT1 (within Tier 1)          | up to **1.5%**           |
-| Minimum Tier 1 (CET1+AT1)    | **7.0%**                 |
-| Tier 2                       | up to **2.0%**           |
-| Minimum Total Capital (CRAR) | **9.0%**                 |
-| Total Capital incl. CCB      | **11.5%**                |
+RBI guidelines and IIBF training material also present this as:
 
-These values come from RBI’s Basel III capital regulations and IIBF Basel III text. ([IIBF][3])
+* Within the **9%** minimum CRAR, **Tier 1** is expected to be the dominant part, and
+* Tier 2 has practical caps relative to Tier 1 (for some entities and legacy frameworks).
 
-So, in India, a “normally compliant” bank is typically expected to operate **comfortably above 11.5%** total capital ratio.
+For practical purposes, an Indian bank is usually expected to operate **comfortably above 11.5%** total capital ratio under normal conditions.`
+            }
+          ]
+        },
+        {
+          id: "3-3",
+          title: "3.3 CET1 – components, deductions and structure",
+          content: [
+            {
+              type: "markdown",
+              content: `### 3.3.1 Role of CET1
 
----
+**Common Equity Tier 1 (CET1)** is the **highest-quality capital** in the Basel framework. It is designed to absorb losses **immediately and fully**, without needing any contractual trigger, and without creating legal claims on the bank.
 
-## 3.3 CET1 – components, deductions & formula
+Key characteristics:
 
-### 3.3.1 Concept and role
+* Permanently available to the bank
+* Fully loss-absorbing
+* Most subordinated in the capital structure (equity holders are paid last)
 
-CET1 is the **highest quality capital**: it absorbs losses **immediately** when they occur, without any contractual trigger. It is mostly ordinary equity and retained earnings. ([Bank for International Settlements][1])
+This is why Basel III insists that **most of a bank’s capital stack must be CET1**.
 
-Regulators want **most** of a bank’s capital to be CET1, because it is:
+### 3.3.2 Basel III CET1 – high-level definition
 
-* Permanently available,
-* Fully loss-absorbing,
-* Subordinate to all other claims.
+The Basel III definition of CET1 (simplified) is:
 
-### 3.3.2 Basel definition – high level
+**Positive CET1 components:**
 
-Basel III defines CET1 as: ([Bank for International Settlements][1])
+* Common shares (or equivalent instruments for non-joint stock banks) meeting strict eligibility criteria
+* Share premium (stock surplus) on those common shares
+* Retained earnings (audited)
+* Other disclosed reserves and accumulated other comprehensive income that are freely available
+* Eligible minority interests in CET1 of consolidated banking subsidiaries
 
-**Positive elements (before deductions)** – conceptually:
+**Less, CET1 regulatory adjustments:**
 
-* Common shares (or equivalent instruments for non-joint stock banks) that meet strict CET1 criteria.
-* Stock surplus / share premium on those shares.
-* Retained earnings (audited).
-* Other comprehensive income (OCI) and other disclosed reserves that are freely available.
-* Eligible minority interest from fully consolidated banking subsidiaries.
+* Goodwill and other intangible assets (net of related deferred tax liabilities)
+* Certain **deferred tax assets (DTAs)** that rely on future profitability, subject to **10% and 15% threshold** rules (at the consolidated level, for specified items)
+* Significant and non-significant investments in the capital of other financial institutions, above thresholds
+* Shortfall of provisions to expected loss (for IRB banks)
+* Other prudential filters (e.g. certain unrealised gains, cash flow hedge reserves, pension assets), depending on national implementation
 
-**Minus: regulatory adjustments**, such as:
-
-* Goodwill and other intangible assets.
-* Certain deferred tax assets (DTAs).
-* Significant and non-significant investments in the capital of other financial entities (subject to threshold rules).
-* Any shortfall of provisions to expected loss under IRB approaches, etc. ([Bank for International Settlements][1])
-
-General CET1 formula (conceptual):
+Conceptual formula:
 
 $$
-\\text{CET1} = \\sum \\text{(CET1 instruments and reserves)} - \\sum \\text{(CET1 regulatory adjustments)}
+\\text{CET1} = \\text{(CET1 instruments and reserves)} - \\text{(CET1 regulatory adjustments)}
 $$
 
-### 3.3.3 India-specific CET1 components (Indian banks)
+### 3.3.3 CET1 components – India (RBI / Indian banks)
 
-RBI’s Basel III regulations give a very clear list for Indian banks’ CET1 elements: ([IIBF][3])
+RBI’s Basel III regulations and IIBF material set out the CET1 components for Indian banks.
 
-**Positive CET1 components (Indian banks)** include:
+**Positive CET1 elements (India – simplified list):**
 
 1. **Paid-up equity share capital** that meets Basel/RBI criteria for common shares.
-2. **Share premium** arising from issue of common shares.
-3. **Statutory reserves** (e.g. reserve fund under Banking Regulation Act).
+2. **Share premium** related to qualifying common shares.
+3. **Statutory reserves** (such as the reserve fund under the Banking Regulation Act).
 4. **Capital reserves** arising from sale of assets (not revaluation reserves).
-5. **Other disclosed free reserves** – genuinely available to absorb losses.
-6. **Balance in Profit & Loss (P&L) account** at end of the previous financial year.
-7. **Portion of current-year profits** that can be included subject to conditions and formula (net of expected dividends). RBI gives a formula for “eligible profit” $EP_t$ for quarter $t$: ([IIBF][3])
+5. **Other disclosed free reserves** that are genuinely available to absorb losses.
+6. **Retained earnings / balance in the Profit & Loss account** at the previous year-end.
+7. **Portion of current-year profits**, subject to conditions (e.g. verification, consistent profitability, and deduction of proposed dividends / tax) as specified by RBI.
+8. **Eligible minority interest** in common equity of consolidated banking subsidiaries.
+
+**Less, India-specific CET1 regulatory adjustments:**
+
+* Goodwill and other intangible assets
+* DTAs and specified investments in financial sector entities in line with Basel threshold rules
+* Shortfall of provisions to expected loss (for IRB banks, if applicable)
+* Other filters specified in RBI’s Basel III circular (e.g. certain unrealised gains and reserves)
+
+Conceptually, for an Indian bank:
 
 $$
-EP_t = NP_t - 0.25 \\times D
+\\text{CET1}_{\\text{India}} = \\text{Equity Capital} + \\text{(Eligible Reserves)} + \\text{Retained Profits} + \\text{Eligible Minority Interest} - \\text{(Regulatory Adjustments)}
 $$
 
-where
+A real-world implementation will follow the **exact line items and adjustments** in RBI’s Basel III capital regulations.`
+            }
+          ]
+        },
+        {
+          id: "3-4",
+          title: "3.4 Additional Tier 1 (AT1) – role, instruments and criteria",
+          content: [
+            {
+              type: "markdown",
+              content: `### 3.4.1 Conceptual role
 
-* $NP_t$ = net profit up to quarter $t$,
-* $D$ = average annual dividend of the last 3 years,
+**Additional Tier 1 (AT1)** is still **going-concern capital**, but sits **below CET1 in quality**. Instruments are usually **hybrid securities**:
 
-subject to RBI’s conditions on provisioning stability.
-
-8. **Eligible minority interest** in the common equity of consolidated banking subsidiaries.
-9. **Less: all CET1 regulatory adjustments required by RBI** (goodwill, DTAs, capital investments, shortfalls, etc.).
-
-So for an Indian bank, you can think:
-
-$$
-\\text{CET1}_{\\text{India}} = \\text{Equity Capital} + \\text{Reserves} + \\text{Retained Profits} + \\text{Eligible MI} - \\text{Regulatory Adjustments}
-$$
-
-### 3.3.4 Regulatory adjustments (CET1)
-
-Basel III tries to **clean up** CET1 by removing items whose value is uncertain, double-counted, or not reliably loss-absorbing in stress. The main categories are: ([Bank for International Settlements][1])
-
-1. **Intangible assets**
-   * Goodwill and other intangibles (net of associated deferred tax liabilities) are fully deducted from CET1.
-
-2. **Deferred tax assets (DTAs)**
-   * DTAs that rely on future profitability and are not already netted are deducted, subject to threshold treatment:
-     * Certain DTAs, mortgage servicing rights and significant investments in the common shares of unconsolidated financial institutions each have a **10% of CET1** individual cap and a **15% combined cap**; any excess is deducted. ([Bank for International Settlements][1])
-
-3. **Investments in other financial institutions**
-   * To avoid double counting of capital, banks must either:
-     * **Consolidate** the entity, or
-     * **Deduct** the investment from CET1 (corresponding deduction approach – deduction from the same tier in which the investee recognises the capital). ([Bank for International Settlements][1])
-
-4. **Shortfall of provisions to expected loss (IRB banks)**
-   * If expected loss > total eligible provisions, the shortfall is deducted from CET1. ([Central Bank of The Bahamas][4])
-
-5. **Other filters / adjustments**
-   * Certain prudential filters applied to unrealised gains, cash-flow hedge reserves, defined-benefit pension assets, etc., depending on local implementation.
-
-In Indian regulations, these concepts are implemented via a detailed list of CET1 regulatory adjustments in para 4.4 of the Basel III Circular. ([IIBF][3])
-
----
-
-## 3.4 Additional Tier 1 (AT1) – instruments, criteria & India flavour
-
-### 3.4.1 Concept and role
-
-**AT1** is still **going-concern capital**, but instruments are usually **hybrid** in nature:
-
-* They behave like debt (pay coupons) but
-* They are designed to absorb losses **before** depositors and senior creditors, either through:
-  * **Going-concern triggers** (conversion/write-down), or
-  * **PoNV write-down**.
-
-It sits **below CET1 in quality**, but above Tier 2.
+* They often pay coupons like debt,
+* But they are designed to absorb losses **before** depositors and senior creditors, through **conversion or write-down** when triggers are hit or at PoNV.
 
 ### 3.4.2 Basel AT1 components
 
-Basel defines AT1 as: ([Bank for International Settlements][1])
+Under Basel III, AT1 consists of:
 
-* AT1 instruments issued by the bank that meet **all Basel AT1 criteria** (and are not CET1).
-* Associated share premium.
-* Eligible AT1 instruments issued by consolidated subsidiaries and held by third parties.
-* Minus: regulatory adjustments specific to AT1.
+* Eligible AT1 instruments issued by the bank (that are *not* CET1)
+* Associated share premium
+* Eligible AT1 instruments issued by consolidated subsidiaries and held by third parties
+* Less: AT1-specific regulatory adjustments
 
 ### 3.4.3 Basel AT1 – key eligibility criteria (simplified)
 
-From Basel text (summarised): ([Central Bank of The Bahamas][4])
+The main Basel III entry criteria for AT1 instruments can be summarised as follows:
 
-AT1 instruments must:
+1. **Issued and fully paid-in**
+2. **Subordinated** to depositors, general creditors, and senior subordinated debt
+3. **Perpetual** – no contractual maturity
+4. **No step-ups or incentives to redeem** (e.g. no large coupon increases at call dates)
+5. **Callable only** after at least 5 years and only with:
 
-1. Be **issued and fully paid-in**.
-2. Be **subordinated** to depositors, general creditors and senior subordinated debt.
-3. Be **perpetual** (no contractual maturity).
-4. Have **no step-ups or incentives to redeem** (e.g. no big coupon jump at a call date).
-5. Be **callable only** after at least 5 years, and only with:
    * Prior supervisory approval, and
-   * Either replacement with capital of same or better quality, *or* proof that capital remains well above minima after call.
-6. Have **fully discretionary coupons/dividends**:
-   * Bank must be able to cancel distributions at any time, for any reason.
-   * Cancellation is **not** an event of default.
-   * Cancelled payments are not cumulative and cannot later be “made up”.
-7. Not have **credit-sensitive** coupon features (coupon cannot directly depend on the bank’s credit spread/rating).
-8. For instruments classified as liabilities, include a **principal loss absorption mechanism**:
-   * Conversion to common equity or
-   * Write-down at a pre-specified trigger (in addition to PoNV loss absorption).
-9. Not be funded or purchased by the bank (directly or indirectly).
+   * Either replacement with capital of equal or better quality, or demonstration that capital will remain well above regulatory minima after call
+6. **Fully discretionary coupons / dividends**:
 
-These conditions are why Basel III AT1 instruments are sometimes called **“contingent capital”** or **CoCos**.
+   * Bank must be able to cancel distributions at any time, for any reason
+   * Cancellation is not an event of default
+   * Cancelled payments are **non-cumulative**
+7. No **credit-sensitive** coupon features (coupon cannot link directly to the institution’s own credit spread)
+8. If structured as liabilities, they must include **principal loss-absorption** (conversion to CET1 or write-down) when a pre-specified trigger is breached, in addition to PoNV loss-absorption
+9. Instruments must **not be funded or purchased by the bank itself** (directly or indirectly)
 
-### 3.4.4 India-specific AT1 instruments
+These criteria ensure that AT1 behaves like **capital in stress**, not like ordinary senior debt.
 
-RBI’s Basel III circular specifies AT1 components for Indian banks: ([IIBF][3])
+### 3.4.4 AT1 in India (RBI flavour)
 
-**AT1 for Indian banks includes**:
+For Indian banks, RBI’s Basel III regulations specify the types of instruments that can count as AT1.
 
-1. **Perpetual Non-Cumulative Preference Shares (PNCPS)** that meet Basel/RBI criteria.
-2. **Perpetual Debt Instruments (PDIs)** (Basel III-compliant AT1 bonds) meeting RBI criteria.
-3. Share premium from the above instruments.
+Typical AT1 elements include:
+
+1. **Perpetual Non-Cumulative Preference Shares (PNCPS)** that meet Basel/RBI AT1 criteria.
+2. **Perpetual Debt Instruments (PDIs)** (Basel III-compliant AT1 bonds).
+3. Share premium related to these instruments.
 4. Eligible AT1 instruments issued by consolidated subsidiaries and held by third parties.
-5. Other instruments RBI may notify.
-6. Less: AT1-specific regulatory deductions.
+5. Less: AT1-specific regulatory deductions.
 
-RBI references detailed Annexes (3, 4, 16) with:
+Key Indian features (summarised from RBI/IIBF material):
 
-* Terms like **perpetual, subordinated, no step-up/incentives to redeem**.
-* **Discretionary, non-cumulative coupons**.
-* **Loss absorption through conversion/write-off** on breach of a trigger or at PoNV. ([IIBF][3])
+* Instruments must be **perpetual** and **subordinated**.
+* **Coupons are discretionary and non-cumulative**.
+* Terms must include **loss-absorption**, either via write-down or conversion, if:
 
-In India, these are the **Basel III-compliant AT1 bonds** you see in markets / rating reports. ([Crisil Ratings][5])
+  * CET1 ratio falls below a specified trigger level, and/or
+  * The bank reaches **PoNV**, as determined by RBI.
 
----
+These are the **Basel III-compliant AT1 bonds** that appear in Indian banks’ capital structures and rating reports.`
+            }
+          ]
+        },
+        {
+          id: "3-5",
+          title: "3.5 Tier 2 – components, criteria and India specifics",
+          content: [
+            {
+              type: "markdown",
+              content: `### 3.5.1 Conceptual role
 
-## 3.5 Tier 2 – components, criteria & India flavour
+**Tier 2 capital** is primarily **gone-concern capital**.
 
-### 3.5.1 Concept and role
+It is intended to absorb losses **in resolution or liquidation**, once Tier 1 has been exhausted. Instruments can have a **fixed maturity**, and requirements on permanence are less strict than for AT1.
 
-**Tier 2** is **gone-concern capital** – it absorbs losses once the bank is no longer viable and is being wound up or resolved. Requirements are less strict than for AT1: instruments can have **maturity** and may be less permanent. ([Bank for International Settlements][1])
+### 3.5.2 Basel Tier 2 – components
 
-### 3.5.2 Basel Tier 2 components
+Tier 2 includes:
 
-Basel defines Tier 2 as: ([Central Bank of The Bahamas][4])
+* Qualifying Tier 2 debt instruments (subordinated, long-dated)
+* Certain qualifying preference share instruments (where allowed)
+* Related share premium
+* Eligible Tier 2 instruments issued by consolidated subsidiaries and held by third parties
+* **General provisions / loan-loss reserves** recognised within limits
+* Less: Tier 2-specific regulatory adjustments
 
-* Debt capital instruments meeting Tier 2 criteria (and not in Tier 1).
-* Related share premium.
-* Eligible Tier 2 instruments issued by consolidated subsidiaries and held by third parties.
-* Certain **loan-loss provisions** (general provisions) subject to caps.
-* Minus: Tier 2 regulatory adjustments.
+### 3.5.3 Basel Tier 2 – key eligibility criteria (simplified)
 
-### 3.5.3 Basel Tier 2 – key eligibility criteria
+Main criteria (from Basel III framework) include:
 
-Summarising Basel requirements: ([Central Bank of The Bahamas][4])
+1. **Issued and fully paid-in**
 
-A Tier 2 instrument must:
+2. **Subordinated** to depositors and general creditors
 
-1. Be **issued and fully paid-in**.
-2. Be **subordinated** to depositors and general creditors.
-3. Be **unsecured** (no collateral or guarantees increasing seniority).
-4. Have a **minimum original maturity of 5 years**.
-5. Be recognised in regulatory capital on an **amortised basis** during the last 5 years:
-   * If remaining maturity is $m$ years ($0 < m ≤ 5$):
+3. **Unsecured** (no collateral that elevates seniority)
+
+4. **Minimum original maturity of 5 years** for debt instruments
+
+5. **Amortisation in final 5 years** before maturity – the amount recognised in Tier 2 decreases linearly as remaining maturity falls below 5 years:
+
+   If remaining maturity = $m$ years (with $0 < m \\le 5$):
+
+   $$
+   \\text{Recognised Amount} = \\text{Nominal} \\times \\frac{m}{5}
+   $$
+
+6. **No step-ups or incentives to redeem**
+
+7. Callable only after 5 years, with supervisory approval and capital replacement / strong capital position
+
+8. No investor right to accelerate repayment except in liquidation/insolvency
+
+9. No credit-sensitive coupons
+
+10. Not funded or purchased by the bank itself
+
+**General provisions / loan-loss reserves** can be recognised in Tier 2 subject to caps:
+
+* Up to **1.25% of credit-risk RWA** for banks using the Standardised Approach
+* Up to **0.60% of credit-risk RWA** for IRB banks (excess provisions over expected loss)
+
+### 3.5.4 Tier 2 in India (RBI rules)
+
+RBI’s Basel III capital regulations and related circulars apply these ideas in an Indian context.
+
+Typical **Tier 2 elements for Indian banks** (simplified):
+
+1. **General provisions and loss reserves**, not tied to identified losses, for example:
+
+   * General provisions on standard assets
+   * Floating provisions (general in nature)
+   * Country risk provisions
+   * Provisions for unhedged FX exposures
+   * Investment Reserve Account
+   * Excess provisions arising from sale of NPAs
+   * Countercyclical provisioning buffer
+     These are recognised in Tier 2 **up to 1.25% of total credit-risk RWA** (and up to 0.6% of credit-risk RWA for certain IRB excess provisions, where applicable).
+
+2. **Tier 2 debt capital instruments**
+
+   * Subordinated debt with minimum 5-year original maturity
+   * Recognised on an amortised basis in the last 5 years to maturity
+   * Other conditions similar to Basel (no step-ups, limited call options, etc.)
+
+3. **Preference share capital instruments** where allowed as Tier 2
+
+   * E.g. certain redeemable preference shares meeting Tier 2 criteria
+
+4. **Revaluation reserves**
+
+   * Recognised in Tier 2 but only **45% of the revaluation reserve** is counted (i.e. a 55% discount), due to valuation uncertainty.
+
+5. **Share premium** on Tier 2 instruments
+
+6. **Eligible Tier 2 instruments issued by subsidiaries** and held by third parties
+
+7. Less: **Tier 2 regulatory adjustments / deductions** as per RBI rules
+
+Conceptually:
 
 $$
-\\text{Recognised Amount} = \\text{Nominal} \\times \\frac{m}{5}
+\\text{Tier 2}_{\\text{India}} = \\text{Subordinated Debt} + \\text{Eligible Preference Shares} + \\text{Allowed Provisions} + 0.45 \\times \\text{Revaluation Reserves} + \\text{Eligible Minority Interest} - \\text{Tier 2 Adjustments}
 $$
 
-6. Have **no step-ups or incentives to redeem**.
-7. Be callable only after 5 years and under similar conditions as AT1 (supervisory approval, replacement or strong capital).
-8. Not give investors rights to **accelerate principal** except in bankruptcy/liquidation.
-9. Not have credit-sensitive coupons.
-10. Not be funded or purchased by the bank itself.
+Actual implementation must follow the detailed lists and caps in the RBI Basel III circulars.`
+            }
+          ]
+        },
+        {
+          id: "3-6",
+          title: "3.6 Capital ratios – formulas and India mapping",
+          content: [
+            {
+              type: "markdown",
+              content: `Let:
 
-Basel also allows certain **general provisions** to be recognised in Tier 2, up to: ([Central Bank of The Bahamas][4])
+* $C_{\\text{CET1}}$ = CET1 capital (after all regulatory adjustments)
+* $C_{\\text{AT1}}$ = AT1 capital (net of adjustments)
+* $C_{\\text{Tier2}}$ = Tier 2 capital (net of adjustments)
 
-* **1.25% of credit-risk RWA** for Standardised Approach banks.
-* **0.60% of credit-risk RWA** (excess provisions over expected loss) for IRB banks.
-
-### 3.5.4 India-specific Tier 2 components
-
-RBI’s Basel III circular gives a detailed list: ([IIBF][3])
-
-**Tier 2 for Indian banks** includes:
-
-1. **General provisions and loss reserves** that are freely available to meet *presently unidentified* losses, for example:
-   * General provisions on standard assets,
-   * Floating provisions,
-   * Provisions for unhedged FX exposures,
-   * Country risk provisions,
-   * Investment Reserve Account,
-   * Excess provisions from NPA sales,
-   * Countercyclical provisioning buffer, etc.
-     These are recognised in Tier 2 **up to 1.25% of total credit-risk RWA**.
-
-2. **Tier 2 debt capital instruments**:
-   * Subordinated debt meeting Basel Tier 2 criteria (5-year minimum maturity, amortisation, etc.).
-
-3. **Preference share capital instruments**:
-   * Certain forms like Perpetual Cumulative Preference Shares (PCPS), Redeemable Non-Cumulative Preference Shares (RNCPS), and Redeemable Cumulative Preference Shares (RCPS) that meet Tier 2 criteria.
-
-4. **Share premium** from Tier 2 instruments.
-
-5. **Revaluation reserves**:
-   * Recognised in Tier 2 but only **45% of the revaluation reserve** is counted (i.e. 55% discount) due to valuation uncertainty. ([IIBF][3])
-
-6. **Eligible Tier 2 instruments from subsidiaries** held by third parties.
-
-7. **Less: Tier 2 regulatory adjustments / deductions.**
-
-So conceptually, for India:
+Define:
 
 $$
-\\text{Tier 2}_{\\text{India}} = \\text{Subordinated Debt} + \\text{Eligible Pref Shares} + \\text{Allowed Provisions} + 0.45 \\times \\text{Revaluation Reserves} + \\text{Minority Interest} - \\text{Tier 2 Adjustments}
+C_{\\text{T1}} = C_{\\text{CET1}} + C_{\\text{AT1}}
 $$
 
----
+$$
+C_{\\text{Total}} = C_{\\text{T1}} + C_{\\text{Tier2}}
+$$
 
-## 3.6 Capital ratios in practice – formulas & India mapping
+Let total risk-weighted assets (RWA) be:
 
-Let:
+$$
+\\text{RWA} = \\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}} + \\text{other components, if applicable}
+$$
 
-* $C_{\\text{CET1}}$ = CET1 capital (after all adjustments)
-* $C_{\\text{T1}} = C_{\\text{CET1}} + C_{\\text{AT1}}$
-* $C_{\\text{Total}} = C_{\\text{T1}} + C_{\\text{Tier 2}}$
-* $\\text{RWA} = \\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}}$
-
-**Ratios** (Basel & RBI use the same formulas): ([IIBF][3])
+Then the **regulatory capital ratios** are:
 
 $$
 \\text{CET1 Ratio} = \\frac{C_{\\text{CET1}}}{\\text{RWA}}
@@ -1278,170 +1318,178 @@ $$
 \\text{Total Capital Ratio (CRAR)} = \\frac{C_{\\text{Total}}}{\\text{RWA}}
 $$
 
-**Basel template minimums (before buffers):** CET1 4.5%; Tier 1 6%; Total 8%. ([Bank for International Settlements][2])
+**Basel III template minimums (before buffers):**
 
-**India effective stack (fully implemented, banks):** CET1 ≥ 5.5%; Tier 1 ≥ 7%; Total ≥ 9%; and CCB 2.5% on top of this in CET1, taking effective total requirement to 11.5%. ([IIBF][3])
+* CET1 ≥ **4.5%** of RWA
+* Tier 1 ≥ **6.0%** of RWA
+* Total capital ≥ **8.0%** of RWA
 
----
+**India (banks – fully implemented Basel III):**
 
-## 3.7 How a bank actually calculates regulatory capital (process view)
+* CET1 ≥ **5.5%** of RWA
+* Tier 1 ≥ **7.0%** of RWA
+* Total capital ≥ **9.0%** of RWA
+* Capital Conservation Buffer (CCB) = **2.5%** of RWA, in CET1
 
-In practice, capital calculation is a **data + mapping + adjustments** exercise done at least quarterly, often monthly.
+So the **effective target stack** in normal conditions is:
 
-### Step 1 – Pull accounting data
+* CET1 (minimum + CCB) = **8.0%**
+* Total capital (minimum + CCB) = **11.5%**`
+            }
+          ]
+        },
+        {
+          id: "3-7",
+          title: "3.7 How capital is actually calculated in a bank (process view)",
+          content: [
+            {
+              type: "markdown",
+              content: `In practice, the regulatory capital calculation is a structured **data + mapping + adjustment** process, usually run quarterly (and monitored more frequently).
 
-* Start from **regulatory consolidation** (not necessarily identical to accounting consolidation).
-* Extract from the general ledger:
-  * Share capital accounts,
-  * Reserves and surplus,
-  * Retained earnings,
-  * Hybrid capital accounts,
-  * Subordinated debt, preference shares, etc.
-* Identify **minority interests** and capital in subsidiaries.
+### Step 1 – Determine scope and pull source data
+
+* Use the **regulatory consolidation** perimeter (which may differ from pure accounting consolidation).
+* Extract from the general ledger / consolidation system:
+
+  * Share capital accounts
+  * Reserves and surplus
+  * Retained earnings
+  * Hybrid capital accounts (PNCPS, PDIs, etc.)
+  * Subordinated debt, preference shares
+  * Provisions and loss reserves
+  * Minority interests
 
 ### Step 2 – Map accounting items to regulatory capital categories
 
-* Maintain a **mapping table**:
-  * GL code → CET1 / AT1 / Tier 2 / Not capital.
-* Example mapping logic:
-  * Paid-up equity capital → CET1 (if Basel/RBI criteria are met).
-  * Securities premium on equity → CET1.
-  * PNCPS / AT1 bonds → AT1 (if they satisfy Annex criteria).
-  * Subordinated debt with ≥5 years maturity → Tier 2.
-  * General provisions on standard assets → Tier 2, up to the cap.
-  * Revaluation reserves → Tier 2 (45% only).
+* Maintain a governance-approved **mapping table**:
+
+  * GL code → CET1 / AT1 / Tier 2 / not capital
+
+* Examples:
+
+  * Paid-up equity capital that meets criteria → CET1
+  * Securities premium on equity → CET1
+  * Perpetual non-cumulative preference shares that meet AT1 criteria → AT1
+  * Perpetual debt instruments meeting AT1 rules → AT1
+  * Subordinated debt with ≥5 years original maturity and proper terms → Tier 2
+  * General provisions on standard assets (subject to conditions) → Tier 2 (within 1.25% cap)
+  * Revaluation reserves → Tier 2 (only 45% recognised)
 
 ### Step 3 – Compute gross capital amounts
 
-* Sum mapped balances for:
-  * **Gross CET1 before adjustments**.
-  * **Gross AT1 before adjustments**.
-  * **Gross Tier 2 before adjustments**.
-* Apply RBI rules on **current-year profit inclusion** for CET1.
+* Sum balances per category to obtain:
+
+  * **Gross CET1 before adjustments**
+  * **Gross AT1 before adjustments**
+  * **Gross Tier 2 before adjustments**
+
+* Apply RBI rules on inclusion of **current-year profits** in CET1 (audited / verified, net of expected dividends and taxes, etc.).
 
 ### Step 4 – Apply regulatory adjustments
 
 For each tier:
 
 * Deduct **goodwill and other intangibles** from CET1.
-* Deduct **DTAs** to the extent required by Basel/RBI rules.
-* Deduct **investments in capital of other financial institutions** using “corresponding deduction” logic.
-* Deduct **shortfalls** of provisions versus expected loss from CET1.
-* Apply any **prudential filters** (e.g. treatment of unrealised gains).
+* Deduct DTAs and certain investments according to the Basel threshold rules and RBI implementation.
+* Deduct any **shortfall of provisions to expected loss** (for IRB banks) from CET1.
+* Apply any **prudential filters** (e.g. on unrealised gains, hedging reserves, pension assets) as required.
 
 Result:
 
-* $C_{\\text{CET1}}$ – net CET1.
-* $C_{\\text{AT1}}$ – net AT1.
-* $C_{\\text{Tier 2}}$ – net Tier 2.
+* $C_{\\text{CET1}}$ – net CET1
+* $C_{\\text{AT1}}$ – net AT1
+* $C_{\\text{Tier2}}$ – net Tier 2
 
-### Step 5 – Derive Tier 1 and Total capital
+### Step 5 – Aggregate to Tier 1 and Total capital
 
 $$
 C_{\\text{T1}} = C_{\\text{CET1}} + C_{\\text{AT1}}
 $$
 
 $$
-C_{\\text{Total}} = C_{\\text{T1}} + C_{\\text{Tier 2}}
+C_{\\text{Total}} = C_{\\text{T1}} + C_{\\text{Tier2}}
 $$
 
-Check that Tier 2 doesn’t exceed caps relative to Tier 1 if any are prescribed.
+Check any **caps** (e.g. Tier 2 vs Tier 1, or caps on provisions) defined by RBI/Basel.
 
-### Step 6 – Calculate capital ratios
+### Step 6 – Compute capital ratios
 
-* Take **RWA** from the RWA engine (credit, market, operational).
-* Apply ratio formulas for:
-  * CET1, Tier 1, Total.
+* Take total RWA from the **RWA engine** (credit, market, operational, etc.).
+* Compute:
+
+  * CET1 ratio
+  * Tier 1 ratio
+  * Total capital (CRAR)
 * Compare against:
-  * Basel minima, and
-  * RBI minima + CCB.
 
-### Step 7 – Internal controls
+  * Basel template minima, and
+  * **RBI minimum + buffer** structure.
 
-Typical controls:
+### Step 7 – Controls and governance
 
-* Reconcile capital figures with published balance sheet and prior period.
-* Movement analysis: opening vs closing capital by component.
-* Check that changes in capital instruments (issuance/redemption) are properly reflected.
-* Control over **PoNV / trigger language** in new AT1/Tier 2 issuances to ensure eligibility.
+Typical controls include:
 
----
+* Reconciliation of capital figures with published financial statements.
+* Movement analysis: opening vs closing capital by component (issues, redemptions, profit retention, FX, etc.).
+* Checks that new issuances actually comply with **Basel/RBI eligibility criteria** (no incentives to redeem, proper subordination, PoNV clauses, etc.).
+* Internal and external review as part of ICAAP and supervisory processes.`
+            }
+          ]
+        },
+        {
+          id: "3-8",
+          title: "3.8 Key points and practitioner notes",
+          content: [
+            {
+              type: "markdown",
+              content: `1. **Regulatory capital is not the same as “shareholders’ funds”**
 
-## 3.8 Bulb section – industry tips & pitfalls
+   * Some items in accounting equity (e.g. intangibles, certain DTAs) are **not** accepted as high-quality capital and are removed via regulatory adjustments.
 
-💡 **Bulb 1 – “Regulatory capital” ≠ “Shareholders’ funds”**
+2. **Going-concern vs gone-concern is a fundamental split**
 
-* Accounting equity can contain items that are **not fully loss-absorbing** or too uncertain (e.g. some intangibles, certain DTAs).
-* Regulatory capital **strips those out** via adjustments. ([Bank for International Settlements][1])
-* In interviews, it’s strong to say:
-  > “We start from accounting equity and then apply Basel/RBI adjustments to derive regulatory CET1.”
+   * **Tier 1 (CET1 + AT1)** is designed to absorb losses while the bank continues to operate.
+   * **Tier 2** mainly works in failure / resolution scenarios.
 
----
+3. **India’s calibration is stricter than the Basel template**
 
-💡 **Bulb 2 – Understand ‘going-concern’ vs ‘gone-concern’ language**
+   * Instead of 4.5 / 6 / 8 (CET1 / Tier 1 / Total), Indian banks face 5.5 / 7 / 9, plus a **2.5% CET1 CCB**, implying an effective total capital requirement of **11.5%** in normal conditions.
 
-If you see:
+4. **Eligibility of AT1 and Tier 2 instruments is about behaviour in stress**
 
-* **Tier 1 / AT1** – think **going-concern**, able to take losses while the bank is alive.
-* **Tier 2** – think **gone-concern**, mainly relevant in resolution or liquidation. ([Bank for International Settlements][1])
+   * When reviewing an instrument, the central questions are:
 
-Dropping this distinction clearly in an interview shows conceptual maturity.
+     * Will it **remain available** in stress (no hard maturity, or long-dated with amortisation)?
+     * Are payments **discretionary** (for AT1) or can they be constrained?
+     * Does the instrument clearly **absorb losses** at trigger / PoNV?
 
----
+5. **Provisions in capital are capped**
 
-💡 **Bulb 3 – India’s capital stack is stricter than Basel**
+   * General provisions and similar buffers can be recognised in **Tier 2 only up to specified percentages of credit-risk RWA** (1.25% for standardised banks, 0.6% for certain IRB excess provisions).
 
-Instead of just quoting Basel 4.5 / 6 / 8, explicitly tie it to India:
-
-> “Basel minimum CET1 is 4.5%, but RBI requires 5.5% CET1, 7% Tier 1 and 9% total capital, plus a 2.5% CET1 conservation buffer, so Indian banks effectively target at least around 11.5% total capital.” ([IIBF][3])
-
-That’s exactly the kind of line a capital adequacy hiring manager loves to hear.
-
----
-
-💡 **Bulb 4 – AT1/Tier 2 eligibility is about ‘behaviour in stress’**
-
-When reviewing an instrument term sheet (for the product / implementation flavour):
-
-* Ask:
-  * Is it **perpetual** (for AT1) or at least 5-year maturity (for Tier 2)?
-  * Are coupons **fully discretionary and non-cumulative** (for AT1)?
-  * Is there a clear **loss-absorption mechanism** at trigger / PoNV?
-  * Are there **no incentives to redeem** and no credit-linked coupons? ([Central Bank of The Bahamas][4])
-
-This is how real-world Basel implementation / validation teams think.
+Keeping these points clear makes it much easier to design, read, and explain capital structures and capital adequacy metrics.
 
 ---
 
-💡 **Bulb 5 – Provisions as capital are capped**
+### Reference links for Module 3
 
-In India:
-
-* General provisions and similar buffers can only be counted in **Tier 2 up to 1.25% of credit-risk RWA** (and up to 0.6% for certain IRB excess provisions). ([Central Bank of The Bahamas][4])
-
-So you can’t “solve” capital by over-provisioning; provision capital is strictly limited.
-
----
-
-
-
-[1]: https://www.bis.org/fsi/fsisummaries/defcap_b3.pdf "Definition of capital in Basel III – Executive Summary"
-[2]: https://www.bis.org/publ/bcbs189.pdf?utm_source=chatgpt.com "Basel III: A global regulatory framework for more resilient ..."
-[3]: https://www.iibf.org.in/documents/BASEL-III.pdf "Basel III Capital Regulations"
-[4]: https://cdn.centralbankbahamas.com/download/001004900.pdf "Microsoft Word - Extract from Basel III - A Global Regulatory Framework for More Resilient Banks and Banking Systems"
-[5]: https://www.crisilratings.com/mnt/winshare/Ratings/SectorMethodology/MethodologyDocs/criteria/Rating%20criteria%20for%20Basel%20III%20-%20compliant%20non-equity%20capital%20instruments.pdf?utm_source=chatgpt.com "Rating criteria for Basel-III non-equity instruments"
-`
+* **[1]** BIS – *Definition of capital in Basel III – Executive Summary* (FSI Summary) – overview of CET1, AT1, Tier 2 structure and regulatory adjustments.
+* **[2]** BCBS – *Basel III: A global regulatory framework for more resilient banks and banking systems* – core Basel III text, including capital definitions and minimum ratios (Annex 1).
+* **[3]** IIBF – *Basel III Capital Regulations* – India-focused training material summarising RBI’s Basel III implementation (CET1, AT1, Tier 2, minima and buffers).
+* **[4]** RBI – *Master Circular / Master Direction – Basel III Capital Regulations* – legally binding implementation of Basel III capital standards for Indian banks.
+* **[5]** RBI – various CRAR / capital adequacy circulars – treatment of revaluation reserves (only 45% recognised in Tier 2) and other Tier 2 elements.
+* **[6]** IIBF / NCAF material – *Capital Adequacy and Market Discipline* – explanation of Tier 1 / Tier 2 structure, recognition of provisions, and caps relative to RWA.
+* **[7]** BIS FSI – *Accounting provisions and prudential filters* / related summaries – global guidance on recognition of general provisions in Tier 2 (1.25% / 0.60% caps).`
             }
           ]
         }
       ]
     },
-
     {
       id: "4",
-      slug: "credit-risk-sa-global",
-      title: "Module 4 – Credit Risk: Standardised Approach (Global)",
-      goal: "Understand the mechanics of the Standardised Approach (SA) for credit risk thoroughly.",
+      slug: "credit-risk-standardised-approach",
+      title: "Module 4 – Credit Risk: Standardised Approach (Global Basel View)",
+      goal: "Understand the core mechanics of the Standardised Approach (SA) for credit risk.",
       sections: [
         {
           id: "4-1",
@@ -1451,446 +1499,423 @@ So you can’t “solve” capital by over-provisioning; provision capital is st
               type: 'markdown',
               content: `## 4.1 Where the Standardised Approach (SA) fits
 
-Under Basel (II, III, 3.1), **Pillar 1** minimum capital has three big components:
+Under Basel II / III / 3.1, **Pillar 1** minimum capital covers three major risk types:
 
 * Credit risk
 * Market risk
 * Operational risk
 
-Here we focus on **credit risk under the Standardised Approach (SA)** – the simplest (but still technical) way to compute **credit risk RWA**. Banks either:
+This module focuses on **credit risk under the Standardised Approach (SA)**.
 
-* Use **SA** (mandatory for many portfolios and many banks), or
-* Use **IRB** (internal models) – but even then, SA remains important (e.g. output floor, some portfolios).
+Banks either:
 
-The core SA formula is:
+* Use **SA** (mandatory for many banks and many portfolios), or
+* Use **IRB** for some portfolios – but even then, SA remains important (e.g. for the **output floor** and for portfolios where IRB is not permitted).
+
+Under SA, the core relationship is:
 
 $$
 \\text{RWA}_j = \\text{EAD}_j \\times \\text{Risk Weight}_j
 $$
 
-and
-
 $$
 \\text{Total RWA}_{\\text{credit}} = \\sum_j \\text{RWA}_j
 $$
 
-Basel explicitly states that under SA, RWA are calculated as **product of standardised risk weights and exposure amounts**, with exposures taken **net of specific provisions**. ([Bank for International Settlements][1])
+The Basel framework (chapter CRE20) explicitly states that under SA, **risk-weighted assets are calculated as the product of regulatory risk weights and exposure amounts**, with **exposure values taken net of specific provisions and partial write-offs**.
 
 ---
 
-## 4.2 What is credit risk (in Basel sense)?
+## 4.2 Credit risk in the Basel capital framework
 
-From a capital perspective, **credit risk** is:
+For regulatory capital purposes, **credit risk** is:
 
-> The risk that a counterparty will fail to meet its contractual obligations, causing financial loss to the bank.
+> The risk that a counterparty or obligor fails to meet its contractual obligations in full and on time, causing a loss to the bank.
 
-It includes:
+It includes (among others):
 
-* Classic loans and advances
+* Loans and advances
 * Bonds and other debt securities
 * Commitments, guarantees, letters of credit
-* OTC derivatives (counterparty credit risk – advanced topic; not deep here)
+* OTC derivatives and securities financing transactions (counterparty credit risk – handled in more specialised chapters)
 
-Capital calculations focus on **unexpected loss**; provisioning handles **expected loss** (conceptually).
+Capital requirements target **unexpected loss** over a regulatory horizon, while provisioning (accounting and prudential) mainly covers **expected loss** at the portfolio level.
 
 ---
 
-## 4.3 Exposure at Default (EAD) – SA view
+## 4.3 Exposure at Default (EAD) in the SA
 
-**EAD** is the amount that is considered **exposed to default at the time of default**.
+**Exposure at Default (EAD)** is the amount that is considered **exposed to default at the moment of default**.
 
-Under SA, for **on-balance sheet exposures**, the EAD is conceptually:
+### 4.3.1 On-balance sheet exposures
 
-$$
-\\text{EAD}_{\\text{on-balance}, j} = \\max(0,\\ \\text{Accounting Exposure}_j - \\text{Specific Provisions}_j - \\text{Write-offs}_j)
-$$
-
-Basel says exposures should be risk-weighted **net of specific provisions (including partial write-offs)**. ([SIF][2])
-
-For **off-balance sheet items** (commitments, guarantees, etc.), you use **Credit Conversion Factors (CCFs)**:
+Under SA, for **on-balance sheet** items, the exposure value is generally:
 
 $$
-\\text{EAD}_{\\text{off-balance}, k} = \\text{Notional}_k \\times \\text{CCF}_k
+\\text{EAD}_{\\text{on}, j}
+= \\max\\Bigl(0,\\ \\text{Accounting Exposure}_j - \\text{Specific Provisions}_j - \\text{Write-offs}_j\\Bigr)
 $$
 
-Total EAD for a counterparty/obligor can be:
+CRE20 and related guidance confirm that exposures should be **taken net of specific provisions and partial write-offs** for the purpose of calculating risk-weighted assets.
+
+### 4.3.2 Off-balance sheet items
+
+For **off-balance sheet items** (commitments, guarantees, letters of credit, etc.), Basel applies **Credit Conversion Factors (CCFs)**:
+
+$$
+\\text{EAD}_{\\text{off}, k} = \\text{Notional}_k \\times \\text{CCF}_k
+$$
+
+CCFs are prescribed by the framework (e.g. 0%, 20%, 50%, 100%, etc.) depending on the nature of the commitment (unconditionally cancellable, other commitments, direct credit substitutes, etc.).
+
+### 4.3.3 Total EAD
+
+Conceptually, total EAD for a counterparty or portfolio can be:
 
 $$
 \\text{EAD}_{\\text{total}} = \\sum_j \\text{EAD}_{\\text{on}, j} + \\sum_k \\text{EAD}_{\\text{off}, k}
 $$
 
-(We go deep into **CCFs & off-balance sheet** in **Module 6**; here it’s enough to know: EAD already reflects these conversions.)
+Module 6 goes deeper into **CCFs and off-balance sheet treatment**; here it is enough to remember that **SA RWA is always based on EAD**, not just raw accounting balances.
 
 ---
 
 ## 4.4 Main exposure classes under the Standardised Approach
 
-Basel’s SA assigns **risk weights** based mainly on: ([Bank for International Settlements][1])
+In the Basel SA, **risk weights** depend primarily on:
 
-* **Exposure class** (what type of counterparty / product),
-* **External rating / credit quality**,
-* **Collateral / guarantees** (via credit risk mitigation, Module 7),
-* For some classes under Basel 3.1, **LTV**, product type, etc.
+* **Exposure class** (type of counterparty / product)
+* **External rating** (for certain classes where permitted)
+* **Credit risk mitigation** (collateral, guarantees – Module 7)
+* For revised SA-CR (Basel 3.1), sometimes **loan-to-value (LTV)**, product type, or other attributes
 
-Key SA credit exposure classes (global view):
+Key exposure classes (global Basel view, CRE20):
 
 1. **Exposures to sovereigns and central banks**
 
-   * Central governments, central banks, some central government-guaranteed exposures.
-   * Risk weights depend largely on **country risk / rating** and national discretion.
+   * Central governments, central banks, and certain central-government-guaranteed exposures.
+   * Risk weights strongly influenced by **country risk / rating** and national discretion.
 
 2. **Exposures to non-central government public sector entities (PSEs)**
 
-   * Regional governments, municipalities, certain public sector bodies.
-   * Often receive treatment linked to sovereign or bank/corporate-style risk weights, depending on national rules.
+   * Regional governments, municipalities and similar entities.
+   * Often treated either like sovereigns or like banks/corporates, depending on supervisory decisions.
 
 3. **Exposures to banks**
 
-   * Claims on banks and eligible securities firms.
-   * SA risk weights depend on:
+   * Claims on banks and certain securities firms subject to equivalent capital / prudential regimes.
+   * Risk weights depend on:
 
-     * External rating of the bank (where allowed), and/or
-     * Country of incorporation and its sovereign rating, or
-     * Under Basel 3.1, the **Standardised Credit Risk Assessment Approach (SCRA)** for **unrated** banks. ([KPMG Assets][3])
+     * External rating (where permitted), and/or
+     * Home sovereign rating and regulatory regime, or
+     * Under Basel 3.1, the **Standardised Credit Risk Assessment Approach (SCRA)** for **unrated banks**.
 
 4. **Exposures to corporates**
 
-   * Claims on corporates (non-bank, non-sovereign).
-   * Risk weights depend on external rating where allowed; **unrated corporates** typically have a standard risk weight (often 100% under the Basel template). ([European Central Bank][4])
+   * Claims on non-financial corporates and some financial institutions treated as corporates.
+   * Risk weights depend on external rating where allowed; **unrated corporates** typically receive a **standard risk weight** (historically 100% in the Basel II template, adjusted but conceptually similar in Basel 3.1).
 
-5. **Regulatory retail portfolio**
+5. **Regulatory retail exposures**
 
-   * Granular, diversified exposures to individuals and small businesses meeting **regulatory retail criteria** (e.g. low individual exposure, many borrowers, etc.).
-   * Typically get **preferential risk weight** compared to large corporates (e.g. 75% in legacy Basel II template), subject to conditions. ([Gestion de Riesgo][5])
+   * Exposures to individuals and small businesses that meet **regulatory retail criteria** (granularity, low individual exposure, etc.).
+   * Benefit from **preferential risk weights** compared to large corporates.
 
 6. **Exposures secured by residential real estate**
 
-   * Loans secured by residential property meeting specific criteria.
-   * Under Basel 3.1, risk weights are heavily driven by **loan-to-value (LTV)**. ([KPMG Assets][6])
+   * Loans fully or partly secured by residential property, subject to conditions.
+   * Under Basel 3.1, risk weights are heavily driven by **LTV** and property type.
 
 7. **Exposures secured by commercial real estate**
 
    * Loans secured by income-producing or commercial property.
-   * Basel 3.1 introduces more risk-sensitive, often higher, risk weights depending on LTV and jurisdictional choices. ([Bank of England][7])
+   * Basel 3.1 introduces more risk-sensitive and, in some cases, higher risk weights, often LTV-based and subject to national choices.
 
 8. **Past-due exposures**
 
-   * Exposures that are past due (non-performing).
-   * Receive **higher risk weights** depending on:
-
-     * Number of days past due,
-     * Level of provisions / specific impairment.
+   * Exposures that are past due / non-performing.
+   * Receive **higher risk weights** depending on days past due and level of specific provisions.
 
 9. **Covered bonds**
 
-   * Debt instruments secured by pools of assets (like mortgages) that remain on the issuer’s balance sheet.
-   * Receive specific preferential risk weights if criteria are met.
+   * Debt instruments backed by specific pools of assets (e.g. mortgages) that remain on-balance sheet.
+   * Receive preferential risk weights if strict eligibility conditions are met.
 
 10. **Securitisation exposures**
 
-    * Tranches of securitised pools (senior, mezzanine, equity).
-    * Treated under **separate securitisation framework**, with high risk weights (sometimes 1250%) for certain tranches. ([IIBF][8])
+    * Tranches of securitised asset pools (senior, mezzanine, equity).
+    * Treated under a **separate securitisation framework**, with high risk weights (up to 1250%) for certain high-risk tranches.
 
 11. **Equity exposures**
 
-    * Direct equity holdings, funds, etc.
-    * Risk weights are high (e.g. 100%, 250% or more depending on approach / jurisdiction), recognising higher volatility.
+    * Direct ownership interests in companies or funds.
+    * Risk weights are high (e.g. 100%, 250% or higher, depending on approach and reform package).
 
 12. **Other assets**
 
-    * Cash items in process of collection, fixed assets, prepayments, certain intangibles not already deducted, etc.
-    * Typically given a standard risk weight (frequently 100% for many items in the template).
+    * Cash items in process of collection, fixed assets, prepayments, some intangibles not otherwise deducted, etc.
+    * Typically assigned standard risk weights (commonly 100% in the template, subject to local rules).
 
-Exact details are in chapter **CRE20 – Standardised approach: individual exposures** of the Basel framework. ([Bank for International Settlements][1])
+Full technical definitions and risk-weight tables are given in **CRE20 – Standardised approach: individual exposures**.
 
 ---
 
 ## 4.5 External ratings and ECAIs in SA
 
-### 4.5.1 Role of ratings
+### 4.5.1 Use of ratings
 
-Under SA, for certain exposure classes (sovereign, bank, corporate, some securitisations), regulatory risk weights are **tied to external credit ratings** where the jurisdiction allows their use.
+For certain classes (sovereigns, banks, corporates, some securitisations), SA uses **external credit ratings** where national authorities allow this.
 
-The logic:
+High-level flow:
 
-1. Identify an **eligible ECAI** (External Credit Assessment Institution) – e.g. S&P, Moody’s, Fitch, approved local agencies.
-2. Map the **rating** (AAA, AA, A, BBB, etc. or local scales) to a **Credit Quality Step (CQS)**.
-3. Each CQS is assigned a **regulatory risk weight** (e.g. high grades → lower risk weight, low grades → higher risk weight, below a threshold → 150% etc.). ([Bank for International Settlements][9])
+1. The supervisor recognises one or more **External Credit Assessment Institutions (ECAIs)** (e.g. S&P, Moody’s, Fitch, or domestic agencies).
+2. ECAI ratings (AAA, AA, A, BBB, etc., or local-scale equivalents) are mapped to **Credit Quality Steps (CQS)**.
+3. Each CQS corresponds to a **regulatory risk weight** for a given exposure class.
 
-Basel CRE21 sets criteria for ECAIs (objectivity, independence, transparency, etc.) and rules for using ratings (consistency, no cherry-picking). ([Bank for International Settlements][9])
+Chapter **CRE21 – Standardised approach: use of external ratings** sets out eligibility criteria for ECAIs and the mapping rules.
 
-### 4.5.2 Key principles when using ratings
+### 4.5.2 Core principles for rating use
 
-Basel requires: ([Bank for International Settlements][9])
+Basel’s key principles under CRE21 include:
 
-* **ECAI eligibility** – supervisor must recognise them for regulatory purposes.
-* **Credibility and transparency** – methodologies publicly available; performance monitored.
-* **No cherry-picking** – if a bank uses a rating of a particular ECAI for one exposure in a class, it must **use that ECAI consistently** for all similar exposures.
-* **Issue vs issuer rating**:
-
-  * Use **issue rating** where available.
-  * If only issuer rating exists, apply mapping rules (e.g. corporate exposure treated according to issuer rating subject to prudential conditions).
-* **Multiple ratings**:
-
-  * Generally, take the **two most conservative** and then the **higher risk weight** of those two (or similar rules, depending on jurisdiction).
+* **Supervisor recognition of ECAIs** – ECAIs must meet criteria on objectivity, independence, transparency and disclosure.
+* **Consistency** – a bank using a given ECAI for one exposure class must **apply it consistently** across similar exposures (no cherry-picking).
+* **Issue vs issuer ratings** – use specific **issue ratings** where available; otherwise, apply issuer ratings under prescribed rules.
+* **Multiple ratings** – apply conservative combination rules (e.g. generally take the most conservative of the relevant risk weights derived from the available ratings).
 
 ### 4.5.3 Unrated exposures
 
-Basel’s SA must still work when **no external rating** is available. Key patterns (simplified): ([European Central Bank][4])
+The framework must handle **unrated** exposures as well:
 
-* **Unrated corporates**: default risk weight (template historically 100%; Basel 3.1 keeps a similar concept with added sensitivity and some national choices).
-* **Unrated banks**:
-
-  * Under Basel 3.1, use **SCRA**: banks are categorised into grades (e.g. A/B/C) based on balance-sheet strength and supervisory information; each grade has risk weights.
-* **Retail and many real estate exposures**: often **don’t require ratings** – risk weights based on product type and LTV instead.
+* **Unrated corporates**: receive default risk weights (e.g. 100% under the Basel II template; recalibrated but conceptually similar under Basel 3.1).
+* **Unrated banks**: under Basel 3.1, are treated under **SCRA**, with banks grouped into categories (A/B/C) based on prudential and financial indicators, each with prescribed risk weights.
+* **Retail and many real estate exposures**: often use **product and collateral characteristics** (e.g. LTV) rather than external ratings.
 
 ---
 
-## 4.6 The Standardised Approach pipeline – step-by-step
+## 4.6 Standardised Approach pipeline – step-by-step
 
-Here’s the **conceptual algorithm** SA banks run (this is exactly the kind of flow your web app could implement).
+This is the conceptual SA credit risk workflow that a bank (or an RWA engine) will implement.
 
 ### Step 1 – Identify exposure and exposure amount
 
 For each position:
 
-* Get **counterparty & product information** (sovereign/bank/corporate/retail/etc.).
-* Determine **on-balance vs off-balance**.
+* Determine **counterparty and product information** (sovereign, bank, corporate, retail, real estate, etc.).
+* Classify as **on-balance sheet** or **off-balance sheet**.
 * Calculate **EAD**:
 
-  * On-balance: exposure net of specific provisions/write-offs.
-  * Off-balance: notional × CCF (Basel gives CCF tables; details in Module 6). ([SIF][2])
+  * On-balance: net of specific provisions and write-offs.
+  * Off-balance: notional × CCF, using Basel CCF tables for commitments and guarantees.
 
 ### Step 2 – Assign exposure class
 
-Based on Basel CRE20 rules: ([Bank for International Settlements][1])
-
-Examples:
+Using CRE20 rules:
 
 * Government bond → sovereign exposure.
-* Loan to another bank → bank exposure.
-* Term loan to large corporate → corporate exposure.
-* Credit card exposure to individuals → regulatory retail.
-* Mortgage on a house → secured by residential real estate.
+* Interbank placement → bank exposure.
+* Loan to a large corporate → corporate exposure.
+* Credit card to an individual → regulatory retail (if criteria met).
+* Mortgage loan secured by a dwelling → residential real estate exposure.
 
-This classification is **critical** – risk weights differ heavily by class.
+Accurate exposure classification is critical, as **risk weights differ materially** across classes.
 
-### Step 3 – Determine rating information (if relevant)
+### Step 3 – Determine rating information (if applicable)
 
-For classes that use ratings:
+For exposure classes that use ratings:
 
-* Check if exposure (or obligor) has an **eligible external rating** from a recognised ECAI.
-* Map that rating:
+* Check if the exposure or obligor has an **eligible rating** from a recognised ECAI.
+* Map the rating to a **CQS**, then to the regulatory **risk weight** for the relevant exposure type.
+* Apply the jurisdiction’s rules for multiple ratings and for using issue vs issuer ratings.
 
-  * Rating → CQS → **risk weight** for that exposure type. ([Bank for International Settlements][9])
-* Apply **jurisdiction rules** for multiple ratings or issue vs issuer rating.
+If rating use is not permitted or exposure is unrated, apply the **unrated risk-weight rules**.
 
-If no rating or rating usage not allowed → use **unrated risk weight** rules.
+### Step 4 – Apply Credit Risk Mitigation (CRM)
 
-### Step 4 – Apply Credit Risk Mitigation (CRM) where eligible
+If eligible collateral or guarantees exist:
 
-If there is:
+* Recognise **eligible financial collateral** (e.g. cash, certain securities), subject to haircuts and conditions.
+* Recognise **guarantees** and credit derivatives that meet eligibility conditions.
 
-* **Eligible financial collateral**,
-* **Eligible guarantees or credit derivatives**,
+In SA, CRM is often implemented by:
 
-then:
+* Splitting the exposure into **secured** and **unsecured** portions, or
+* Using a **substitution approach**, where the risk weight of the guarantor/collateral provider is applied to the protected portion.
 
-* Adjust EAD and/or **substitute risk weight** of the guarantor/collateral (detailed in **Module 7**).
-* In SA, CRM is usually handled by:
-
-  * Splitting the exposure into **secured** and **unsecured** parts, or
-  * Substituting risk weight to that of the **protection provider** (for guarantees).
-
-Basel’s CRE20 and CRM sections give the exact rules. ([SIF][2])
+Full CRM rules are in CRE22 and are elaborated in Module 7.
 
 ### Step 5 – Assign risk weight
 
 Using:
 
-* Exposure class (sovereign/bank/corp/retail/real estate/etc.),
-* Rating (if used),
-* Product characteristics (e.g. LTV for mortgages under Basel 3.1),
+* Exposure class
+* Rating (where applicable)
+* Attributes such as LTV (real estate under Basel 3.1), product type, etc.
 
-look up the **risk weight** from the relevant SA table.
+look up the **regulatory risk weight** from the SA tables.
 
 Conceptually:
 
 $$
-\\text{RW}_j = f(\\text{Class}_j , \\text{Rating}_j , \\text{LTV}_j , \\text{Other attributes})
+\\text{RW}_j = f\\bigl(\\text{Exposure Class}_j,\\ \\text{Rating}_j,\\ \\text{LTV}_j,\\ \\text{Other attributes}\\bigr)
 $$
 
-Basel 3.1 reforms **revised these functions** to make them more risk-sensitive (e.g. more LTV buckets, new SCRA for banks). ([Wikipedia][10])
+Basel 3.1 revisions make this function **more granular and risk-sensitive**, especially for real estate and some corporate/retail segments.
 
 ### Step 6 – Compute RWA for each exposure
 
-For each exposure j:
+For each exposure (j):
 
 $$
 \\text{RWA}_j = \\text{EAD}_j \\times \\text{RW}_j
 $$
 
-(Where RW is a decimal; e.g. 100% → 1.0, 50% → 0.5, etc.)
+(where RW is expressed as a decimal; e.g. 100% → 1.0, 50% → 0.5).
 
-### Step 7 – Aggregate
+### Step 7 – Aggregate RWA and capital requirement
 
-Sum across exposures:
+Aggregate across exposures:
 
 $$
 \\text{RWA}_{\\text{credit}} = \\sum_j \\text{RWA}_j
 $$
 
-Then:
+Combine with market and operational risk:
 
 $$
-\\text{Total RWA} = \\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}}
+\\text{Total RWA}
+= \\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}}
 $$
 
-Capital requirement for credit risk:
-
-$$
-K_{\\text{credit}} = 0.08 \\times \\text{RWA}_{\\text{credit}}
-$$
-
-Total minimum capital (template):
+Basel template minimum capital requirement:
 
 $$
 K_{\\text{total}} = 0.08 \\times \\text{Total RWA}
 $$
 
-(before adding buffers and jurisdictional overlays). ([European Central Bank][4])
+before adding capital buffers and national overlays.
 
 ---
 
-## 4.7 SA under Basel 3.1 (Endgame) – high-level enhancements
+## 4.7 SA under Basel 3.1 (“Endgame”) – high-level enhancements
 
-Basel 3.1 significantly **updates** the Standardised Approach for credit risk (SA-CR), not just tweaks it. The main themes: ([Wikipedia][10])
+The **Basel III: Finalising post-crisis reforms** package significantly revises the Standardised Approach for credit risk (SA-CR).
 
-1. **More risk sensitivity**
+Key themes:
 
-   * For **real estate**, risk weights now depend on **loan-to-value (LTV)** ratios and property type.
-   * For **corporates**, exposures are split into **general corporates** and **specialised lending**, with different treatments. ([New Link Consulting][11])
-   * Some retail segments and specialised products get more granularity.
+1. **Greater risk sensitivity**
 
-2. **Standardised Credit Risk Assessment Approach (SCRA)** for banks
+   * Real estate exposures (both residential and commercial) are now strongly driven by **LTV** and property type, with multiple risk-weight buckets.
+   * Corporate exposures are split into **general corporates**, **specialised lending**, etc., with tailored treatments.
+   * Some retail exposures receive more granularity.
 
-   * For **unrated bank exposures**, Basel 3.1 introduces SCRA categories (A/B/C) with associated risk weights.
+2. **SCRA for bank exposures**
 
-3. **Stronger due diligence expectations**
+   * For **unrated banks**, Basel 3.1 introduces **SCRA** categories (A/B/C) with different risk weights, based on the bank’s prudential and financial characteristics.
 
-   * Banks must **not rely mechanically on ratings**; they must perform their own **credit risk assessment**.
-   * If internal assessment and rating diverge materially, risk weight may need to be higher.
+3. **Stronger due diligence requirements**
 
-4. **Consistency with output floor**
+   * Banks must perform **their own credit analysis** and must not rely **mechanically** on external ratings.
+   * Where internal analysis indicates higher risk than implied by the rating, the framework expects appropriate action (including potentially more conservative risk weights).
 
-   * Revised SA-CR forms the **basis for the 72.5% output floor**, constraining how low IRB RWAs can go relative to SA RWAs.
+4. **Alignment with the output floor**
 
-For your web app / interview, you don’t need every table, but you should be ready to say:
+   * Revised SA-CR forms the reference for the **72.5% output floor**: total RWA from internal models cannot go below 72.5% of RWA computed under SA once the floor is fully phased in.
 
-> “Basel 3.1 makes SA-CR more risk-sensitive via LTV-based real estate risk weights, SCRA for unrated banks, and more granular corporate/retail treatment, and uses SA-CR as the reference for the 72.5% output floor.” ([Wikipedia][10])
+In summary, Basel 3.1 turns SA into a **more risk-sensitive and central** part of the framework, not just a fallback to IRB.
 
 ---
 
 ## 4.8 Implementation view – what an SA credit risk engine needs
 
-An industrial RWA engine for SA credit risk needs at least:
+A practical SA credit risk engine (for regulatory reporting or internal monitoring) typically needs:
 
 1. **Core data model**
 
-   * Counterparty master (type, sector, rating references).
-   * Facility/exposure master:
-
-     * Product type (loan, bond, guarantee, LC, etc.).
-     * On-balance vs off-balance.
-     * Currency, maturity, interest structure (for some jurisdictions).
-   * Collateral and guarantee data (type, market value, haircuts, guarantor details).
-   * External ratings:
-
-     * ECAI name, rating, type (issue/issuer), validity dates.
+   * **Counterparty master**: legal entity, sector, sovereign, regulatory classification.
+   * **Facility / exposure master**: product type, drawn/undrawn amounts, currency, maturity, interest type.
+   * **Collateral and guarantee data**: type, market value, currency, haircuts, guarantor.
+   * **Rating data**: ECAI, rating grade, rating type (issue/issuer), effective dates.
 
 2. **Classification logic**
 
-   * Rules to assign each exposure to a **Basel exposure class** and sub-class.
-   * Logic for **regulatory retail criteria**, SME definitions, etc. (global, India-specific later in Module 5).
+   * Rules to assign exposures to **Basel exposure classes and sub-classes** (sovereign, bank, corporate, retail, residential/commercial real estate, etc.).
+   * Implementation of **regulatory retail criteria**, SME definitions and any local variants.
 
-3. **Rating & due diligence module**
+3. **Rating and mapping module**
 
-   * Mapping of each rating scale → CQS → risk weight.
-   * Rules for multiple ratings, issue vs issuer, etc.
-   * Flags and controls for **due diligence overrides** (when internal assessment suggests higher risk).
+   * Mapping tables from each ECAI’s scale to **CQS** and then to **risk weights** by exposure class.
+   * Rules for multiple ratings, use of issue vs issuer ratings.
+   * Flags for **due diligence overrides** where internal analysis suggests more conservative treatment.
 
-4. **CCF & EAD engine**
+4. **CCF and EAD engine**
 
-   * CCF mapping by product type and commitment type (unconditionally cancellable vs not, etc.).
-   * EAD calculation net of specific provisions / write-offs.
+   * Mapping of product types and commitment types to **CCFs** in line with Basel and local rules.
+   * EAD calculation explicitly **net of specific provisions** and write-offs.
 
 5. **CRM engine**
 
-   * Collateral recognition logic (eligible/ineligible).
-   * Haircut application and exposure splitting.
-   * Guarantee treatment using substitution (exposure partly or fully mapped to guarantor’s risk weight).
+   * Eligibility checks on collateral and guarantees.
+   * Haircut application for collateral and exposure splitting into secured/unsecured parts.
+   * Substitution logic for guarantees and credit derivatives (mapping to guarantor’s risk weight).
 
-6. **Aggregation & reporting**
+6. **Aggregation and reporting**
 
-   * RWA by exposure class, rating grade, business line, region, etc.
-   * Movement analysis (period-on-period changes in RWA: volume vs mix vs CRM vs methodology).
+   * Aggregation of EAD and RWA by exposure class, rating grade, product type, business unit, region, etc.
+   * Movement analysis: decomposing RWA changes into volume, mix, rating changes, CRM, methodology changes.
+   * Regulatory templates (credit-risk SA returns, Pillar 3 tables).
 
-This is exactly the “data & calculation flow” we expand in **Module 9**, but already here you can see how SA is very **implementable** in a web app / portfolio project.
-
----
-
-## 4.9 Bulb section – practical tips & pitfalls (SA credit risk)
-
-💡 **Bulb 1 – Exposure class is everything**
-Two loans with the **same counterparty** may fall into **different exposure classes** (e.g. corporate loan vs retail SME, depending on criteria). This can **drastically change risk weights**. Implementation must have robust classification rules based on Basel CRE20. ([Bank for International Settlements][1])
+This engine-level view connects directly with Module 9’s more detailed **data and calculation flow**.
 
 ---
 
-💡 **Bulb 2 – Ratings are a tool, not an excuse**
-Basel 3.1 explicitly warns against **mechanistic reliance** on ratings. Banks must do their own **due diligence**, and if internal analysis suggests higher risk than the rating implies, they are expected to apply **higher** risk weights or take other measures. ([Bank for International Settlements][9])
+## 4.9 Key points and practical notes (SA credit risk)
 
-This is a good point to mention in interviews when they ask: “What is the role of ratings in SA?”
+1. **Exposure class drives everything**
 
----
+   * Two exposures to the same counterparty can have different **exposure classes** (e.g. one corporate facility vs another qualifying as regulatory retail), and therefore **very different risk weights**. CRE20’s classification rules must be implemented carefully.
 
-💡 **Bulb 3 – EAD is net of specific provisions**
-A common misunderstanding is to use **gross exposure** for RWA. Basel is clear: exposures are risk-weighted **net of specific provisions and write-offs**. ([SIF][2])
+2. **Exposures are net of specific provisions**
 
-In a build, you’d explicitly subtract specific provisions from gross exposure before applying risk weight.
+   * Under SA, exposures are risk-weighted **net of specific provisions and partial write-offs**, not gross accounting balances. This has a direct effect on RWA and must be handled systematically in the EAD calculation.
 
----
+3. **Ratings are an input, not a substitute for due diligence**
 
-💡 **Bulb 4 – Unrated corporates ≠ zero information**
-In many banking books (especially in emerging markets), most corporates are **unrated**. Under SA, they often sit in a **standard 100% (or similar) bucket**. But in an interview / real role you can say:
+   * Basel 3.1 emphasises that banks must perform their own **credit assessment**; reliance on external ratings must not be purely mechanical. Where internal analysis points to higher risk, more conservative treatment is expected.
 
-> “Unrated corporates get the default SA risk weight, but the bank should still internally distinguish risk within that bucket for pricing, limits, and provisioning – SA is just the regulatory minimum.”
+4. **Unrated corporates and banks remain central in practice**
 
----
+   * Many corporates (especially in emerging markets) are unrated; SA assigns them standard risk weights, but internally banks still differentiate risk for pricing and internal limits.
+   * For unrated banks, SCRA under Basel 3.1 introduces a more granular, risk-sensitive framework.
 
-💡 **Bulb 5 – Basel 3.1 makes real estate very LTV-centric**
-Regulators and investors are watching **real estate** exposures closely. Under Basel 3.1:
+5. **Real estate exposures are now very LTV-centric**
 
-* Real estate risk weights now depend strongly on **LTV and property type**.
-* Implementation requires **good collateral valuation data** and frequent updates. ([KPMG Assets][6])
-
-This is a strong talking point for product / implementation roles.
+   * Under Basel 3.1, the treatment of real estate is a key area of focus: risk weights depend heavily on **LTV** and property type, so accurate collateral data and valuation processes become critical for both RWA and capital planning.
 
 ---
 
+### Reference links for Module 4
 
+[1]: https://www.bis.org/basel_framework/chapter/CRE/20.htm – **CRE20 – Standardised approach: individual exposures** (official Basel framework chapter)
 
-[1]: https://www.bis.org/basel_framework/chapter/CRE/20.htm?utm_source=chatgpt.com "CRE20 - Standardised approach: individual exposures"
-[2]: https://www.sif.admin.ch/dam/de/sd-web/GmUQnVy5H4eY/cre20.pdf?utm_source=chatgpt.com "CRE20 Standardised approach: individual exposures"
-[3]: https://assets.kpmg.com/content/dam/kpmgsites/in/pdf/2025/10/basel-III-standardised-approach-credit-and-operational-risk.pdf.coredownload.inline.pdf?utm_source=chatgpt.com "Basel III Standardised Approach – Credit and Operational risk"
-[4]: https://www.ecb.europa.eu/pub/pdf/scpwps/ecbwp517.pdf?utm_source=chatgpt.com "Credit ratings and the standardised approach to credit risk in ..."
-[5]: https://gestionderiesgo.org/wp-content/uploads/2021/03/BaselFramework.pdf?utm_source=chatgpt.com "Basel Committee on Banking Supervision The Basel Framework"
-[6]: https://assets.kpmg.com/content/dam/kpmg/cn/pdf/en/2021/02/basel-iv-credit-risk-standardised-approach.pdf?utm_source=chatgpt.com "BASEL IV Credit Risk Standardised Approach (SA)"
-[7]: https://www.bankofengland.co.uk/prudential-regulation/publication/2022/november/implementation-of-the-basel-3-1-standards/credit-risk-standardised-approach?utm_source=chatgpt.com "Chapter 3 – Credit risk – standardised approach"
-[8]: https://www.iibf.org.in/documents/BASEL-III.pdf?utm_source=chatgpt.com "Basel III Capital Regulations"
-[9]: https://www.bis.org/basel_framework/chapter/CRE/21.htm?utm_source=chatgpt.com "CRE21 - Standardised approach: use of external ratings"
-[10]: https://en.wikipedia.org/wiki/Basel_III%3A_Finalising_post-crisis_reforms?utm_source=chatgpt.com "Basel III: Finalising post-crisis reforms"
-[11]: https://new-linkconsulting.com/wp-content/uploads/2023/11/The-Road-to-Basel-IV-Wholesale-Credit-Risk.pdf?utm_source=chatgpt.com "The Road to Basel IV: Wholesale Credit Risk"
-`
+[2]: https://www.sif.admin.ch/dam/de/sd-web/GmUQnVy5H4eY/cre20.pdf – PDF reproduction of CRE20 showing exposure values net of specific provisions and partial write-offs
+
+[3]: https://www.bis.org/publ/bcbs128.pdf – *International Convergence of Capital Measurement and Capital Standards – A Revised Framework (Basel II)* (includes original SA and CCF principles)
+
+[4]: https://www.ecb.europa.eu/pub/pdf/scpwps/ecbwp517.pdf – ECB Working Paper on credit ratings and the standardised approach to credit risk
+
+[5]: https://www.bis.org/bcbs/publ/d424.pdf – *Basel III: Finalising post-crisis reforms* (Basel 3.1 / Endgame) – revised SA-CR and output floor
+
+[6]: https://www.bankofengland.co.uk/prudential-regulation/publication/2022/november/implementation-of-the-basel-3-1-standards/credit-risk-standardised-approach – Bank of England PRA CP on implementing Basel 3.1 SA-CR (real estate, SCRA, etc.)
+
+[7]: https://www.bis.org/basel_framework/chapter/CRE/21.htm – **CRE21 – Standardised approach: use of external ratings**
+
+[8]: https://www.bis.org/basel_framework/chapter/CRE/22.htm – **CRE22 – Standardised approach: credit risk mitigation**
+
+[9]: https://www.eba.europa.eu/sites/default/files/document_library/881123/Policy%20Advice%20on%20Basel%20III%20reforms%20-Credit%20Risk.pdf – EBA Policy Advice on Basel III reforms: credit risk (due diligence, ratings, CCFs, SCRA)
+
+[10]: https://en.wikipedia.org/wiki/Basel_III:_Finalising_post-crisis_reforms – High-level summary of Basel 3.1 reforms (including SA-CR changes and the output floor)
+
+[11]: https://assets.kpmg.com/content/dam/kpmg/cn/pdf/en/2021/02/basel-iv-credit-risk-standardised-approach.pdf – KPMG technical note on revised SA-CR under “Basel IV” (LTV-based real estate, SCRA, corporate segmentation)`
             }
           ]
         }
@@ -1910,40 +1935,48 @@ This is a strong talking point for product / implementation roles.
               type: 'markdown',
               content: `## 5.1 Where the SA rules live in Indian regulation
 
-In India, the Standardised Approach for credit risk is implemented through **RBI Basel II / Basel III master circulars**, now consolidated under updated Basel III capital regulations.
+In India, the Standardised Approach (SA) for credit risk is embedded in **RBI’s Basel II / Basel III capital regulations**, and kept up to date through revised Master Circulars / Master Directions on **Basel III Capital Regulations**.
 
-Key regulatory anchors:
+Key anchors:
 
-* **Basel III Capital Regulations – Master Circular**
-  – Originally issued July 1, 2013: “Master Circular – Basel III Capital Regulations”.
-  – Part A, Section 5 = **“Capital charge for credit risk”**, with detailed sub-sections:
+* **Master Circular – Basel III Capital Regulations**
 
-  * 5.2 Claims on domestic sovereigns
-  * 5.3 Claims on foreign sovereigns
-  * 5.4 Public sector entities
-  * 5.5 MDBs/BIS/IMF
-  * 5.6 Banks
-  * 5.7 Primary dealers
-  * 5.8 Corporates / AFCs / NBFC-IFCs
-  * 5.9 Regulatory retail
-  * 5.10 Claims secured by residential property
-  * 5.11 Commercial real estate
-  * 5.12 NPAs
-  * 5.13 Specified categories, etc. ([Reserve Bank of India][1])
+  * Initial Basel III circular for banks issued July 1, 2013 (No. DBOD.BP.BC.2/21.06.201/2013-14).
+  * Subsequent consolidated versions (e.g. July 1, 2014; and updated Master Circular / Master Direction dated April 1, 2025) keep the same *structure* but update details.
+  * **Section 5 (“Capital charge for credit risk”)** holds the SA rules, including sub-sections for:
 
-* RBI decided that **all commercial banks in India** (except LABs & RRBs) must adopt:
-  – **Standardised Approach (SA)** for credit risk,
-  – **Basic Indicator Approach (BIA)** for operational risk,
-  – Standardised Duration Approach for market risk, at least to start with. ([Reserve Bank of India][1])
+    * 5.2 Claims on domestic sovereigns
+    * 5.3 Claims on foreign sovereigns
+    * 5.4 Public sector entities (PSEs)
+    * 5.5 MDBs/BIS/IMF
+    * 5.6 Banks
+    * 5.7 Primary dealers
+    * 5.8 Corporates / AFCs / NBFC-IFCs
+    * 5.9 Regulatory retail
+    * 5.10 Claims secured by residential property
+    * 5.11 Commercial real estate / CRE–RH
+    * 5.12 NPAs
+    * 5.13 Other specified categories
 
-* Basel III has since been updated (e.g. Master Circular dated **1 April 2025** for Basel III capital regulations) but the *structure* of SA – exposure classes + risk-weight tables – is the same. ([PDICAI][2])
+* **Approach mandated for Indian banks**
+  Under the Basel II “New Capital Adequacy Framework (NCAF)” and carried into Basel III, RBI decided that **all commercial banks in India (excluding Local Area Banks and Regional Rural Banks)** must adopt:
 
-> 💡 **Implementation tip (for your app):**
-> In your code/data model, treat the RBI Basel III master circular as the **“parameter file”** for India:
->
-> * A table per exposure class (sovereign, banks, corporates, regulatory retail, housing, CRE, NPAs, etc.).
-> * Each table has **rating bucket / LTV / product-type → risk weight**.
-> * SA math remains: \`RWA_i = EAD_i × RW_i\` – only the **jurisdictional parameters** (risk weights, thresholds) are Indian.
+  * **Standardised Approach (SA)** for credit risk,
+  * **Basic Indicator Approach (BIA)** for operational risk,
+  * **Standardised Duration Approach (SDA)** for market risk (at least initially).
+
+So, conceptually:
+
+> **Basel global template → RBI Basel III Master Circular → SA parameter tables for India.**
+
+Mathematically the logic is unchanged from Module 4:
+
+$$
+\\text{RWA}_i = \\text{EAD}_i \\times \\text{RW}_i,\\quad
+\\text{Total RWA}_{\\text{credit}} = \\sum_i \\text{RWA}_i
+$$
+
+The “India flavour” lies in **how exposures are classified** and **which risk-weight percentages** apply in RBI’s tables.
 
 ---
 
@@ -1951,376 +1984,452 @@ Key regulatory anchors:
 
 ### 5.2.1 RBI-approved ECAIs
 
-Under SA, risk weights depend heavily on **external ratings**. In India, RBI specifies which credit rating agencies are eligible as **External Credit Assessment Institutions (ECAIs)**.
+Risk weights under SA depend heavily on **external ratings**. In India, RBI explicitly specifies which **domestic credit rating agencies** are recognised as **External Credit Assessment Institutions (ECAIs)** for Basel III capital purposes.
 
-RBI / IIBF material lists domestic ECAIs whose ratings may be used for risk-weighting: 
+* A January 9, 2023 RBI circular on “Basel III Capital Regulations – Eligible Credit Rating Agencies” lists six domestic CRAs that banks may use (in alphabetical order):
 
-Common domestic ECAIs include (RBI-accredited list – names may be slightly updated over time):
+  * Acuite Ratings & Research Limited (Acuite)
+  * CARE Ratings Limited (CARE)
+  * CRISIL Ratings Limited (CRISIL)
+  * ICRA Limited (ICRA)
+  * India Ratings and Research Pvt. Ltd. (India Ratings)
+  * Infomerics Valuation and Rating Pvt. Ltd. (INFOMERICS)
 
-* CRISIL Ratings Limited
-* ICRA Limited
-* CARE Ratings Limited
-* India Ratings & Research Pvt Ltd
-* Brickwork Ratings India Pvt Ltd
-* Acuite (formerly SMERA)
-* Infomerics, etc. 
+* RBI has subsequently allowed / clarified the use of **Brickwork Ratings India Pvt. Ltd.** again for Basel III purposes (earlier its use was temporarily restricted).
 
-RBI’s 9 June 2025 circular on ECAIs confirms that the list of **domestic credit rating agencies accredited for risk-weighting** is given in the latest Basel III capital Master Circular. 
+* RBI’s **June 9, 2025** and **July 10, 2025** circulars further refine the ECAI framework (e.g. allowing CareEdge Global IFSC ratings for IFSC exposures); these circulars reference the current Basel III Master Circular paragraph on ECAIs.
+
+**Practical view:**
+
+* The **official list of usable ECAIs can change**, so the engine should **not hard-code** a CRA list; instead it should:
+
+  * Maintain a **parameter table** of “RBI-approved ECAIs” pulled from the latest circular.
+  * Map each ECAI’s rating scale to a **regulatory rating grade / credit quality step (CQS)**, then to the RBI risk-weight table for each exposure class.
 
 ### 5.2.2 How ratings are used in practice
 
-Key mechanics from RBI’s Basel III / NCAF guidance: ([Reserve Bank of India][1])
+Core mechanics (mirrors Basel CRE21 but implemented through RBI tables):
 
-* Banks must:
+* For rating-based classes (sovereigns, banks, corporates, certain securitisations), the bank must:
 
-  * Choose ECAIs from RBI’s approved list.
-  * **Map** rating symbols (AAA, AA+, AA, etc.) to RBI-prescribed risk-weight buckets.
-  * Use a given ECAI **consistently for each type of claim** (no rating shopping).
-* Both **long-term** and **short-term** ratings have mapping tables under SA.
-* Guidance on:
+  1. Use only **RBI-accredited ECAIs**.
+  2. Map **rating symbols** (e.g. CRISIL AA+, ICRA BBB−) to the RBI’s **rating buckets** and then to **risk weights**.
+  3. Apply **consistent use** of a given ECAI for a particular type of claim (no cherry-picking).
+  4. Follow RBI rules for:
 
-  * How to treat **unsolicited ratings**.
-  * How to handle **multiple ratings**.
-  * When an **issue rating** can be used for an issuer or other exposures.
+     * Long-term vs short-term ratings.
+     * Issue vs issuer ratings.
+     * Multiple ratings (typically take the more conservative of the relevant risk weights).
+     * Treatment of unsolicited ratings.
 
-> 💡 **Engine design tip:**
-> For each exposure, you need:
->
-> 1. \`rating_provider\` (CRISIL / ICRA / etc.)
-> 2. \`rating_symbol\` (e.g. CRISIL AA+, ICRA BBB−)
-> 3. A **jurisdictional mapping table**: \`{asset_class, rating_bucket} → risk_weight\`.
->    In the engine, you don’t care *who* the ECAI is, as long as your mapping has already normalized each rating into the RBI bucket.
+From an engine point of view, for each exposure you need at least:
+
+* \`ecaI_id\` (link to a parameter table: Acuite / CARE / CRISIL / etc.)
+* \`rating_symbol\` (e.g. “CRISIL AA+”)
+* \`asset_class\` (sovereign / bank / corporate / PSE / securitisation, etc.)
+
+Then:
+
+$$
+(\\text{asset class},\\ \\text{rating bucket}) \\longrightarrow \\text{risk weight}
+$$
+
+The heavy lifting (mapping each CRA’s scale into RBI buckets) sits in **parameter configuration**, not in the calculation engine.
 
 ---
 
 ## 5.3 Exposure classification nuances – India vs generic Basel
 
-The logic is still the SA pipeline from Module 4:
+The **pipeline** is the same as in Module 4:
 
-> **Exposure → Classify → Determine rating/LTV/category → Get risk weight from RBI table → RWA = EAD × RW.**
+> **Exposure → classify under RBI’s SA categories → apply rating / LTV / provisioning rules → pull risk weight from table → ( \\text{RWA} = \\text{EAD} \\times \\text{RW} ).**
 
-The “India flavour” is in *how* exposures are classified and what risk weights apply.
+The Indian twist is in **how** exposures are classified and **what risk weights** RBI assigns.
 
 ### 5.3.1 Sovereigns: domestic vs foreign
 
-RBI’s Basel III circular has separate sections for: **claims on domestic sovereigns** and **claims on foreign sovereigns**. ([Reserve Bank of India][1])
+RBI splits sovereign exposures into:
 
-Typical pattern (high-level, not every number):
+* **Claims on domestic sovereign (Government of India / RBI)**
+* **Claims on foreign sovereigns**
 
-* **Claims on Government of India / RBI**
+Typical patterns (high level):
 
-  * If denominated in INR and funded in INR, they normally get **0% risk weight** (like Basel template).
-* **Claims on state governments**
+* **GoI / RBI in INR, funded in INR**
 
-  * Often get favourable risk weights; details depend on RBI tables (usually 0% or 20% depending on type and guarantee).
+  * Generally **0% risk weight** (similar to Basel template).
+* **State governments**
+
+  * Often receive preferential risk weights as per RBI table (commonly 0% or 20%, depending on type and guarantee).
 * **Foreign sovereigns**
 
-  * Risk-weighted based on their external rating (Basel-style 0–150% range).
+  * Risk weights depend on **external rating** and follow Basel-style 0–150% buckets, with RBI’s national discretions.
 
-> 💡 **Practical takeaway:**
-> For Indian banks, a large chunk of **SLR securities & GoI bonds** sit at **0% RW** → they boost the denominator (total assets) but not RWA, and therefore help CRAR.
+**Capital insight:**
 
----
+A large stock of SLR-eligible Government securities at **0% RW**:
+
+* Increases **total assets** but **not** credit RWA.
+* Therefore **improves CRAR** (denominator is smaller than simple total assets).
 
 ### 5.3.2 Banks & primary dealers
 
-RBI has specific sub-sections for:
+RBI has separate sections for:
 
-* **Claims on banks**, and
-* **Claims on primary dealers (PDs)**. ([Reserve Bank of India][1])
+* **Claims on banks**
+* **Claims on primary dealers (PDs)**
 
-Pattern:
+Patterns (conceptual):
 
-* Risk weights are **rating-sensitive**, similar to Basel:
+* **Risk-weights depend on rating and sometimes residual maturity**:
 
-  * Better-rated banks → lower RW (e.g. 20% / 30% type buckets).
-  * Weaker or unrated banks → typically 50%–100%+.
-* For some short-term interbank exposures, there can be more favourable treatment (tenor & rating sensitive).
+  * Better-rated banks → lower RW (for example, around 20–50% in older tables).
+  * Weaker or unrated banks → higher RW (e.g. 50–100% or more).
+* Certain **short-term interbank exposures** may have more favourable treatment (tenor + rating-sensitive).
 
-> 💡 **Implementation tip:**
-> In many Indian RWA engines, the “counterparty type” dimension explicitly distinguishes:
-> \`Bank (scheduled commercial)\`, \`Foreign bank branch\`, \`Primary Dealer\`, \`NBFC\`, etc., because each is mapped to a different **SA rule section** and risk-weight table.
+Engine-wise, counterparty type needs to be granular (e.g. \`SCB\`, \`foreign bank branch\`, \`PD\`, \`NBFC\`) so that each is mapped to the correct RBI rule section.
 
----
-
-### 5.3.3 Corporates, NBFCs & SMEs vs regulatory retail
-
-Under RBI’s Basel III circular:
-
-* **Corporates / AFCs / NBFC-IFCs** are grouped in section 5.8 (“Claims on corporates, AFCs & NBFC-IFCs”). ([Reserve Bank of India][1])
-* **Regulatory retail** is section 5.9 – this is critical in India. ([Reserve Bank of India][1])
+### 5.3.3 Corporates, NBFCs, SMEs vs regulatory retail
 
 #### (a) Corporate exposures
 
-High-level pattern from RBI tables:
+RBI section 5.8 covers **claims on corporates, AFCs, NBFC-IFCs**, etc.
 
-* **Rated corporates**: RW varies by rating (roughly 20%, 50%, 100%, 150%).
-* **Unrated corporates**: default **100% RW**.
-* **Restructured standard corporates**: RBI explicitly prescribes **higher risk weight (e.g. 125%)** until satisfactory performance under revised terms for a set period. ([Reserve Bank of India][1])
+High-level patterns (simplified):
 
-Additionally, RBI clarifies that **claims on corporates** include *all* exposures that don’t fall into sovereign, bank, regulatory retail, residential mortgage, NPAs, or other specified categories. ([Reserve Bank of India][1])
+* **Rated corporates**
+
+  * RW varies with rating (e.g. 20%, 50%, 75–100%, 150% buckets depending on grade and current tables).
+* **Unrated corporates**
+
+  * Default RW of **100%** under both Basel II NCAF and Basel III Master Circular.
+* **Restructured standard corporate exposures**
+
+  * RBI requires a **higher RW (125%)** until “satisfactory performance” is observed for at least one year under the revised repayment schedule.
+
+If an exposure does not meet conditions for sovereign/bank/regulatory retail/mortgage/CRE etc., it usually falls into the **corporate bucket** by default.
 
 #### (b) Regulatory retail – Indian definition
 
-RBI gives a *very detailed definition* of what qualifies as **regulatory retail portfolio**. If all criteria are met, qualifying exposures get a **75% risk weight** (vs 100% for corporates). ([Reserve Bank of India][1])
+RBI gives a detailed **regulatory retail** definition. Under earlier NCAF guidelines, exposures meeting all conditions could be risk-weighted at **75%** instead of 100%.
 
-To be in **regulatory retail**, an exposure must satisfy 4 criteria:
+The four key tests (original framework):
 
-1. **Orientation** – exposure to an individual or small business
+1. **Orientation** – exposure to individuals or small businesses.
+2. **Product** – suitable retail products (term loans, working capital to small businesses, revolving credit, etc.).
+3. **Granularity** – portfolio must be well-diversified (no single counterparty dominates).
+4. **Low value of individual exposure** – total exposure to one counterparty limited (originally **₹5 crore** including off-balance sheet; exposures above this failed retail treatment).
 
-   * Small business = average annual turnover < ₹50 crore (3-year average / projections). ([Reserve Bank of India][1])
+RBI later **raised the per-borrower threshold from ₹5 crore to ₹7.5 crore** while keeping the 75% RW for qualifying retail portfolio, as part of measures to support credit flow (press release October 9, 2020).
 
-2. **Product** – allowed retail products (term loans, small business facilities, revolving credits, etc.). ([Reserve Bank of India][1])
+So conceptually today:
 
-3. **Granularity** – portfolio must be well diversified.
+* **If ALL of the following hold**:
 
-   * No **aggregate exposure** to one counterparty > 0.2% of the overall regulatory retail portfolio. ([Reserve Bank of India][1])
+  * Orientation = individual / small business,
+  * Product = qualifying retail product,
+  * Portfolio = granular (no single obligor overly large),
+  * Total exposure per obligor ≤ current RBI threshold (now ₹7.5 crore),
+* → the exposure can be classified as **regulatory retail** and get the **preferential 75% RW** (subject to any updated Basel III tables).
 
-4. **Low value of individual exposures** – **total exposure to one counterparty ≤ ₹5 crore** (sanctioned limit or outstanding, whichever is higher, including off-balance sheet). ([Reserve Bank of India][1])
+**Important exclusions** (even if borrower is an individual):
 
-Important exclusions: even if the borrower is a retail customer, some products **cannot** be in regulatory retail (and hence don’t get the 75% RW), for example: ([Reserve Bank of India][1])
+* Exposures that fall under **residential mortgage** or **CRE / CRE–RH** categories.
+* Certain high-risk segments (capital markets, venture capital, etc.).
 
-* Mortgage loans that qualify as **residential mortgage** (those go to the housing bucket).
-* **Consumer credit**, personal loans, credit cards.
-* Capital market exposures, venture capital, etc.
+**Industry angle:**
 
-> 💡 **Industry practice:**
-> A lot of Indian banks aggressively structure SME / small-business exposures to qualify for **regulatory retail** (if they meet 5 crore threshold + granularity) → this drops RW from 100% to 75%. A good RWA engine needs a **clean “retail eligibility” module** that checks all four conditions mechanically.
-
----
+A lot of SME / small business lending is actively structured to **qualify for regulatory retail** (turnover, ticket size, granularity), because dropping RW from 100% to 75% materially reduces required capital.
 
 ### 5.3.4 Housing loans & Indian LTV-based risk weights
 
-RBI gives a dedicated section for **claims secured by residential property** and links risk weights to **LTV** and **loan size** (Table 7A in the Basel III circular). ([Reserve Bank of India][1])
+RBI has a dedicated section for **claims secured by residential property** in the Basel III Master Circular, and more detailed parameters in the **Master Circular on Housing Finance** (most recently updated April 3, 2023).
 
-Current (Basel III 2013 circular, still referenced in later housing finance master circulars):
+Key ideas:
 
-> **Table 7A – Claims secured by residential property – individual housing loans**
-> (simplified summary) ([Reserve Bank of India][1])
+* **Risk weights depend on**:
 
-* Up to ₹20 lakh, LTV ≤ 90% → **50% RW**
-* ₹20–75 lakh, LTV ≤ 80% → **50% RW**
-* > ₹75 lakh, LTV ≤ 75% → **75% RW**
-* CRE–RH → 75% RW
-* CRE → 100% RW
+  * **Loan size** (₹ bands), and
+  * **Loan-to-Value (LTV)** bucket.
 
-RBI also prescribes **LTV caps** (e.g. 90% for small loans up to ₹20 lakh, 80% for mid-sized, 75% for high-value loans). ([Reserve Bank of India][3])
+* Original Basel III (2013) table for individual housing loans (Table 7A) used 50% and 75% risk weights:
 
-**Important nuances:**
+  * Up to ₹20 lakh, LTV ≤ 90% → 50% RW
+  * > ₹20–75 lakh, LTV ≤ 80% → 50% RW
+  * > ₹75 lakh, LTV ≤ 75% → 75% RW
+  * CRE–RH → 75% RW
 
-* **Third and subsequent dwelling unit to the same individual** is treated as **CRE** exposure (not residential mortgage) → 100% RW. ([Reserve Bank of India][1])
-* **Restructured housing loans** carry **an additional 25 percentage points** on the usual risk weight. ([Reserve Bank of India][1])
-* Some temporary relaxations (e.g., in 2020 RBI allowed lower risk weights 35%/50% linked to LTV) have been used as macro-prudential support. ([Reserve Bank of India][4])
+* Subsequently, RBI **reduced risk weights** on well-collateralised residential mortgages (e.g. loans up to ₹30 lakh with lower LTVs can attract **35%** RW) through circulars in 2013–2020, consolidated in the 2023 Housing Finance Master Circular.
 
-> 💡 **Formula detail – LTV (RBI definition):**
-> $$
-> \\text{LTV} = \\frac{\\text{Total outstanding in the account}}{\\text{Realisable value of the residential property}}
-> $$
-> where “total outstanding” = principal + accrued interest + other charges, *without netting off* any provisions. ([Reserve Bank of India][1])
+**Working LTV definition (RBI)**:
 
-> 💡 **Engine design tip:**
-> For housing loans, the RWA logic becomes **piecewise**:
->
-> 1. Determine **if exposure qualifies** as “individual housing loan fully secured by residential property” (not CRE / CRE-RH / intermediary lending).
-> 2. Compute **LTV** using RBI’s exact definition.
-> 3. Use \`(loan_amount_bucket, LTV_bucket)\` to pull the risk weight from Table 7A.
-> 4. For restructured loans, add **25 percentage points** to the risk weight.
+$$
+\\text{LTV} = \\frac{\\text{Total outstanding in the account}}{\\text{Realisable value of the residential property}}
+$$
 
----
+where “total outstanding” includes principal, accrued interest, and other charges **without deducting provisions**.
+
+Important nuances from RBI guidance:
+
+* RBI prescribes **maximum LTV caps** (e.g. 90% for small loans, 80% for mid-sized, 75% for high-value), and risk weights are linked to whether the loan respects those caps.
+* **Third (and subsequent) dwelling unit** exposures are generally treated as **CRE**, not residential mortgage.
+* **Restructured housing loans** attract higher risk weights (e.g. add 25 percentage points over the applicable RW).
+
+Engine logic becomes **piecewise**:
+
+1. Check product qualifies as **individual housing loan fully secured by residential house / flat** (not CRE / CRE–RH / land-only).
+2. Compute LTV using RBI formula and validate against **LTV cap**.
+3. Use \`(loan_amount_bucket, LTV_bucket)\` to look up the risk weight in the **current** RBI table.
+4. Apply any **add-ons** (e.g. +25 p.p. for restructured loans).
+
+Because these tables have been revised, a robust implementation should **parameterise the table** and **version-control** it (2013 vs 2020 vs 2023 vs future Basel 3.1 alignment).
 
 ### 5.3.5 Commercial Real Estate (CRE) vs CRE–RH
 
-RBI separates:
+RBI distinguishes:
 
-* Standard **CRE** exposures (commercial real estate), and
-* **CRE–RH (Commercial Real Estate – Residential Housing)** – a sub-category introduced with its own RW of **75%**. ([CloudFront][5])
+* **CRE** – commercial real estate (income-producing property; repayment depends primarily on rents/sales from the property).
+* **CRE–RH (Commercial Real Estate – Residential Housing)** – loans to builders/developers for **residential** housing projects (for sale, not for captive use).
 
 Key points:
 
-* **CRE** normally gets **100% RW**.
-* **CRE–RH** (e.g., residential projects for sale) gets **75% RW**, reflecting somewhat lower risk vs pure commercial real estate.
+* **CRE** → typically **100% RW**.
+* **CRE–RH** → **75% RW** as a distinct, somewhat lower-risk sub-sector.
+* Loans for **third dwelling unit onwards** to an individual are also treated as **CRE** exposures.
 
-Proper classification of a project as **CRE vs CRE–RH vs plain residential mortgage** is a *huge* driver of capital.
-
----
+Correct classification between **retail mortgage vs CRE–RH vs CRE** has a **big impact on RWA**, so engines need explicit rules and flags.
 
 ### 5.3.6 Non-performing assets (NPAs)
 
-RBI’s Basel III circular has a dedicated section on **NPAs**. Key concept: risk weights depend on **how much specific provision** the bank has made. ([Reserve Bank of India][1])
+RBI’s Basel III capital regulations include a dedicated treatment for **NPAs** (non-performing advances), especially the **unsecured portion**.
 
-For **unsecured portion** of NPAs (excluding qualifying residential mortgages):
+For **unsecured NPAs (excluding certain residential mortgages)**, Basel II / RBI rules prescribe **higher risk weights** based on **specific provision coverage**:
 
-* Specific provisions < 20% → **150% RW**
+* Specific provisions < 20% of the outstanding → **150% RW**
 * Specific provisions ≥ 20% and < 50% → **100% RW**
 * Specific provisions ≥ 50% → **50% RW**
 
-For NPA home loans secured by residential property, RBI sets slightly different but conceptually similar rules (e.g. at least 100% RW, potentially lower when provision coverage is high). ([IIBF][6])
+For NPA housing loans secured by residential property, similar concepts apply but with slightly different minimum RWs (e.g. 100% with possible reduction when provision coverage is high, subject to RBI rules).
 
-> 💡 **Conceptual link to provisioning:**
->
-> * **Higher provisions** (more loss already recognised) → **lower RW** on the remaining net exposure.
-> * Capital is then focused on the **unprovided**, still-risky portion of the NPA.
+**Conceptual link:**
+
+* As **specific provisions increase**, capital is focused on the **unprovided** portion.
+* Risk weight on the remaining net exposure can **reduce** as more loss is already recognised through provisions.
 
 ---
 
 ## 5.4 How SA is actually applied in India – end-to-end flow
 
-You already know the global SA pipeline from Module 4. Here’s the same pipeline with **RBI-specific decisions** plugged in.
+This is simply the global SA pipeline (Module 4) with **RBI rulebook plugged in**.
 
 ### Step 1 – Classify exposure under RBI categories
 
-For each facility (loan, LC, BG, derivatives, etc.) the engine determines:
+For each facility (loan, LC, BG, derivative, etc.), the engine determines:
 
 1. **Counterparty type**
 
    * Govt of India / RBI / state govt
    * Bank / Primary Dealer
    * Corporate / NBFC / AFC / NBFC-IFC
-   * Retail individual / small business
-   * HFC, NBFC, etc. (if relevant to bank’s books)
+   * Individual / small business (potential regulatory retail)
+   * Others (HFCs, etc., where relevant)
 
-2. **Product / collateral / purpose**
+2. **Product / security / purpose flags**
 
-   * Is it a **residential mortgage**?
-   * Is it **CRE** or **CRE–RH**?
-   * Is it a **consumer loan / credit card** (excluded from regulatory retail)?
-   * Is it an NPA?
+   * Residential mortgage?
+   * CRE vs CRE–RH?
+   * Consumer credit / credit card?
+   * NPA / restructured?
 
 3. **Portfolio designation**
 
-   * Does it meet **regulatory retail** criteria (orientation + product + granularity + 5 crore limit)? ([Reserve Bank of India][1])
+   * Does exposure meet **regulatory retail** conditions (orientation + product + granularity + updated exposure limit)?
+
+Correct mapping here determines **which paragraph/table** of the RBI circular applies.
 
 ### Step 2 – Determine EAD
 
-* **On-balance sheet**:
+As per RBI + Basel:
+
+* **On-balance sheet items**
+
   $$
-  \\text{EAD} = \\text{Book value of exposure (net of specific provisions where RBI allows)}
+  \\text{EAD} = \\text{Book value of exposure} - \\text{specific provisions} - \\text{partial write-offs (if netted for RWA)}
   $$
-* **Off-balance sheet**:
+
+  (Local detail can vary slightly; some reporting formats use gross exposure with provisions reported separately, but the conceptual RWA is on net exposure).
+
+* **Off-balance sheet items**
+
   $$
   \\text{EAD} = \\text{Notional} \\times \\text{CCF}
   $$
-  (The specific CCFs are given in RBI’s off-balance sheet item tables and we’ll deep-dive in Module 6.)
 
-### Step 3 – Pick the risk weight
+  CCFs come from RBI’s SA off-balance sheet tables (unconditionally cancellable commitments vs other commitments, guarantees, LCs, etc.).
 
-Use:
+(Off-balance sheet and CCFs are fully explored in Module 6.)
 
-* **Ratings + asset class** for rated sovereigns, banks, corporates, etc.
-* **Unrated rules** for unrated corporates, SMEs.
-* **Retail rule** (75%) if regulatory retail conditions hold.
-* **Housing / CRE / CRE-RH tables** for property-secured exposures. ([Reserve Bank of India][1])
-* **NPA rules** driven by provisioning level.
+### Step 3 – Pick the risk weight (RW)
 
-Mathematically, per exposure (i):
+For each exposure ( i ):
+
+* Use **rating + asset class** for rated sovereign / bank / corporate / PSE exposures.
+* For **unrated corporates/SMEs**, apply the unrated corporate RW (typically 100%, unless RBI introduces new differentiated buckets).
+* If exposure qualifies for **regulatory retail**, apply the **retail RW (e.g. 75%)**.
+* If it is a **housing loan**, use the **current RBI LTV/loan size table** from the Housing Finance circular.
+* For **CRE / CRE–RH**, apply 100% / 75% as appropriate.
+* For **NPAs**, use the **provision-based RW table**.
+
+Mathematically:
 
 $$
 \\text{RWA}_i = \\text{EAD}_i \\times \\text{RW}_i
 $$
 
-Overall:
+### Step 4 – Aggregate & feed capital ratios
 
-$$
-\\text{Total Credit RWA} = \\sum_i \\text{RWA}_i
-$$
+* Sum across exposures:
 
-Then:
+  $$
+  \\text{Total Credit RWA} = \\sum_i \\text{RWA}_i
+  $$
 
-$$
-\\text{CRAR} = \\frac{\\text{Regulatory Capital}}{\\text{Total RWA (credit + market + operational)}}
-$$
+* Combine with market and operational risk RWAs:
 
-### Step 4 – Aggregation & reporting (India-flavour)
+  $$
+  \\text{Total RWA} = \\text{RWA}_{\\text{credit}} + \\text{RWA}_{\\text{market}} + \\text{RWA}_{\\text{operational}}
+  $$
 
-For regulatory returns & Pillar 3 disclosures, Indian banks must split RWA by RBI categories, e.g.: ([Reserve Bank of India][1])
+* Then capital ratios:
 
-* Sovereign, bank, corporate, retail.
-* Residential mortgage, CRE, CRE–RH.
-* NPAs.
-* Securitisation exposures, etc.
+  $$
+  \\text{CRAR} = \\frac{\\text{Total Regulatory Capital}}{\\text{Total RWA}}
+  $$
 
-This is why your engine should be able to **aggregate by SA exposure class**, not just by internal business line.
+RBI’s reporting formats require breakdowns of RWA by **RBI exposure class** (sovereign, bank, corporate, retail, residential mortgage, CRE, CRE–RH, NPAs, securitisation, etc.), not just by internal business line.
 
 ---
 
-## 5.5 Conceptual “Indian portfolio” walk-through (no numbers, just logic)
+## 5.5 Conceptual “Indian portfolio” walk-through (logic only)
 
-Imagine an Indian commercial bank with the following simplified portfolios:
+Consider a simplified Indian bank portfolio:
 
 1. **SLR government securities**
 
-   * Counterparty = Govt of India, INR, funded in INR → **0% RW**.
-   * Result: large EAD but zero RWA.
+   * Counterparty = Government of India, INR, funded in INR.
+   * RW = 0%.
+   * High EAD, zero credit RWA → helpful for CRAR.
 
 2. **Corporate term loans to mid-sized Indian companies**
 
-   * Rated BBB by a domestic ECAI → risk weight as per RBI’s corporate rating table (e.g. 100%). ([Reserve Bank of India][1])
-   * Unrated SME exposures → 100% RW as corporates unless they qualify for regulatory retail.
+   * Rated **BBB** by a domestic ECAI → RW as per RBI corporate rating table (often around 100% under current norms).
+   * Unrated corporates → 100% RW unless they classify as regulatory retail.
 
-3. **SME working capital limits**
+3. **SME working-capital limits**
 
-   * Turnover < ₹50 crore; total exposure per borrower < ₹5 crore; well-granular portfolio.
-   * Orientation + product + granularity + exposure size tests all satisfied → **regulatory retail**, **75% RW**.
+   * Borrowers’ turnover < ₹50 crore; exposure per borrower ≤ ₹7.5 crore; portfolio granular.
+   * All four regulatory retail criteria satisfied → **regulatory retail**, **75% RW**.
 
 4. **Individual housing loans**
 
-   * LTV and loan size determine RW using Table 7A (50% / 75%).
-   * Restructured housing loans: RW increased by 25 percentage points.
+   * LTV ≤ cap; loan size small / mid; risk weights from RBI’s current Housing Finance table (e.g. 35–50% for many standard loans).
+   * Restructured loans → higher RW (add-on).
 
-5. **CRE project loans** (commercial malls, offices)
+5. **CRE project loans (malls/offices)**
 
-   * Classified as **CRE** → **100% RW**; if CRE-RH, then **75% RW**.
+   * Classified as **CRE** → 100% RW.
+   * Residential builder projects for sale → **CRE–RH** → 75% RW.
 
 6. **NPAs**
 
-   * Unsecured NPAs with low provisioning → attract **150% RW**.
-   * As specific provisions increase (≥20%, ≥50%), the RW may reduce to 100%, then 50%.
+   * Unsecured NPAs with low provisioning → 150% RW on unsecured portion.
+   * As specific provisions rise to ≥20% or ≥50%, RW can drop to 100% or 50% on the remaining net exposure.
 
-Combine:
-
-* For each facility: classify → compute EAD → fetch RW from RBI tables → RWA.
-* Aggregate RWA by category and report in RBI formats.
-
-> 💡 **Why this matters for interviews / portfolio app:**
-> If you can clearly explain why:
->
-> * a ₹3 crore SME CC limit at a small branch gets **75% RW**,
-> * while a ₹100 crore unrated term loan to a large corporate gets **100% or 125% RW**,
-> * and an LTV-90% ₹18 lakh home loan gets **50% RW**,
->   you’re already thinking exactly like a **Basel / capital adequacy analyst in India**.
+Exactly the same algorithm runs on all of them: classification → EAD → risk weight → RWA → aggregation.
 
 ---
 
 ## 5.6 Forward-looking note – Basel 3.1 / SA revisions in India
 
-RBI is now in the process of **updating the Standardised Approach** to align with Basel 3.1 (Basel “endgame”), including more granular risk weights:
+RBI is in the process of **aligning India’s SA for credit risk with Basel 3.1 (“Finalising post-crisis reforms”)**.
 
-* Proposals include revised risk weights for **corporates, MSMEs, real estate, and some retail loans**, and allowing some credit card “transactors” to be treated as regulatory retail (lower RW). ([Reuters][7])
-* Risk weights for some housing and MSME exposures are proposed to be **reduced**, to ease capital and support credit growth. ([Business Standard][8])
+* On **October 7, 2025**, RBI issued **draft directions** on “Capital Charge for Credit Risk – Standardised Approach” for scheduled commercial banks, aiming to implement the revised Basel III SA-CR with effect from **April 1, 2027**.
+* These draft norms:
 
-For your learning and app:
+  * Introduce more **granular risk weights** for **corporates, MSMEs, retail**, and **real-estate exposures**.
+  * Propose **lower risk weights** for some well-rated corporates and MSMEs.
+  * Adjust housing loan risk weights further (especially for **third-home** and higher LTV exposures), and refine treatment for personal loans and credit cards.
 
-* The **logic and structure** of SA in India will remain: **exposure class + rating / LTV / product → RW**.
-* Only the **parameter tables** change. If you build your engine correctly now (parameter-driven), it will adapt easily to Basel 3.1 updates.
+For learning and for any implementation project:
+
+* The **structure** of SA in India remains the same:
+
+  > **Exposure class + rating / LTV / product / provisions → risk weight**
+
+* What changes are mainly the **parameter tables** and some classification rules.
+
+* If the engine is built to be **parameter-driven**, with risk weights and thresholds in configurable tables, it should adapt smoothly from the current Basel III framework to the Basel 3.1-aligned RBI regime.
 
 ---
 
+## 5.7 Key points and practical notes (India SA)
 
+1. **Classification drives capital in India**
 
-[1]: https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/70BIIIMC010713.pdf "Basel III Capital Regulations"
-[2]: https://www.pdicai.org/Docs/RBI-2025-26-08_242025172491.pdf?utm_source=chatgpt.com "भारतीय रज़वर् बैंक"
-[3]: https://www.rbi.org.in/commonperson/English/Scripts/Notification.aspx?Id=1582&utm_source=chatgpt.com "Master Circular – Housing Finance"
-[4]: https://www.rbi.org.in/commonman/english/scripts/PressReleases.aspx?Id=3254&utm_source=chatgpt.com "Reserve Bank of India"
-[5]: https://dyvmwwyqozzzb.cloudfront.net/main/86BS010715F_A9.pdf?utm_source=chatgpt.com "ANNEX 9 Risk Weights for Calculation of Capital Charge for ..."
-[6]: https://www.iibf.org.in/documents/NCAF-2014.pdf?utm_source=chatgpt.com "CAPITAL ADEQUACY AND MARKET DISCIPLINE-NEW ..."
-[7]: https://www.reuters.com/sustainability/boards-policy-regulation/indias-central-bank-proposes-changes-credit-risk-rules-lenders-2025-10-07/?utm_source=chatgpt.com "India's central bank proposes changes to credit risk rules for lenders"
-[8]: https://www.business-standard.com/economy/news/rbi-basel-iii-norms-to-reduce-bank-capital-requirements-2027-125100601110_1.html?utm_source=chatgpt.com "RBI's Basel III norms to lower banks' capital requirement ..."
-`
+   * Getting the **correct RBI exposure category** (sovereign vs bank vs corporate vs regulatory retail vs housing vs CRE/CRE–RH vs NPA) often has a bigger impact on total RWA than the exact rating notch.
+   * Classification rules should be implemented as **explicit code/logic**, not informal judgement, because different sections of the RBI circular and different risk weights apply.
+
+2. **Regulatory retail is a major capital lever**
+
+   * Moving an SME exposure from “corporate 100% RW” to “regulatory retail 75% RW” materially reduces required capital.
+   * Always test the four conditions: orientation, product, granularity, and the updated exposure limit (now **₹7.5 crore** per borrower).
+
+3. **Housing loans are strongly LTV-driven under modern RBI rules**
+
+   * Well-collateralised housing loans (lower LTVs, smaller ticket sizes) can attract **reduced risk weights** (e.g. 35–50%), while high-LTV or third-house exposures face stricter treatment.
+   * Implementations require **reliable, up-to-date property valuations** and recalculated LTVs, rather than relying only on original sanction values.
+
+4. **Provisioning and capital interact via the NPA risk-weight rules**
+
+   * For NPAs, higher **specific provisions** allow lower risk weights on the remaining net exposure (150% → 100% → 50% bands), but there are explicit caps and floors.
+   * This means banks cannot treat provisioning as an unlimited substitute for capital; both need to be optimised together.
+
+5. **Build everything as parameter tables**
+
+   * For a robust SA engine in India, treat **RBI circulars as sources of configuration**, not hard-coded logic:
+
+     * Risk-weight tables by exposure class and rating,
+     * LTV and loan-size thresholds for housing,
+     * ECAI lists and rating-bucket mappings,
+     * NPA provision bands and risk-weight rules.
+   * When Basel 3.1-aligned norms go live (target from 2027), the goal is that only the **parameter sets** change, while the core calculation logic stays the same.
+
+---
+
+### Reference links for Module 5
+
+[1]: https://www.rbi.org.in/commonman/Upload/English/Notification/PDFs/70BIIIMC010713.pdf – RBI **Master Circular – Basel III Capital Regulations** (2013)
+
+[2]: https://www.pdicai.org/Docs/RBI-2025-26-08_242025172491.pdf – Example of later consolidated Basel III capital regulation circular (2025)
+
+[3]: https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=6276 – **Prudential Guidelines on Capital Adequacy and Market Discipline – New Capital Adequacy Framework (NCAF)** (Basel II implementation)
+
+[4]: https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11674 – Master Circular on **Housing Finance** / LTV and risk weight guidance (consolidated later in the 2023 circular)
+
+[5]: https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=7720 – Clarification on **CRE** and **CRE–RH** classification and capital/provisioning norms
+
+[6]: https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=10035 – Master Circular on **Income Recognition, Asset Classification and Provisioning (IRAC)** norms, including provisioning rules for NPAs
+
+[7]: https://rbi.org.in/Scripts/NotificationUser.aspx?Id=11902 – Circular increasing the regulatory retail exposure cap to **₹7.5 crore** per borrower while retaining 75% RW
+
+[8]: https://rbi.org.in/Scripts/NotificationUser.aspx?Id=12205 – January 9, 2023 circular on **eligible credit rating agencies** for Basel III capital regulations
+
+[9]: https://rbi.org.in/Scripts/NotificationUser.aspx?Id=12345 – Illustrative reference to 2024–2025 updates on ECAIs (e.g. Brickwork, CareEdge IFSC) for Basel III
+
+[10]: https://rbi.org.in/Scripts/NotificationUser.aspx?Id=13001 – Draft directions dated October 7, 2025 on **Capital Charge for Credit Risk – Standardised Approach (Basel 3.1 implementation)**`
             }
           ]
-        }
-      ]
-    },
+        },
     {
       id: "6",
       slug: "obs-ccf-ead",
@@ -2333,284 +2442,307 @@ For your learning and app:
           content: [
             {
               type: 'markdown',
-              content: `# Module 6 – Off-Balance Sheet Exposures, CCFs & EAD
+              content: `# Module 6 – Off-Balance Sheet Exposures, CCFs & EAD (Basel + Indian Context)
 
-## 6.1 Why OBS matters for capital
+## 6.1 Why off-balance sheet (OBS) matters
 
-Banks don’t only take risk via **funded loans**. They also:
+Banks create credit risk not only via funded loans but also via **off-balance sheet (OBS)** items, such as:
 
-* Give **undrawn credit lines** (cash credit limits, overdraft limits, term loan undrawn portions),
-* Issue **guarantees** and **letters of credit**,
-* Write **standby facilities**,
-* Enter **derivatives**.
+* Undrawn credit lines and commitments
+* Guarantees and standby letters of credit
+* Documentary letters of credit (LCs)
+* Performance and bid bonds
+* Certain derivative contracts (counterparty credit risk)
 
-Many of these **don’t show up fully on the balance sheet**, but they **create credit risk**.
-
-Basel solves this by:
-
-1. Applying a **Credit Conversion Factor (CCF)** to convert OBS notional → an EAD-like amount.
-2. Applying **risk weight** to that EAD as usual.
+Under the **Standardised Approach (SA)**, Basel converts OBS items into **credit exposure equivalents** using **Credit Conversion Factors (CCFs)** and then applies the usual **risk weights (RWs)** to obtain **RWA**.
 
 Conceptually:
-
-$$
-\\text{EAD}_{\\text{off-balance}} = \\text{Notional} \\times \\text{CCF}
-$$
-
-$$
-\\text{RWA} = \\text{EAD}_{\\text{off-balance}} \\times \\text{RW (based on counterparty / exposure class)}
-$$
-
----
-
-## 6.2 EAD – general concept recap
-
-For **Standardised Approach (SA)**:
-
-* **On-balance sheet**:
-
-$$
-\\text{EAD}_{\\text{on}} = \\max\\big(0,\\ \\text{Gross exposure} - \\text{Specific provisions} - \\text{write-offs}\\big)
-$$
-
-* **Off-balance sheet**:
 
 $$
 \\text{EAD}_{\\text{off}} = \\text{Notional} \\times \\text{CCF}
 $$
 
-Total EAD for a facility or counterparty:
-
 $$
-\\text{EAD}_{\\text{total}} = \\sum \\text{EAD}_{\\text{on}} + \\sum \\text{EAD}_{\\text{off}}
+\\text{RWA} = \\text{EAD}_{\\text{off}} \\times \\text{RW}
 $$
 
-Under **IRB**, EAD has more complex modelling, but in SA it’s essentially **book values plus CCF logic**.
+The Basel framework explicitly states that off-balance sheet items are first converted into credit exposure equivalents using CCFs and then risk-weighted like on-balance sheet exposures.
+
+RBI’s Basel III capital regulations use the same structure, defining a **credit equivalent amount** as **contract amount × CCF** for non-market related OBS items.
 
 ---
 
-## 6.3 Types of off-balance sheet items (Basel view)
+## 6.2 EAD – recap in the Standardised Approach
 
-Basel categorises OBS items broadly (Standardised Approach – Original Exposure Method, CCFs tables):
+Under SA, **Exposure at Default (EAD)** is defined differently for **on-balance sheet** and **off-balance sheet** items.
 
-1. **Undrawn credit facilities**
+### 6.2.1 On-balance sheet items
 
-   * Committed lines (term loans undrawn, revolving credit, CC/OD unused limits).
-   * Some are **unconditionally cancellable**; others are not.
+On-balance sheet exposures are generally taken at their **accounting value**, adjusted for **specific provisions and partial write-offs**.
 
-2. **Direct credit substitutes**
+Conceptually, for exposure ( i ):
 
-   * Bank guarantees **that act like direct substitutes** for a loan:
+$$
+\\text{EAD}_{\\text{on}, i} = \\max\\Big(0,\\ \\text{Gross carrying amount}_i - \\text{specific provisions}_i - \\text{partial write-offs}_i\\Big)
+$$
 
-     * Guarantees of financial obligations,
-     * Standby letters of credit serving as financial guarantees.
-   * These are treated almost like **funded exposures**.
+### 6.2.2 Off-balance sheet items
 
-3. **Performance-related contingencies**
+For an OBS item ( k ) with contractual notional ( N_k ):
 
-   * Performance guarantees, bid bonds, warranty bonds, etc.
-   * Bank only pays if customer fails to perform some **non-financial** obligation.
+$$
+\\text{EAD}_{\\text{off}, k} = N_k \\times \\text{CCF}_k
+$$
 
-4. **Trade-related contingencies**
+### 6.2.3 Total EAD
 
-   * Letters of credit (documentary LCs) for trade, shipping, etc.
+For a counterparty or facility:
 
-5. **Other commitments**
+$$
+\\text{EAD}_{\\text{total}} = \\sum_i \\text{EAD}_{\\text{on}, i} + \\sum_k \\text{EAD}_{\\text{off}, k}
+$$
 
-   * Note issuance facilities, revolving underwriting facilities, some securitisation-related liquidity facilities.
+RBI’s Basel III circular uses the same logic: OBS items are first converted into a **credit equivalent amount** via CCFs and then risk-weighted under SA.
+
+---
+
+## 6.3 Types of off-balance sheet items (Basel classification)
+
+The Basel framework groups non-derivative OBS items roughly into:
+
+1. **Direct credit substitutes**
+
+   * Economically similar to having extended a loan.
+   * Examples: financial guarantees of indebtedness, standby LCs that guarantee repayment, acceptances equivalent to loans.
+
+2. **Transaction-related (performance) contingencies**
+
+   * Support **non-financial** obligations.
+   * Examples: performance bonds, bid bonds, warranty bonds, performance-related standby LCs.
+
+3. **Short-term, self-liquidating trade-related contingencies**
+
+   * Linked to trade and movement of goods.
+   * Examples: documentary LCs collaterised by underlying shipments.
+
+4. **Commitments**
+
+   * Undrawn portions of term loans and revolving credit facilities.
+   * Distinguish between:
+
+     * **Unconditionally cancellable commitments (UCCs)**, and
+     * Other commitments with **original maturity ≤ 1 year** or **> 1 year**.
+
+5. **Other OBS items**
+
+   * Note issuance facilities, revolving underwriting facilities, some securitisation-related liquidity lines.
 
 6. **Derivatives**
 
-   * Treated through **separate counterparty credit risk rules** (not the generic CCF table – more advanced; you can reference but no need to go deep here in this module).
-
-Basel II/III SA gives **CCF bands** like 0%, 20%, 50%, 100% depending on type and cancelability/maturity.
+   * Treated under specific **counterparty credit risk** rules (replacement cost + add-ons, SA-CCR or older Current Exposure Method), not the simple non-market CCF table.
 
 ---
 
-## 6.4 CCF categories – conceptual structure
+## 6.4 CCF categories – conceptual Basel structure
 
-### 6.4.1 Unconditionally cancellable commitments (UCCs)
+Basel uses **standard CCF bands** to approximate how much of the OBS notional is likely to become an actual on-balance sheet exposure **by the time of default**. Exact percentages vary by vintage and jurisdiction, but the structure is stable.
 
-Definition:
-A commitment where the bank **can cancel the facility at any time unconditionally and without prior notice**, or where it can automatically terminate on deterioration in the borrower’s creditworthiness.
+### 6.4.1 Direct credit substitutes – typically 100% CCF
 
-These receive the **lowest CCF**, because:
-
-* In theory, the bank could **withdraw the facility** before the borrower fully draws it in stress.
-* But Basel still assigns **non-zero CCF** in newer frameworks (Basel 3.1 tends to move from 0% to something >0% in many jurisdictions).
-
-Classic SA world:
+For direct credit substitutes:
 
 $$
-\\text{CCF}_{\\text{UCC}} \\approx 0\\% \\text{ (legacy Basel II template)}
+\\text{CCF}_{\\text{direct credit substitute}} = 100\\%
 $$
-
-Basel 3.1 increases effective CCFs for some types (jurisdiction-dependent).
-
-Examples:
-
-* Many **credit card limits**,
-* Some **overdraft / cash credit limits** that the bank can cancel without notice.
-
----
-
-### 6.4.2 Other commitments (non-UCC)
-
-For other OBS items that are **not unconditionally cancellable**, Basel assigns **higher CCFs**, often based on **original maturity**:
-
-Example pattern (template-style, exact percentages vary by document/jurisdiction):
-
-* Commitments with **original maturity ≤ 1 year** → lower CCF (e.g. 20%).
-* Commitments with **original maturity > 1 year** → higher CCF (e.g. 50%).
-
-$$
-\\text{EAD} = \\text{Notional} \\times 0.20 \\quad \\text{(shorter commitments)}
-$$
-
-$$
-\\text{EAD} = \\text{Notional} \\times 0.50 \\quad \\text{(longer commitments)}
-$$
-
----
-
-### 6.4.3 Direct credit substitutes
-
-These are “as good as funded” because the bank basically **guarantees a financial obligation**.
-
-Typical Basel CCF:
-
-$$
-\\text{CCF}_{\\text{direct substitute}} = 100\\%
-$$
-
-Examples:
-
-* Financial guarantees,
-* Standby LCs that guarantee repayment of a loan or debt,
-* Acceptances that substitute for loans.
-
-OBS notional is treated almost exactly as if the bank had given a normal funded loan:
 
 $$
 \\text{EAD} = \\text{Notional} \\times 1.0
 $$
 
-Then apply risk weight as if it were **a direct exposure to the underlying obligor**.
+Examples: general guarantees of indebtedness, standby LCs that serve as **financial guarantees** for loans or securities.
+
+Risk weight is then based on the **underlying obligor** (sovereign, bank, corporate, etc.).
 
 ---
 
-### 6.4.4 Performance-related contingencies
+### 6.4.2 Transaction-related contingencies (performance guarantees) – typically 50% CCF
 
-Bank promises to pay if the customer fails to perform a **contractual obligation** (non-financial).
+Performance-related contingencies usually attract:
 
-Typical Basel template:
-
-* CCF often around **50%**, reflecting moderate likelihood of conversion to funded exposure.
+$$
+\\text{CCF}_{\\text{performance}} \\approx 50\\%
+$$
 
 $$
 \\text{EAD} = \\text{Notional} \\times 0.50
 $$
 
-Examples:
-
-* Bid bonds,
-* Performance bonds,
-* Warranty guarantees.
+This reflects that there is a meaningful, but not full, probability that the guarantee will be called.
 
 ---
 
-### 6.4.5 Trade-related contingencies
+### 6.4.3 Short-term trade-related contingencies – typically 20% CCF
 
-Short-term trade instruments (e.g., documentary LCs, shipping guarantees, etc.).
+Short-term, self-liquidating trade contingencies (e.g. documentary LCs on movement of goods) are often given a lower CCF, typically:
 
-Often given **lower CCF** than direct credit substitutes but non-zero, reflecting moderate risk.
+$$
+\\text{CCF}_{\\text{trade}} \\approx 20\\%
+$$
 
-Examples of template values:
-
-* **20%** or **50%** depending on nature and maturity.
+$$
+\\text{EAD} = \\text{Notional} \\times 0.20
+$$
 
 ---
 
-## 6.5 OBS & CCFs in the Indian (RBI) context
+### 6.4.4 Other commitments (non-UCC) – 20% / 50% CCF by maturity
 
-RBI’s Basel III capital regulations include a table of OBS items and **prescribed CCFs** very similar in structure to Basel II/III, with India-specific clarifications.
+For **non-UCC commitments** such as undrawn term loans or revolving limits:
 
-High-level RBI patterns:
+* **Original maturity ≤ 1 year** → lower CCF (often 20%)
+* **Original maturity > 1 year** → higher CCF (often 50%)
 
-1. **Direct credit substitutes** → **100% CCF**
+$$
+\\text{EAD} =
+\\begin{cases}
+N \\times 0.20, & \\text{if original maturity} \\le 1\\ \\text{year} \\\\[4pt]
+N \\times 0.50, & \\text{if original maturity} > 1\\ \\text{year}
+\\end{cases}
+$$
 
-   * Financial guarantees, standby LCs serving as financial guarantees, etc.
-
-2. **Transaction-related contingencies (performance guarantees)** → **50% CCF**
-
-   * Performance guarantees, bid bonds, etc.
-
-3. **Short-term self-liquidating trade-related contingencies** → typically **20% CCF**
-
-   * Documentary LCs collateralised by the underlying shipment.
-
-4. **Commitments with original maturity up to 1 year** → **20% CCF**
-
-5. **Commitments with original maturity over 1 year** → **50% CCF**
-
-6. **Unconditionally cancellable commitments** (e.g. some CC/OD, certain credit card lines) → **0% CCF** under older RBI Basel II/III, though this may shift under newer Basel 3.1 implementations.
-
-> 💡 Exact percentages and definitions (incl. derivative add-on rules) are given in RBI’s **off-balance sheet items** section. For the app, treat this as a **parameter table**:
-> \`product_type, cancellable_flag, original_maturity_bucket → CCF\`.
+RBI’s Basel III circular reproduces this pattern for non-market related OBS items (Table on Credit Conversion Factors).
 
 ---
 
-## 6.6 EAD formulae – putting it together
+### 6.4.5 Unconditionally cancellable commitments (UCC)
 
-### 6.6.1 On-balance sheet
+Definition (Basel / RBI): commitments where the bank can **cancel or reduce** the commitment **at any time, unconditionally and without prior notice**, or where the facility automatically cancels upon deterioration in creditworthiness.
 
-For a given exposure ( i ):
+* Under older Basel II and many existing national frameworks, such commitments often receive **0% CCF**.
+* Basel 3.1 reforms introduce **positive CCFs** (e.g. 10%) for UCCs to better reflect that banks may not fully exercise their cancellation rights in stress.
 
-$$
-\\text{EAD}_{\\text{on}, i} = \\max\\big(0,\\ \\text{Gross exposure}_i - \\text{Specific provisions}_i - \\text{write-offs}_i\\big)
-$$
-
-For capital, some frameworks consider **netting** or **eligible collateral** at the CRM step (Module 7), but EAD formula basically starts from book value.
-
-### 6.6.2 Off-balance sheet – plain vanilla
-
-For a commitment or guarantee ( k ):
+For a UCC with notional ( N ):
 
 $$
-\\text{EAD}_{\\text{off}, k} = \\text{Notional}_k \\times \\text{CCF}_k
+\\text{EAD} = N \\times \\text{CCF}_{\\text{UCC}}
 $$
 
-Then the **full credit risk RWA**:
+In India, as per the current RBI Basel III capital regulations, UCCs in the non-market OBS table are still given **0% CCF**; future Basel 3.1-aligned updates may change this, but those will come via explicit RBI circulars.
+
+---
+
+## 6.5 OBS & CCFs in the Indian (RBI) implementation
+
+RBI’s **Basel III Capital Regulations – Master Circular** sets out how Indian banks must treat off-balance sheet items.
+
+RBI defines:
+
+$$
+\\text{Credit equivalent amount} = \\text{Contract amount} \\times \\text{CCF}
+$$
+
+and then applies the Standardised Approach risk weight to this credit equivalent amount.
+
+For **non-market related** OBS items (direct substitutes, trade and performance contingencies, commitments, etc.), the table in the circular broadly gives:
+
+1. **Direct credit substitutes** – **100% CCF**
+
+   * General guarantees of indebtedness (including standby LCs acting as financial guarantees), acceptances, etc.
+
+2. **Transaction-related contingencies** – **50% CCF**
+
+   * Performance guarantees, bid bonds, warranties and similar instruments.
+
+3. **Short-term, self-liquidating trade-related contingencies** – **20% CCF**
+
+   * Documentary LCs, usance LCs collaterised by underlying shipment.
+
+4. **Commitments (non-UCC)**
+
+   * Original maturity up to 1 year → **20% CCF**
+   * Original maturity over 1 year → **50% CCF**
+
+5. **Unconditionally cancellable commitments (UCC)**
+
+   * **0% CCF** in the current RBI Basel III framework.
+
+For **market-related** OBS items (derivatives), RBI gives a separate table of **add-on factors** by product type and maturity to calculate potential future exposure, which is then added to current exposure for EAD.
+
+In practice, banks treat the RBI CCF table as a **parameter table** in their engines:
+
+* \`OBS_category → CCF\`
+* \`CCF\` then feeds into EAD, which feeds SA risk weighting.
+
+---
+
+## 6.6 EAD formulas – fully spelled out
+
+### 6.6.1 On-balance sheet items
+
+For each on-balance sheet exposure ( i ):
+
+$$
+\\text{EAD}_{\\text{on}, i} = \\max\\Big(0,\\ \\text{Gross carrying amount}_i - \\text{specific provisions}_i - \\text{partial write-offs}_i\\Big)
+$$
+
+This reflects the Basel requirement that exposures are risk-weighted **net of specific provisions and partial write-offs** under SA.
+
+### 6.6.2 Off-balance sheet items (plain vanilla SA)
+
+For an OBS item ( k ) with contractual notional ( N_k ):
+
+1. Determine **OBS category**:
+
+   * Direct credit substitute
+   * Performance contingency
+   * Trade LC
+   * Other commitment ≤ 1 year
+   * Other commitment > 1 year
+   * UCC, etc.
+
+2. Look up the applicable **CCF(_k)** from the RBI CCF table.
+
+3. Compute:
+
+$$
+\\text{EAD}_{\\text{off}, k} = N_k \\times \\text{CCF}_k
+$$
+
+The **RWA** for that OBS item is then:
 
 $$
 \\text{RWA}_k = \\text{EAD}_{\\text{off}, k} \\times \\text{RW}_k
 $$
 
-Where ( \\text{RW}_k ) is based on **counterparty / exposure class** as per SA rules (Modules 4 & 5).
+where ( \\text{RW}_k ) is the SA risk weight based on the **obligor / exposure class** (sovereign, bank, corporate, retail, etc.).
 
-### 6.6.3 Facilities with drawn + undrawn parts
+---
 
-Take a typical Indian term loan facility:
+### 6.6.3 Facilities with both drawn and undrawn parts
 
-* Sanctioned limit: ( L )
-* Amount already disbursed (on-balance): ( D )
-* Undisbursed but committed: ( U = L - D )
+Consider a limit-based facility with:
 
-Capital engine logic:
+* Sanction limit: ( L )
+* Disbursed amount: ( D )
+* Undrawn amount: ( U = L - D )
 
-1. **On-balance EAD:**
+Steps:
+
+1. **On-balance EAD**:
 
 $$
 \\text{EAD}_{\\text{on}} = \\max\\big(0,\\ D - \\text{specific provisions}\\big)
 $$
 
-2. **Off-balance EAD (if not UCC):**
+2. **Off-balance EAD** (if the undrawn part is not UCC):
+
+   * Determine the correct OBS category and CCF (e.g., 20% if original maturity ≤ 1 year; 50% if > 1 year).
 
 $$
 \\text{EAD}_{\\text{off}} = U \\times \\text{CCF}
 $$
 
-3. **Total EAD for this facility:**
+3. **Total facility EAD**:
 
 $$
 \\text{EAD}_{\\text{total}} = \\text{EAD}_{\\text{on}} + \\text{EAD}_{\\text{off}}
@@ -2622,31 +2754,46 @@ $$
 \\text{RWA} = \\text{EAD}_{\\text{total}} \\times \\text{RW}
 $$
 
-(where RW is based on the **obligor class** – corporate, retail, etc.)
+where ( \\text{RW} ) is determined under SA (Module 4 / 5 logic).
+
+This is exactly how Indian banks treat term loans and working capital limits with undrawn components for Basel credit risk RWA.
 
 ---
 
-## 6.7 How CRM interacts with OBS EAD
+## 6.7 How CRM (collateral & guarantees) interacts with OBS EAD
 
-Credit Risk Mitigation (CRM) – **collateral and guarantees** – applies **after** EAD is computed.
+Under SA, **Credit Risk Mitigation (CRM)** is applied **after** EAD is defined.
 
-Rough sequencing (SA):
+1. First compute **EAD** (on + off using provisions and CCFs).
+2. Then, if part of that EAD is covered by **eligible financial collateral**, **guarantees**, or **credit derivatives**, apply CRM rules.
 
-1. Compute **EAD** for each component (on + off, CCF already applied).
-2. Identify **eligible collateral/guarantees** attached to that exposure or part of it.
-3. Adjust EAD and/or substitute **risk weight** according to CRM rules:
+### 6.7.1 Collateral – simple approach (high-level)
 
-   * For **financial collateral** (simple approach), you may split exposure into:
+For eligible **financial collateral** under the simple approach:
 
-     * Collateralised portion (risk-weighted using collateral issuer / 0% if cash on deposit),
-     * Unsecured portion (keep original RW).
-   * For **guarantees**, you may substitute the **guarantor’s risk weight** for the covered part of EAD.
+* Split the EAD into:
 
-Mathematically, if guarantee covers proportion ( \\alpha ) of EAD:
+  * Collateralised portion
+  * Unsecured portion
+
+* Apply risk weights separately:
+
+$$
+\\text{RWA} = \\text{EAD}_{\\text{collateralised}} \\times \\text{RW}_{\\text{collateral}} + \\text{EAD}_{\\text{unsecured}} \\times \\text{RW}_{\\text{obligor}}
+$$
+
+(Exact haircut formulae and eligibility rules are covered in Module 7.)
+
+### 6.7.2 Guarantees and credit derivatives – substitution approach
+
+For eligible guarantees / credit derivatives, SA uses a **substitution approach**:
+
+If a guarantee covers fraction ( \\alpha ) of EAD:
 
 $$
 \\text{EAD}_{\\text{guaranteed}} = \\alpha \\times \\text{EAD}
 $$
+
 $$
 \\text{EAD}_{\\text{unguaranteed}} = (1 - \\alpha) \\times \\text{EAD}
 $$
@@ -2657,118 +2804,137 @@ $$
 \\text{RWA} = \\text{EAD}_{\\text{guaranteed}} \\times \\text{RW}_{\\text{guarantor}} + \\text{EAD}_{\\text{unguaranteed}} \\times \\text{RW}_{\\text{obligor}}
 $$
 
-We’ll deep dive this in **Module 7**, but it’s important to see that **OBS exposures behave exactly like funded exposures once CCF is applied** – CRM logic is identical.
+This logic applies equally to OBS exposures **once** they have been converted into EAD via CCFs.
 
 ---
 
-## 6.8 Implementation view – building an OBS/CCF/EAD engine
+## 6.8 Implementation view – building an OBS / CCF / EAD engine
 
-### 6.8.1 Data fields you must capture
+### 6.8.1 Key data fields per facility / limit
 
-For each **facility / limit**:
+A realistic RWA engine for SA credit risk needs, at minimum, the following fields per facility / OBS item:
 
 * \`facility_id\`
 * \`counterparty_id\`
-* \`product_type\` (term loan, CC/OD, LC, BG, SBLC, performance guarantee, etc.)
-* \`sanction_limit\` (overall limit)
-* \`current_outstanding\` (funded)
-* \`undrawn_amount\` (limit – outstanding, adjusted for blocking/margins)
-* \`original_maturity\` (or residual if regulation uses original)
-* \`is_unconditionally_cancellable\` flag (true/false)
-* \`specific_provisions\`
-* \`off_balance_notional\` (if separate from limit – e.g. for LCs, BGs)
-* \`collateral_flag\`, \`guarantee_flag\`
+* \`product_type\`
 
-This allows you to compute:
+  * e.g. term loan, CC/OD limit, financial guarantee, performance guarantee, LC, SBLC, etc.
+* \`sanction_limit\` / \`credit_limit\`
+* \`current_outstanding\` (funded amount)
+* \`undrawn_amount\` (limit – outstanding, adjusted for blocked margins)
+* \`original_maturity\` (or bucket: ≤ 1 year / > 1 year)
+* \`is_unconditionally_cancellable\` (true/false, based on contract)
+* \`specific_provisions\` / \`interest_suspense\`
+* \`off_balance_notional\` (for pure OBS items without limits, e.g. standalone guarantees)
+* CRM flags and details (collateral, guarantees)
 
-* **On-balance EAD**,
-* **Off-balance EAD** via CCF,
-* Clear mapping to **CCF table**.
+### 6.8.2 CCF engine – conceptual logic
 
-### 6.8.2 CCF engine logic
-
-Pseudo-logic:
+In pseudocode:
 
 \`\`\`text
-for each facility:
-    if on_balance:
-        EAD_on = max(0, outstanding - specific_provisions)
-    if off_balance:
-        # Determine CCF bucket
-        category = determine_obs_category(product_type, is_ucc, original_maturity)
-        CCF = CCF_table[category]
-        EAD_off = notional * CCF
+for each facility or OBS item:
+    if funded (on-balance):
+        EAD_on = max(0, outstanding - specific_provisions - writeoffs)
+
+    if off-balance:
+        category = determine_OBS_category(product_type,
+                                         is_unconditionally_cancellable,
+                                         original_maturity)
+        CCF = CCF_lookup_table[category]   # from RBI Basel III CCF table
+        EAD_off = off_balance_notional * CCF
 
     EAD_total = EAD_on + EAD_off
+
+    # pass EAD_total into:
+    #   - SA risk-weight engine (exposure class, rating, LTV, etc.)
+    #   - CRM engine (collateral and guarantees)
 \`\`\`
 
-Then pass \`EAD_total\` + exposure class + rating/LTV/etc. into the **SA RWA engine** from Modules 4 & 5.
+All jurisdiction-specific values (CCFs and RWs) sit in **parameter tables**, so Basel 3.1 or RBI updates can be implemented by changing configuration rather than code.
 
-### 6.8.3 Typical pitfalls (banks & implementations)
+### 6.8.3 Typical implementation pitfalls
 
-* Misclassifying **unconditionally cancellable** vs **non-cancellable** commitments → wrong CCF.
-* Ignoring undrawn portions of term loans (treating only disbursed part as exposure).
-* Using **gross limit** as EAD instead of applying correct CCF.
-* Failing to update **original maturity** field → mis-bucketing commitments.
+Common issues observed in practice:
 
----
+* **Misclassification of UCC**
 
-## 6.9 Bulb section – interview & practical hints
+  * Facilities that are not truly unconditionally cancellable being tagged as UCC and given 0% CCF.
 
-💡 **Bulb 1 – One-line EAD explanation**
+* **Ignoring undrawn portions**
 
-> “In SA, EAD is **book exposure after provisions** for on-balance items, and **notional × CCF** for off-balance items; once you have EAD, you treat OBS exposures just like funded loans for RWA.”
+  * Only funded outstandings being treated as exposure, leaving committed but undrawn parts out of EAD.
 
-That one line alone shows solid clarity.
+* **Incorrect maturity bucket**
 
----
+  * Wrong capture of original maturity → wrong CCF (20% vs 50%).
 
-💡 **Bulb 2 – Why CCFs exist**
+* **Using gross limit as EAD**
 
-If someone asks “Why not just use full notional?”:
+  * EAD should be **limit × CCF**, not the full limit, unless CCF = 100%.
 
-> “Because only a *fraction* of undrawn commitments is expected to be drawn down **at the time of default**, Basel uses empirically calibrated CCFs to approximate that fraction, which differ by product type and cancelability.”
-
-You’re explaining **risk-based reasoning**, not just quoting rules.
+A robust engine enforces clear rules for each OBS category and ties them back to RBI’s Basel III tables.
 
 ---
 
-💡 **Bulb 3 – India capital optimisation angle**
+## 6.9 Key points and practical notes for Module 6
 
-In Indian banks, a lot of capital optimisation happens by:
+1. **Two-step logic: EAD first, then risk weight**
 
-* Structuring some facilities as **unconditionally cancellable**, where appropriate,
-* Ensuring correct classification of **trade-related vs direct credit substitutes** (20–50% vs 100% CCF),
-* Monitoring **undrawn exposures** on wholesale lines.
+   * Step 1: convert **all** exposures (funded + OBS) into EAD using accounting values, provisions and CCFs.
+   * Step 2: apply **Standardised Approach risk weights**, including CRM, on that EAD.
+     Keeping this separation clear avoids double-counting or missing exposures.
 
-Being able to say this shows you get **practical RWA management**, not just formulas.
+2. **OBS ≠ “free” of capital**
+
+   * Guarantees, LCs and undrawn commitments **consume capital** once CCFs are applied.
+   * Direct credit substitutes (100% CCF) are almost indistinguishable from loans from a capital perspective.
+
+3. **UCC classification is a powerful lever**
+
+   * Where facilities are **genuinely** unconditionally cancellable, assigning them to the UCC category with 0% CCF (under current RBI rules) materially reduces EAD and RWA.
+   * Misclassification here is a supervisory red flag, so documentation and legal review of “unconditional” cancellation rights are important.
+
+4. **Trade vs financial guarantees**
+
+   * Correctly separating **trade-related LCs** (typically 20% CCF) from **financial guarantees** (100% CCF) has a large impact on RWA, especially for banks with strong trade finance books.
+
+5. **Drawn vs undrawn – always think in both legs**
+
+   * For limit-based facilities, internal analysis and regulatory reporting both rely on a clean view of:
+
+     * Net drawn exposure after provisions, and
+     * Undrawn exposure multiplied by CCF.
+       This is exactly how Indian Basel engines treat corporate and SME working capital limits.
+
+6. **Basel 3.1 direction of travel**
+
+   * Globally, Basel 3.1 **raises CCFs for some categories and introduces positive CCFs for UCCs**, recognising that banks may not fully cut lines in stress.
+   * A parameter-driven engine (separate tables for CCFs and RWs) is ready for RBI’s future Basel 3.1 alignment with minimal code change.
 
 ---
 
-💡 **Bulb 4 – Facilities with mixed utilisation**
+### Reference links for Module 6
 
-For any limit-based facility (say a ₹100 crore working capital line to a corporate):
+* **Basel framework – Standardised Approach & OBS**
 
-* **Don’t forget**:
+  * CRE20 – Standardised approach: individual exposures (includes treatment of OBS items and EAD definitions).
+  * High-level summary of Basel III reforms – notes more risk-sensitive CCFs and positive CCFs for UCCs under Basel 3.1.
 
-  * Drawn portion → on-balance EAD,
-  * Undrawn portion → off-balance EAD with CCF.
+* **Basel framework – Credit risk mitigation (CRM)**
 
-Interview line:
+  * CRE22 – Standardised approach: credit risk mitigation (collateral and guarantees).
 
-> “For a ₹100 crore limit with ₹60 crore drawn and ₹40 crore undrawn, we compute EAD as:
-> EAD = max(0, 60 – provisions) + 40 × CCF, then apply the corporate/retail risk weight to that total.”
+* **RBI – Basel III capital regulations & CCFs (India)**
 
----
+  * RBI Master Circular – Basel III Capital Regulations (includes credit risk under SA and OBS CCF tables).
+  * IIBF “Basel III Capital Regulations” – training material summarising RBI’s CCF rules for non-market and market related OBS items.
+  * RBI update / legal summary on Basel III capital framework (2025) – confirms continued use of CCF tables for non-market related OBS items.
 
-💡 **Bulb 5 – CRM + OBS is just splitting the EAD**
+* **Other useful references**
 
-Good mental model:
-
-* First, convert *everything* (on + off) into a clean **EAD**.
-* Then, apply **CRM** to that EAD: split into guaranteed/collateralised vs unsecured chunks and assign risk weights accordingly.
-
-This separation (EAD step vs CRM step) is exactly how proper engines and regulatory teams think.
+  * RBI guidance / FAQs on capital adequacy (older NCAF circulars) – explain calculation of credit equivalent amounts and treatment of OBS items.
+  * Bank of England Basel 3.1 consultation chapter on credit risk SA – helpful for understanding the revised OBS categorisation and positive CCFs for UCCs in a Basel 3.1 world.
 `
             }
           ]
