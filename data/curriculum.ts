@@ -2444,7 +2444,7 @@ For learning and for any implementation project:
           content: [
             {
               type: 'markdown',
-              content: `# Module 6 – Off-Balance Sheet Exposures, CCFs & EAD (Basel + Indian Context)
+              content: `
 
 ## 6.1 Why off-balance sheet (OBS) matters
 
@@ -2955,7 +2955,7 @@ A robust engine enforces clear rules for each OBS category and ties them back to
           content: [
             {
               type: 'markdown',
-              content: `# Module 7 – Credit Risk Mitigation (CRM): Collateral, Guarantees & Netting
+              content: `
 
 ## 7.1 Big picture: why CRM exists
 
@@ -3500,7 +3500,7 @@ For a product / engine design mindset, it helps to model CRM as **separate objec
           content: [
             {
               type: "markdown",
-              content: `# Module 8 – Securitisation & Other Pillar 1 Risks (Market & Operational)
+              content: `
 
 ## 8.1 What securitisation is (in capital language)
 
@@ -4016,7 +4016,7 @@ So:
           content: [
             {
               type: "markdown",
-              content: `# Module 9 – RWA Engine Design & Implementation (Basel + RBI SA)
+              content: `
 
 ## 9.1 What this module is really about
 
@@ -4675,7 +4675,7 @@ That combination (regulatory understanding + data model + engine + UI) is exactl
           content: [
             {
               type: "markdown",
-              content: `# Module 10 – Regulatory Capital Reporting & Disclosures (Pillar 3 + RBI)
+              content: `
 
 ## 10.1 What “regulatory capital reporting” actually means
 
@@ -5236,7 +5236,7 @@ That’s the mindset of a **Senior/Lead Capital Adequacy & Regulatory Reporting 
           content: [
             {
               type: "markdown",
-              content: `# Module 11 – Capital Buffers, Headroom & Planning Concepts
+              content: `
 
 ## 11.1 From “minimum” to “management view”
 
@@ -5669,7 +5669,7 @@ That’s exactly the “capital adequacy + planning” mindset they want.
           content: [
             {
               type: "markdown",
-              content: `# Module 12 – IRB Approaches, Vasicek Model & Basel 3.1 (Endgame)
+              content: `
 
 ---
 
@@ -5762,7 +5762,7 @@ Regulatory capital under IRB is designed to cover:
 In the IRB framework, we denote the **capital requirement as a percentage of EAD** by K:
 
 $$
-K = \\text{capital charge as % of EAD}
+K = \\text{capital charge as \\% of EAD}
 $$
 
 Then Basel defines **RWA** as:
@@ -5797,19 +5797,17 @@ Basel uses the **Asymptotic Single Risk Factor (ASRF)** model – originally des
 
 ### 12.4.2 The latent-variable setup
 
-For borrower *i*, define an **“asset value”** variable ( X_i ):
+For borrower *i*, define an **"asset value"** variable $X_i$:
 
 $$
-X_i = \\sqrt{\\rho}, Y + \\sqrt{1-\\rho}, \\varepsilon_i
+X_i = \\sqrt{\\rho} \\cdot Y + \\sqrt{1-\\rho} \\cdot \\varepsilon_i
 $$
 
 Where:
 
-* (Y) = **systematic factor**, common to all borrowers (state of the economy),
-  (Y \\sim N(0,1))
-* (\\varepsilon_i) = **idiosyncratic factor**, specific to borrower i,
-  (\\varepsilon_i \\sim N(0,1)), independent across i and of Y
-* (\\rho) = **asset correlation** between borrowers (0 < ρ < 1)
+* $Y$ = **systematic factor**, common to all borrowers (state of the economy), $Y \\sim N(0,1)$
+* $\\varepsilon_i$ = **idiosyncratic factor**, specific to borrower i, $\\varepsilon_i \\sim N(0,1)$, independent across i and of Y
+* $\\rho$ = **asset correlation** between borrowers (0 < ρ < 1)
 
 Default rule:
 
@@ -5817,7 +5815,7 @@ $$
 \\text{Borrower } i \\text{ defaults if } X_i < a
 $$
 
-The threshold (a) is set so that **unconditional** probability of default equals PD:
+The threshold $a$ is set so that **unconditional** probability of default equals PD:
 
 $$
 PD = \\Phi(a) \\quad \\Rightarrow \\quad a = \\Phi^{-1}(PD)
@@ -5825,56 +5823,46 @@ $$
 
 Where:
 
-* (\\Phi) is the **standard normal CDF**
-* (\\Phi^{-1}) (often denoted G in Basel) is its **inverse**.
+* $\\Phi$ is the **standard normal CDF**
+* $\\Phi^{-1}$ (often denoted G in Basel) is its **inverse**.
 
 ### 12.4.3 Conditional default probability
 
-Given a particular state of the economy (Y = y):
+Given a particular state of the economy ($Y = y$):
 
 $$
-P(\\text{default} \\mid Y=y) =
-\\Phi!\\left(\\frac{\\Phi^{-1}(PD) - \\sqrt{\\rho}, y}{\\sqrt{1-\\rho}}\\right)
+P(\\text{default} \\mid Y=y) = \\Phi\\left(\\frac{\\Phi^{-1}(PD) - \\sqrt{\\rho} \\cdot y}{\\sqrt{1-\\rho}}\\right)
 $$
 
-* If (y) is **very low** (bad economy), this conditional PD becomes **much higher**.
-* If (y) is **high** (good economy), conditional PD is lower.
+* If $y$ is **very low** (bad economy), this conditional PD becomes **much higher**.
+* If $y$ is **high** (good economy), conditional PD is lower.
 
 ### 12.4.4 Portfolio loss and high-quantile
 
 Assume a very large number of **identical** borrowers (same PD, LGD, EAD).
 
-Conditional on (Y=y), the **portfolio loss rate** is approximately:
+Conditional on $Y=y$, the **portfolio loss rate** is approximately:
 
 $$
-L(y) \\approx LGD \\times
-\\Phi!\\left(\\frac{\\Phi^{-1}(PD) - \\sqrt{\\rho}, y}{\\sqrt{1-\\rho}}\\right)
+L(y) \\approx LGD \\times \\Phi\\left(\\frac{\\Phi^{-1}(PD) - \\sqrt{\\rho} \\cdot y}{\\sqrt{1-\\rho}}\\right)
 $$
 
 We want the **99.9% quantile** of loss, i.e. loss when the economy is extremely bad.
 
 * The 0.1% worst economy corresponds to a low value of Y.
-* For quantile level α = 99.9%, the corresponding quantile of Y is
-  (y_\\alpha = \\Phi^{-1}(1-\\alpha) = \\Phi^{-1}(0.001)), which is a **large negative** number.
+* For quantile level α = 99.9%, the corresponding quantile of Y is $y_\\alpha = \\Phi^{-1}(1-\\alpha) = \\Phi^{-1}(0.001)$, which is a **large negative** number.
 
 After rearranging (this is the maths Basel did for us), the **loss at 99.9% quantile** becomes:
 
 $$
-L_{\\text{0.999}} =
-LGD \\times
-\\Phi!\\left(\\frac{\\Phi^{-1}(PD) + \\sqrt{\\rho},\\Phi^{-1}(0.999)}{\\sqrt{1-\\rho}}\\right)
+L_{0.999} = LGD \\times \\Phi\\left(\\frac{\\Phi^{-1}(PD) + \\sqrt{\\rho} \\cdot \\Phi^{-1}(0.999)}{\\sqrt{1-\\rho}}\\right)
 $$
 
 Then the **capital per unit of EAD** is:
 
 $$
-K = L_{\\text{0.999}} - EL
-= LGD \\left[
-\\Phi!\\left(\\frac{\\Phi^{-1}(PD) + \\sqrt{\\rho},\\Phi^{-1}(0.999)}{\\sqrt{1-\\rho}}\\right)
-
-* PD
-  \\right]
-  $$
+K = L_{0.999} - EL = LGD \\times \\left[ \\Phi\\left(\\frac{\\Phi^{-1}(PD) + \\sqrt{\\rho} \\cdot \\Phi^{-1}(0.999)}{\\sqrt{1-\\rho}}\\right) - PD \\right]
+$$
 
 *This is the classic **Vasicek capital formula** for a homogeneous portfolio.*
 
@@ -5891,12 +5879,12 @@ For **corporate / bank / sovereign** exposures under IRB, Basel uses a risk-weig
 
 ### 12.5.1 Notation
 
-* (\\Phi(x)) = standard normal CDF (often written N(·))
-* (G(p) = \\Phi^{-1}(p)) = inverse CDF
-* (R(PD)) = **asset correlation** as a function of PD
-* (b(PD)) = function used in maturity adjustment
-* (M) = effective maturity (years, typically between 1 and 5)
-* (K) = capital requirement **as % of EAD**
+* $\\Phi(x)$ = standard normal CDF (often written N(·))
+* $G(p) = \\Phi^{-1}(p)$ = inverse CDF
+* $R(PD)$ = **asset correlation** as a function of PD
+* $b(PD)$ = function used in maturity adjustment
+* $M$ = effective maturity (years, typically between 1 and 5)
+* $K$ = capital requirement **as % of EAD**
 
 ### 12.5.2 Correlation function (R)
 
@@ -5926,9 +5914,7 @@ $$
 Then **maturity adjustment (MA)** is:
 
 $$
-\\text{MA}(PD,M) =
-\\frac{1 + (M-2.5),b(PD)}
-{1 - 1.5,b(PD)}
+\\text{MA}(PD,M) = \\frac{1 + (M-2.5) \\cdot b(PD)}{1 - 1.5 \\cdot b(PD)}
 $$
 
 * If **M = 2.5**, MA ≈ 1 (no adjustment).
@@ -5942,24 +5928,13 @@ $$
 Using Vasicek structure plus correlation and maturity adjustment, Basel defines:
 
 $$
-K(PD,LGD,M) =
-LGD \\left[
-\\Phi!\\left(
-\\frac{1}{\\sqrt{1-R}}
-G(PD) +
-\\sqrt{\\frac{R}{1-R}}
-G(0.999)
-\\right)
-
-* PD
-  \\right]
-  \\times \\text{MA}(PD,M)
-  $$
+K(PD,LGD,M) = LGD \\times \\left[ \\Phi\\left( \\frac{G(PD) + \\sqrt{R/(1-R)} \\cdot G(0.999)}{\\sqrt{1-R}} \\right) - PD \\right] \\times \\text{MA}(PD,M)
+$$
 
 Where:
 
-* (R = R(PD)) from above.
-* (G(0.999) = \\Phi^{-1}(0.999)) is the **99.9% systemic shock**.
+* $R = R(PD)$ from above.
+* $G(0.999) = \\Phi^{-1}(0.999)$ is the **99.9% systemic shock**.
 * The term in square brackets is just the **Vasicek capital formula** with correlation R(PD) instead of ρ.
 * MA adjusts for maturity.
 
@@ -6128,17 +6103,13 @@ This is the **headline Basel 3.1 reform**.
 
 Let:
 
-* (\\text{RWA}_{\\text{internal}}) = total RWA using **IRB + internal models + SA** where applicable (what the bank’s chosen approaches give).
-* (\\text{RWA}_{\\text{SA}}) = total RWA if the bank applied **only the revised Standardised Approaches**.
+* $\\text{RWA}_{\\text{internal}}$ = total RWA using **IRB + internal models + SA** where applicable (what the bank's chosen approaches give).
+* $\\text{RWA}_{\\text{SA}}$ = total RWA if the bank applied **only the revised Standardised Approaches**.
 
 The **output floor** says:
 
 $$
-\\text{RWA}*{\\text{final}} =
-\\max\\Big(
-\\text{RWA}*{\\text{internal}},
-\\ 0.725 \\times \\text{RWA}_{\\text{SA}}
-\\Big)
+\\text{RWA}_{\\text{final}} = \\max\\Big( \\text{RWA}_{\\text{internal}}, 0.725 \\times \\text{RWA}_{\\text{SA}} \\Big)
 $$
 
 So **total RWA** can never be less than **72.5% of standardised RWA**.
@@ -6169,8 +6140,7 @@ At total-bank level:
 Capital ratios are then:
 
 $$
-\\text{CET1 ratio} = \\frac{\\text{CET1}}{\\text{RWA}*{\\text{final}}},\\quad
-\\text{Total capital ratio} = \\frac{\\text{Total capital}}{\\text{RWA}*{\\text{final}}}
+\\text{CET1 ratio} = \\frac{\\text{CET1}}{\\text{RWA}_{\\text{final}}},\\quad \\text{Total capital ratio} = \\frac{\\text{Total capital}}{\\text{RWA}_{\\text{final}}}
 $$
 
 ---
@@ -6305,7 +6275,7 @@ This tells an interviewer:
               content: `
 ---
 
-# Module 13 – Summary, Cheat-Sheets & How To Use All This
+
 
 ---
 
@@ -6410,11 +6380,9 @@ If you can narrate that chain end-to-end, you’re already thinking like a capit
 
 Formulas:
 
-[
-\\text{CET1 ratio} = \\frac{\\text{CET1}}{\\text{RWA}_{\\text{total}}}, \\quad
-\\text{Tier 1 ratio} = \\frac{\\text{Tier 1}}{\\text{RWA}_{\\text{total}}}, \\quad
-\\text{Total Capital Ratio (CRAR)} = \\frac{\\text{Total Capital}}{\\text{RWA}_\\text{total}}
-]
+$$
+\\text{CET1 ratio} = \\frac{\\text{CET1}}{\\text{RWA}_{\\text{total}}}, \\quad \\text{Tier 1 ratio} = \\frac{\\text{Tier 1}}{\\text{RWA}_{\\text{total}}}, \\quad \\text{Total Capital Ratio (CRAR)} = \\frac{\\text{Total Capital}}{\\text{RWA}_{\\text{total}}}
+$$
 
 Basel **minimums (without buffers)**:
 
@@ -6432,9 +6400,9 @@ Plus **Capital Conservation Buffer (CCB)** = **2.5% of RWA in CET1**.
 
 So today:
 
-[
-\\text{Effective minimum Total Capital (incl. CCB) in India} = 11.5% \\times \\text{RWA}
-]
+$$
+\\text{Effective minimum Total Capital (incl. CCB) in India} = 11.5\\% \\times \\text{RWA}
+$$
 
 (plus any systemic / Pillar 2 add-ons).
 
@@ -6452,22 +6420,22 @@ For **each exposure**, Standardised Approach (SA) works like this:
 2. **Compute EAD**
 
    * **On-balance sheet**:
-     [
-     \\text{EAD}_{\\text{on}} = \\max(0,\\ \\text{gross exposure} - \\text{specific provisions} - \\text{write-offs})
-     ]
+     $$
+     \\text{EAD}_{\\text{on}} = \\max(0, \\text{gross exposure} - \\text{specific provisions} - \\text{write-offs})
+     $$
 
    * **Off-balance sheet**:
-     [
+     $$
      \\text{EAD}_{\\text{off}} = \\text{Notional} \\times \\text{CCF}
-     ]
+     $$
      CCFs from Basel / RBI tables (e.g. 100% for direct credit substitutes, 50% performance guarantees, 20% trade LCs, 20/50% other commitments, 0% unconditionally cancellable lines in current RBI rules).
 
 3. **Apply CRM (if any)**
 
    * **Collateral** – comprehensive approach (India):
-     [
-     E^* = \\max{0,\\ E(1+H_e) - C(1 - H_c - H_{fx})}
-     ]
+     $$
+     E^* = \\max\\{0, E(1+H_e) - C(1 - H_c - H_{fx})\\}
+     $$
    * **Guarantees / CDS** – substitution approach: protected part takes **guarantor RW**, adjusted for FX + maturity mismatch.
 
 4. **Assign risk weight (RW)**
@@ -6476,9 +6444,9 @@ For **each exposure**, Standardised Approach (SA) works like this:
 
 5. **Compute RWA**
 
-   [
+   $$
    \\text{RWA} = (\\text{EAD or }E^*) \\times \\text{RW}
-   ]
+   $$
 
 Sum across all exposures → **credit risk RWA**.
 
@@ -6489,9 +6457,9 @@ Sum across all exposures → **credit risk RWA**.
 ### 13.5.1 Off-balance sheet exposures (Module 6)
 
 * **Rule:**
-  [
+  $$
   \\text{EAD}_{\\text{off}} = \\text{Notional} \\times \\text{CCF}
-  ]
+  $$
 
 * **Typical RBI / Basel CCF patterns** for non-derivatives:
 
@@ -6508,7 +6476,7 @@ Sum across all exposures → **credit risk RWA**.
 * **Collateral (India – only comprehensive approach for credit risk):**
 
   * Eligible: cash & own deposits, gold, GoI / state securities, certain rated debt, NSC/KVP, eligible insurance surrender values, qualifying MF units, etc.
-  * Exposure and collateral are **haircut** for price / FX risk: (H_e, H_c, H_{fx}).
+  * Exposure and collateral are **haircut** for price / FX risk: $H_e$, $H_c$, $H_{fx}$.
 
 * **Guarantees / credit derivatives:**
 
@@ -6622,23 +6590,23 @@ Frequency:
 
 Let:
 
-* (K) = total capital,
-* (\\text{RWA}) = total risk-weighted assets,
-* (r_{\\min}) = **required** total capital ratio (min + buffers + SIB + Pillar 2 etc.).
+* $K$ = total capital,
+* $\\text{RWA}$ = total risk-weighted assets,
+* $r_{\\min}$ = **required** total capital ratio (min + buffers + SIB + Pillar 2 etc.).
 
 Then:
 
-[
+$$
 \\text{Required capital} = r_{\\min} \\times \\text{RWA}
-]
+$$
 
-[
+$$
 \\text{Headroom} = K - r_{\\min} \\times \\text{RWA}
-]
+$$
 
-[
+$$
 \\text{Headroom ratio} = \\frac{K}{\\text{RWA}} - r_{\\min}
-]
+$$
 
 BIS and supervisors describe **capital headroom** exactly as “surplus capital above all minimum requirements and buffers.”
 
@@ -6646,26 +6614,25 @@ BIS and supervisors describe **capital headroom** exactly as “surplus capital 
 
 Capital evolution:
 
-[
+$$
 K_{t+1} = K_t + \\Pi_t - D_t + \\Delta K_{\\text{ext}, t}
-]
+$$
 
 RWA evolution:
 
-[
+$$
 \\text{RWA}_{t+1} = \\text{RWA}_t + \\Delta \\text{RWA}_t
-]
+$$
 
 Future capital ratio:
 
-[
+$$
 \\text{CRAR}_{t+1} = \\frac{K_{t+1}}{\\text{RWA}_{t+1}}
-]
+$$
 
 Planning question:
 
-> For my **target ratio (r_\\text{target})** (usually above 11.5%), is
-> (\\text{CRAR}_{t+1} \\ge r_\\text{target}) under base & stress scenarios?
+> For my **target ratio** $r_{\\text{target}}$ (usually above 11.5%), is $\\text{CRAR}_{t+1} \\ge r_{\\text{target}}$ under base & stress scenarios?
 
 ---
 
@@ -6680,15 +6647,15 @@ Planning question:
 
 Core identity:
 
-[
+$$
 \\text{EL} = PD \\times LGD \\times EAD
-]
+$$
 
 Capital function:
 
-[
+$$
 \\text{RWA} = 12.5 \\times K \\times EAD
-]
+$$
 
 where **K** is the IRB capital charge (% of EAD) from the **Basel ASRF / Vasicek-style formula** calibrated to 99.9% confidence.
 
@@ -6714,9 +6681,9 @@ where **K** is the IRB capital charge (% of EAD) from the **Basel ASRF / Vasicek
 
 **Output floor:**
 
-[
-\\text{RWA}_{\\text{final}} = \\max\\left(\\text{RWA}_{\\text{internal}},\\ 0.725 \\times \\text{RWA}_\\text{SA}\\right)
-]
+$$
+\\text{RWA}_{\\text{final}} = \\max\\left(\\text{RWA}_{\\text{internal}}, 0.725 \\times \\text{RWA}_{\\text{SA}}\\right)
+$$
 
 BCBS explicitly states: RWA from internal models must be **no lower than 72.5%** of RWA from revised Standardised Approaches.
 
@@ -7069,9 +7036,9 @@ Frequency:
 
 Let:
 
-* (K) = total capital,
-* (\\text{RWA}) = total risk-weighted assets,
-* (r_{\\min}) = **required** total capital ratio (min + buffers + SIB + Pillar 2 etc.).
+* $K$ = total capital,
+* $\\text{RWA}$ = total risk-weighted assets,
+* $r_{\\min}$ = **required** total capital ratio (min + buffers + SIB + Pillar 2 etc.).
 
 Then:
 
@@ -7087,7 +7054,7 @@ $$
 \\text{Headroom ratio} = \\frac{K}{\\text{RWA}} - r_{\\min}
 $$
 
-BIS and supervisors describe **capital headroom** exactly as “surplus capital above all minimum requirements and buffers.”
+BIS and supervisors describe **capital headroom** exactly as "surplus capital above all minimum requirements and buffers."
 
 ### 13.8.3 Capital planning equations (1-period, simple)
 
@@ -7106,13 +7073,12 @@ $$
 Future capital ratio:
 
 $$
-\\text{CRAR}*{t+1} = \\frac{K*{t+1}}{\\text{RWA}_{t+1}}
+\\text{CRAR}_{t+1} = \\frac{K_{t+1}}{\\text{RWA}_{t+1}}
 $$
 
 Planning question:
 
-> For my **target ratio (r_\\text{target})** (usually above 11.5%), is
-> (\\text{CRAR}*{t+1} \\ge r*\\text{target}) under base & stress scenarios?
+> For my **target ratio** $r_{\\text{target}}$ (usually above 11.5%), is $\\text{CRAR}_{t+1} \\ge r_{\\text{target}}$ under base & stress scenarios?
 
 ---
 
@@ -7157,19 +7123,7 @@ where **K** is the IRB capital charge (% of EAD) from the **Basel ASRF / Vasicek
 
 * IRB use **restricted** for low-default portfolios (large corporates, banks, some equity).
 * Stronger **PD, LGD, EAD input floors**.
-* Higher model governance & validation requirements.
-
-**Output floor:**
-
-$$
-\\text{RWA}*\\text{final} = \\max\\left(\\text{RWA}*\\text{internal},\\ 0.725 \\times \\text{RWA}_\\text{SA}\\right)
-$$
-
-BCBS explicitly states: RWA from internal models must be **no lower than 72.5%** of RWA from revised Standardised Approaches.
-
-So even IRB banks must **always run SA in parallel** to compute the floor.
-
-**India today:** for credit risk capital, banks are essentially **SA-only**; IRB is still more conceptual / future-directional, except for some global groups.
+* **India today:** for credit risk capital, banks are essentially **SA-only**; IRB is still more conceptual / future-directional, except for some global groups.
 
 ---
 

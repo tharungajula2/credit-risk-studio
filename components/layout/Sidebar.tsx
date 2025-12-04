@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { curriculum } from "@/data/curriculum";
 import { cn } from "@/lib/utils";
-import { CheckCircle, Circle, BookOpen } from "lucide-react";
+import { CheckCircle, Circle, BookOpen, Zap } from "lucide-react";
 import { useProgress } from "@/hooks/useProgress";
 
 export function Sidebar() {
@@ -75,7 +75,19 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-slate-800">
+      <div className="p-4 border-t border-slate-800 space-y-1">
+        <Link
+          href="/flashcards"
+          className={cn(
+            "flex items-center gap-3 rounded-lg p-3 text-sm font-medium transition-colors",
+            pathname.startsWith("/flashcards")
+              ? "bg-indigo-500/10 text-indigo-300"
+              : "text-slate-400 hover:bg-slate-800/50 hover:text-slate-200"
+          )}
+        >
+          <Zap className="h-4 w-4" />
+          Flashcards
+        </Link>
         <Link
           href="/references"
           className={cn(
