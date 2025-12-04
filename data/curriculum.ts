@@ -5956,12 +5956,18 @@ $$
 
 Basel distinguishes two levels:
 
-| Parameter | Foundation IRB (F-IRB)                         | Advanced IRB (A-IRB)                       |
-| --------- | ---------------------------------------------- | ------------------------------------------ |
-| **PD**    | Bank estimates (subject to standards & floors) | Bank estimates                             |
-| **LGD**   | **Supervisory values** (regulator tables)      | Bank estimates (with floors)               |
-| **EAD**   | Supervisory rules (e.g. fixed CCFs)            | Bank estimates (with constraints & floors) |
-| **M**     | Bank calculates using rules                    | Bank calculates                            |
+**Foundation IRB (F-IRB):**
+- **PD** – Bank estimates (subject to standards & floors)
+- **LGD** – Supervisory values from regulator tables
+- **EAD** – Supervisory rules (e.g. fixed CCFs)
+- **M** – Bank calculates using rules
+
+**Advanced IRB (A-IRB):**
+- **PD** – Bank estimates
+- **LGD** – Bank estimates (with floors)
+- **EAD** – Bank estimates (with constraints & floors)
+- **M** – Bank calculates
+
 
 * F-IRB = **half-way house**: bank models **PD** but uses **standard LGD/EAD**.
 * A-IRB = bank estimates **all** PD, LGD, EAD (and M), under tighter scrutiny.

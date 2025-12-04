@@ -92,6 +92,19 @@ function MobileNavLinks({ onItemClick }: { onItemClick: () => void }) {
       })}
       <div className="mt-4 border-t border-slate-800 pt-4">
         <Link
+          href="/flashcards"
+          onClick={onItemClick}
+          className={cn(
+            "flex items-center gap-3 rounded-lg p-3 text-sm font-medium transition-colors",
+            pathname === "/flashcards" || pathname.startsWith("/flashcards/")
+              ? "bg-indigo-500/10 text-indigo-300"
+              : "text-slate-400 hover:bg-slate-800/50 hover:text-slate-200"
+          )}
+        >
+          <div className="h-4 w-4" /> {/* Spacer for alignment */}
+          ✨ Flashcards
+        </Link>
+        <Link
           href="/references"
           onClick={onItemClick}
           className={cn(
@@ -105,6 +118,7 @@ function MobileNavLinks({ onItemClick }: { onItemClick: () => void }) {
           References & Sources
         </Link>
       </div>
+
     </>
   );
 }
